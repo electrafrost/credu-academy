@@ -215,6 +215,24 @@
     text-transform: uppercase;
     color: var(--teal-mid);
     margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(40,40)'%3E%3Crect x='-22' y='-22' width='18' height='18' rx='3' fill='%231a6b5a' opacity='0.7'/%3E%3Crect x='4' y='-22' width='18' height='18' rx='3' fill='%231a6b5a' opacity='0.5'/%3E%3Crect x='-22' y='4' width='18' height='18' rx='3' fill='%231a6b5a' opacity='0.35'/%3E%3Crect x='4' y='4' width='18' height='18' rx='3' fill='%231a6b5a' opacity='0.2'/%3E%3Crect x='-5' y='-5' width='10' height='10' rx='2' fill='%23c49a2a' transform='rotate(45)'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+  }
+
+  .beyond .section-label::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(40,40)'%3E%3Crect x='-22' y='-22' width='18' height='18' rx='3' fill='white' opacity='0.7'/%3E%3Crect x='4' y='-22' width='18' height='18' rx='3' fill='white' opacity='0.5'/%3E%3Crect x='-22' y='4' width='18' height='18' rx='3' fill='white' opacity='0.35'/%3E%3Crect x='4' y='4' width='18' height='18' rx='3' fill='white' opacity='0.2'/%3E%3Crect x='-5' y='-5' width='10' height='10' rx='2' fill='%23dbb94e' transform='rotate(45)'/%3E%3C/g%3E%3C/svg%3E");
   }
 
   h2 {
@@ -235,6 +253,7 @@
     position: relative;
     overflow: hidden;
     padding-bottom: 2rem;
+    margin-top: 2.5rem;
   }
 
   .wave-line {
@@ -525,9 +544,11 @@
     CREDU Academy
   </div>
   <div class="nav-links">
-    <a href="#programme">Programme</a>
     <a href="#location">Location</a>
-    <a href="https://academy.credu.org/apply" target="_blank" class="nav-apply">Apply →</a>
+    <a href="#programme">Programme</a>
+    <a href="#outcomes">Outcomes</a>
+    <a href="#meet">Meet</a>
+    <a href="https://credu.academy/apply" target="_blank" class="nav-apply">Apply →</a>
   </div>
 </nav>
 
@@ -559,7 +580,7 @@
   <div class="hero-inner">
     <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:2rem;">
       <div class="hero-badge" style="margin-bottom:0;">// Now accepting applications — June 2026</div>
-      <a href="https://academy.credu.org/apply" target="_blank" class="btn-apply-hero">Apply →</a>
+      <a href="https://credu.academy/apply" target="_blank" class="btn-apply-hero">Apply →</a>
     </div>
     <div class="hero-brand">CREDU <em>Academy</em></div>
     <div class="hero-programme">Network School Residency</div>
@@ -700,7 +721,7 @@
   <p>This isn't a fixed curriculum. It's a choose-your-own-adventure programme built around your expertise, what you want to build, and where you want to take your practice - with structured mentoring and a cohort of no more than 10.</p>
   <p>Network School runs a rich programme of talks, workshops and events covering AI, decentralisation technologies, the digital economy and healthy living. You participate in all of that. Around it, we tailor the CREDU Academy experience for each cohort - presenting ideas, building projects, and working toward outcomes to improve our professional futures, together.</p>
   <p>Applications are selective. We want high-agency, curious people ready to co-create the future of the profession. This isn't a passive course - it's a working residency.</p>
-  <p style="margin-top:0.5rem;"><a href="https://academy.credu.org/apply" class="btn btn-primary" target="_blank">Apply Now →</a></p>
+  <p style="margin-top:0.5rem;"><a href="https://credu.academy/apply" class="btn btn-primary" target="_blank">Apply Now →</a></p>
   <div class="programme-grid">
     <div class="month-card">
       <div class="month-num">Month 1</div>
@@ -837,7 +858,7 @@
       <h3>3-Month Programme</h3>
       <p class="option-desc"><strong>US$2,000 per month</strong> - $1,500 Network School membership (apartment accommodation, meals, gym, coworking, wifi, standard programming) + $500 CREDU Academy mentoring and programme facilitation.</p>
       <p class="option-detail">Cohorts of up to 10 people. Applications are selective - we're looking for high-agency professionals who want to build. First cohort starts June 2026. After 3 months, continue at the standard NS rate of $1,500/month.</p>
-      <a href="https://academy.credu.org/apply" class="btn btn-primary" target="_blank">Apply Now →</a>
+      <a href="https://credu.academy/apply" class="btn btn-primary" target="_blank">Apply Now →</a>
     </div>
     <div class="option-card">
       <div class="option-icon">✈️</div>
@@ -864,12 +885,12 @@
 </section>
 
 <!-- CTA -->
-<section class="cta">
+<section class="cta" id="meet">
   <h2>Interested? Let's talk.</h2>
   <p>Book a conversation with Electra to learn more about the programme, discuss your goals, and figure out the right path for you.</p>
   <div class="cta-buttons">
     <a href="https://calendar.app.google/7CvGye8gGmcMm2Gf7" class="btn btn-primary" target="_blank">Book a Meeting with Electra →</a>
-    <a href="https://academy.credu.org/apply" class="btn btn-outline" target="_blank">Apply Directly →</a>
+    <a href="https://credu.academy/apply" class="btn btn-outline" target="_blank">Apply Directly →</a>
   </div>
 </section>
 
