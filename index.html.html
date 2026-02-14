@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CREDU Academy — Accounting Technologist & International Tax Program</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1917;
+    --warm: #f5f2ed;
+    --cream: #faf9f7;
+    --accent: #c49a2a;
+    --accent-light: #dbb94e;
+    --muted: #57534e;
+    --border: #e7e2db;
+    --teal: #14594a;
+    --teal-mid: #1a6b5a;
+    --teal-light: #e6f0ed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.75rem;
+    background: #081a16;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.04em;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+    letter-spacing: 0.03em;
+  }
+
+  .nav-links a:hover { color: rgba(255,255,255,0.85); }
+
+  .nav-apply {
+    color: var(--accent-light) !important;
+    font-weight: 600;
+    padding: 0.3rem 0.9rem;
+    background: transparent;
+    border: 1px solid rgba(219,185,78,0.5);
+    border-radius: 3px;
+  }
+
+  .nav-apply:hover {
+    background: rgba(219,185,78,0.1);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(175deg, #060f0d 0%, #0a1f1a 30%, #10332b 65%, #14453a 100%);
+    color: white;
+    padding: 4.5rem 2rem 5rem;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(219,185,78,0.15);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -15%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(196,154,42,0.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(20,89,74,0.3) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-tiles {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    opacity: 0.85;
+    margin-bottom: 2rem;
+  }
+
+  .hero-brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 6vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+  }
+
+  .hero-brand em {
+    font-style: italic;
+    color: var(--accent-light);
+  }
+
+  .hero-programme {
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: rgba(255,255,255,0.75);
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    line-height: 1.75;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem 2rem;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .hero-meta span { display: flex; align-items: center; gap: 0.5rem; }
+
+  .hero-meta .dot {
+    width: 5px; height: 5px;
+    background: var(--accent-light);
+    border-radius: 50%;
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem;
+  }
+
+  .section-label {
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal-mid);
+    margin-bottom: 0.75rem;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    line-height: 1.3;
+  }
+
+  p { color: var(--muted); margin-bottom: 1rem; font-size: 0.95rem; }
+
+  /* ─── WHO ─── */
+  .who {
+    background: var(--warm);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 2rem;
+  }
+
+  .wave-line {
+    position: absolute;
+    bottom: -20px;
+    right: -5%;
+    width: 75%;
+    height: 220px;
+    pointer-events: none;
+    opacity: 0.1;
+  }
+
+  .who-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .who-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  .who-list li::before {
+    content: '';
+    width: 8px; height: 8px; min-width: 8px;
+    background: var(--teal);
+    border-radius: 50%;
+    margin-top: 0.5rem;
+  }
+
+  /* ─── LOCATION ─── */
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 600px) { .location-grid { grid-template-columns: 1fr; } }
+
+  .location-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+
+  .location-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+  .location-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  .location-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; margin: 0; }
+
+  /* ─── PROGRAMME ─── */
+  .programme-grid { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
+
+  .month-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .month-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+  .month-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.8rem;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .month-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .month-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .month-card li {
+    font-size: 0.88rem; color: var(--muted);
+    padding-left: 1.25rem; position: relative; line-height: 1.55;
+  }
+
+  .month-card li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+
+  .throughout {
+    background: var(--teal-light);
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-top: 2rem;
+  }
+
+  .throughout h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem; font-weight: 400; margin-bottom: 0.75rem;
+  }
+
+  .throughout ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .throughout li {
+    font-size: 0.85rem; color: var(--muted);
+    padding-left: 1.25rem; position: relative;
+  }
+
+  .throughout li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
+
+  /* ─── OUTCOMES ─── */
+  .outcomes {
+    background: var(--warm);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .outcomes-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .outcomes-list li {
+    font-size: 0.88rem; color: var(--ink);
+    padding: 1rem; background: white;
+    border-radius: 8px; border: 1px solid var(--border); line-height: 1.5;
+  }
+
+  @media (max-width: 600px) { .outcomes-list { grid-template-columns: 1fr; } }
+
+  /* ─── OPTIONS ─── */
+  .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+  @media (max-width: 650px) { .options-grid { grid-template-columns: 1fr; } }
+
+  .option-card {
+    background: white; border: 2px solid var(--border); border-radius: 12px;
+    padding: 2rem 1.5rem; text-align: center; transition: all 0.3s ease; position: relative;
+  }
+
+  .option-card.featured { border-color: var(--teal); box-shadow: 0 4px 24px rgba(26,107,90,0.12); }
+
+  .option-card.featured::after {
+    content: 'Recommended'; position: absolute; top: -0.75rem; left: 50%;
+    transform: translateX(-50%); background: var(--teal); color: white;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 0.25rem 1rem; border-radius: 2rem;
+  }
+
+  .option-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .option-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .option-card .option-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem; line-height: 1.6; }
+  .option-card .option-detail { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; padding-top: 0.75rem; border-top: 1px solid var(--border); line-height: 1.6; }
+
+  .btn {
+    display: inline-block; padding: 0.75rem 2rem; border-radius: 6px;
+    font-size: 0.9rem; font-weight: 600; text-decoration: none;
+    transition: all 0.25s ease; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-primary { background: var(--teal); color: white; }
+  .btn-primary:hover { background: #155a4a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(26,107,90,0.3); }
+  .btn-outline { background: transparent; color: var(--teal); border: 2px solid var(--teal); }
+  .btn-outline:hover { background: var(--teal-light); }
+
+  /* ─── BEYOND ─── */
+  .beyond { background: linear-gradient(170deg, #0a1f1a 0%, #0d3028 50%, #14453a 100%); color: white; text-align: center; }
+  .beyond .section-label { color: var(--accent-light); }
+  .beyond h2 { color: white; }
+  .beyond p { color: rgba(255,255,255,0.75); }
+  .beyond-options { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1.5rem 0; }
+  .beyond-tag { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); padding: 0.5rem 1.25rem; border-radius: 2rem; font-size: 0.85rem; }
+
+  /* ─── CTA ─── */
+  .cta { text-align: center; padding: 4rem 2rem; }
+  .cta h2 { margin-bottom: 0.75rem; }
+  .cta p { max-width: 500px; margin: 0 auto 2rem; }
+  .cta-buttons { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+
+  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); }
+
+  /* ─── HERO APPLY BUTTON ─── */
+  .btn-apply-hero {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0a1f1a;
+    background: var(--accent-light);
+    padding: 0.4rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-apply-hero:hover {
+    background: #e8c84e;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(219,185,78,0.4);
+  }
+
+  /* ─── FLOATING SCROLL BUTTON ─── */
+  .scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  }
+
+  .scroll-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-top:hover {
+    background: #155a4a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(20,89,74,0.4);
+  }
+
+  /* ─── VIDEO PLACEHOLDER ─── */
+  .video-placeholder {
+    background: #0d3028;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    border: 1px dashed rgba(219,185,78,0.3);
+  }
+
+  .video-placeholder span {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .video-placeholder p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @media (prefers-reduced-motion: no-preference) {
+    .month-card, .option-card, .outcomes-list li { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
+    .month-card:nth-child(1) { animation-delay: 0.1s; }
+    .month-card:nth-child(2) { animation-delay: 0.2s; }
+    .month-card:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-brand">
+    <svg width="20" height="20" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><g transform="translate(40,40)"><rect x="-22" y="-22" width="18" height="18" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="4" y="-22" width="18" height="18" rx="3" fill="rgba(255,255,255,0.5)"/><rect x="-22" y="4" width="18" height="18" rx="3" fill="rgba(255,255,255,0.35)"/><rect x="4" y="4" width="18" height="18" rx="3" fill="rgba(255,255,255,0.2)"/><rect x="-5" y="-5" width="10" height="10" rx="2" fill="#dbb94e" transform="rotate(45)"/></g></svg>
+    CREDU Academy
+  </div>
+  <div class="nav-links">
+    <a href="#programme">Programme</a>
+    <a href="#location">Location</a>
+    <a href="https://academy.credu.org/apply" target="_blank" class="nav-apply">Apply →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-tiles">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+      <defs>
+        <pattern id="tile" x="0" y="0" width="72" height="65" patternUnits="userSpaceOnUse">
+          <g transform="translate(36,32)">
+            <rect x="-14" y="-14" width="12" height="12" rx="2" fill="white"/>
+            <rect x="2" y="-14" width="12" height="12" rx="2" fill="white" opacity="0.7"/>
+            <rect x="-14" y="2" width="12" height="12" rx="2" fill="white" opacity="0.5"/>
+            <rect x="2" y="2" width="12" height="12" rx="2" fill="white" opacity="0.3"/>
+            <rect x="-3.5" y="-3.5" width="7" height="7" rx="1.5" fill="#dbb94e" transform="rotate(45)"/>
+          </g>
+        </pattern>
+        <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="white" stop-opacity="0.04"/>
+          <stop offset="100%" stop-color="white" stop-opacity="0.20"/>
+        </linearGradient>
+        <mask id="fadeMask">
+          <rect width="100%" height="100%" fill="url(#fade)"/>
+        </mask>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#tile)" mask="url(#fadeMask)"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:2rem;">
+      <div class="hero-badge" style="margin-bottom:0;">// Now accepting applications — June 2026</div>
+      <a href="https://academy.credu.org/apply" target="_blank" class="btn-apply-hero">Apply →</a>
+    </div>
+    <div class="hero-brand">CREDU <em>Academy</em></div>
+    <div class="hero-programme">Network School Residency</div>
+    <div class="hero-title">Accounting Technologist & International Tax Program</div>
+    <p class="hero-sub">A 3-month residency for accounting professionals learning to build solutions in AI, digital assets, decentralised governance and international tax - in a global tech and health campus with a professional community.</p>
+    <div class="hero-meta">
+      <span><span class="dot"></span>Malaysia / Singapore</span>
+      <span><span class="dot"></span>3 months</span>
+      <span><span class="dot"></span>All inclusive</span>
+      <span><span class="dot"></span>Monthly cohorts</span>
+    </div>
+  </div>
+</header>
+
+<!-- WHO IT'S FOR -->
+<section class="who">
+  <div class="wave-line">
+    <svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <!-- Water base / swell rising from left -->
+      <path d="M0,280 C40,278 100,270 160,255 C220,238 270,215 320,185 C360,160 390,132 420,105 C445,82 465,62 485,45 C505,30 520,20 540,15 C558,10 575,12 590,18" 
+            stroke="#1a6b5a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      
+      <!-- The lip curling over and throwing forward -->
+      <path d="M590,18 C608,25 622,38 632,55 C642,72 648,92 648,112 C647,130 640,148 628,162 C616,175 600,184 582,188 C565,191 548,188 535,180 C522,172 514,158 512,142 C510,128 515,114 525,104" 
+            stroke="#1a6b5a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+      <!-- Inner barrel lines - the tube -->
+      <path d="M535,180 C548,172 558,160 565,145 C572,130 575,115 573,100 C570,86 563,74 553,65" 
+            stroke="#1a6b5a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M545,170 C555,162 563,150 568,136 C572,122 572,108 568,96 C564,85 558,76 550,70" 
+            stroke="#c49a2a" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <path d="M555,160 C562,152 567,140 570,128 C572,116 570,105 565,96" 
+            stroke="#1a6b5a" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+
+      <!-- Wave face texture lines - the wall of water -->
+      <path d="M340,178 C370,155 400,128 430,100 C455,76 478,55 500,38" 
+            stroke="#1a6b5a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <path d="M360,185 C388,162 415,135 442,108 C465,84 485,62 508,42" 
+            stroke="#c49a2a" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+      <path d="M380,192 C405,170 430,145 455,118 C475,95 495,72 518,50" 
+            stroke="#1a6b5a" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+      <path d="M400,198 C422,178 445,155 465,130 C482,108 500,85 525,60" 
+            stroke="#1a6b5a" stroke-width="0.5" fill="none" stroke-linecap="round"/>
+
+      <!-- Crest fingers / spray claws throwing off the lip -->
+      <path d="M590,18 C596,10 605,5 615,4 C625,5 630,10 632,18" 
+            stroke="#1a6b5a" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <path d="M600,12 C608,4 618,0 628,2 C636,5 640,12 638,20" 
+            stroke="#1a6b5a" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <path d="M612,6 C620,0 630,-2 638,2 C644,6 644,14 640,20" 
+            stroke="#c49a2a" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+      <path d="M625,3 C632,-2 640,-2 646,2 C650,6 648,12 644,16" 
+            stroke="#1a6b5a" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+
+      <!-- Spray droplets -->
+      <path d="M648,8 C650,2 654,0 656,3" stroke="#c49a2a" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+      <path d="M652,14 C655,8 658,7 659,10" stroke="#1a6b5a" stroke-width="0.5" fill="none" stroke-linecap="round"/>
+      <circle cx="660" cy="5" r="1.5" fill="none" stroke="#1a6b5a" stroke-width="0.5"/>
+      <circle cx="665" cy="12" r="1" fill="none" stroke="#c49a2a" stroke-width="0.5"/>
+      <circle cx="656" cy="18" r="1.2" fill="none" stroke="#1a6b5a" stroke-width="0.4"/>
+      <circle cx="670" cy="8" r="0.8" fill="none" stroke="#c49a2a" stroke-width="0.4"/>
+      <circle cx="662" cy="22" r="0.7" fill="none" stroke="#1a6b5a" stroke-width="0.4"/>
+
+      <!-- Tiny surfer on the face of the wave -->
+      <!-- Board -->
+      <line x1="432" y1="98" x2="444" y2="88" stroke="#1a6b5a" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Body -->
+      <line x1="437" y1="93" x2="438" y2="82" stroke="#1a6b5a" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- Arms out for balance -->
+      <line x1="433" y1="84" x2="438" y2="82" stroke="#1a6b5a" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="438" y1="82" x2="443" y2="80" stroke="#1a6b5a" stroke-width="0.8" stroke-linecap="round"/>
+      <!-- Head -->
+      <circle cx="438" cy="79" r="2" fill="none" stroke="#1a6b5a" stroke-width="0.8"/>
+
+      <!-- Whitewater / foam cascading down the back -->
+      <path d="M632,55 C645,70 655,90 660,115 C665,140 665,168 660,195 C655,220 645,245 635,265 C628,278 620,288 610,295" 
+            stroke="#1a6b5a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M640,65 C652,82 660,105 665,130 C668,155 668,180 664,205 C660,228 652,250 642,268" 
+            stroke="#c49a2a" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+      
+      <!-- Foam texture on the back -->
+      <path d="M636,80 C642,75 648,78 645,85" stroke="#1a6b5a" stroke-width="0.5" fill="none" stroke-linecap="round"/>
+      <path d="M642,100 C648,95 654,98 650,105" stroke="#1a6b5a" stroke-width="0.5" fill="none" stroke-linecap="round"/>
+      <path d="M648,125 C654,120 658,124 655,130" stroke="#c49a2a" stroke-width="0.4" fill="none" stroke-linecap="round"/>
+      <path d="M650,155 C656,150 660,154 656,160" stroke="#1a6b5a" stroke-width="0.4" fill="none" stroke-linecap="round"/>
+
+      <!-- Water surface line at base -->
+      <path d="M0,290 C80,286 180,282 300,278 C420,274 520,275 610,280 C680,284 740,288 800,292" 
+            stroke="#1a6b5a" stroke-width="1" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="section-label">Who it's for</div>
+  <h2>Accountants positioning for the next big wave</h2>
+  <ul class="who-list">
+    <li>Professionals building their practices and solutions around frontier tech and international tax</li>
+    <li>Recent graduates entering the profession, seeking elite talent mentorship</li>
+    <li>Career changers pursuing a professional accounting qualification with specialisation</li>
+  </ul>
+</section>
+
+<!-- THE LOCATION -->
+<section id="location">
+  <div class="section-label">The location</div>
+  <h2>Forest City, Malaysia — next door to Singapore</h2>
+  <p>Network School is located on Forest City, a modern island development in Johor, Malaysia — 40 minutes from Singapore's Changi Airport and connected to one of Asia's most important financial and tech hubs. The cost of living is significantly less than Singapore, Australia, or any major Western city.</p>
+  <p>Network School at Forest City offers a unique environment: social infrastructure, water views, tropical climate, and the quiet focus of a place purpose-built for living and working without the distractions of a busy city. Singapore is right across the strait for conferences, meetings, and travel.</p>
+  <div class="location-grid">
+    <div class="location-card">
+      <div class="location-icon">🏫</div>
+      <h3>Network School</h3>
+      <p>A global community of remote workers, founders, creators, professionals and technologists. Your membership includes accommodation, coworking space, high-speed wifi, 24/7 gym with personal trainers, 3 healthy daily meals, a content studio, and access to all programming - talks, workshops and events.</p>
+    </div>
+    <div class="location-card">
+      <div class="location-icon">🎤</div>
+      <h3>World-class speakers</h3>
+      <p>Network School regularly hosts globally recognised figures in technology, crypto, health, and business. Past speakers have included founders and leaders from Ethereum, Coinbase, Sequoia, Flexport, and more. You'll learn alongside and network with people building start-ups at the frontier.</p>
+    </div>
+    <div class="location-card">
+      <div class="location-icon">🏠</div>
+      <h3>Apartment living</h3>
+      <p>CREDU Academy participants live in serviced apartments rather than hotel rooms - with a kitchen, living space, and the comfort needed for a 3-month professional residency. Ideal for those who need space to work, study, and live - including those with a partner or children.</p>
+    </div>
+    <div class="location-card">
+      <div class="location-icon">🌏</div>
+      <h3>Strategic for Asia-Pacific</h3>
+      <p>Easy access from Australia, India, China, and across Southeast Asia - with a comfortable timezone for working remotely. Singapore next door for flights and the broader tech and business ecosystem. Network School offers Malaysian visa support for longer stays.</p>
+    </div>
+  </div>
+
+  <div class="video-placeholder">
+    <span>🎬</span>
+    <p>Video tour coming soon — walking through Network School, the apartments, coworking spaces, gym, and Forest City</p>
+  </div>
+</section>
+<section id="programme">
+  <div class="section-label">The programme</div>
+  <h2>Your programme, your path</h2>
+  <p>This isn't a fixed curriculum. It's a choose-your-own-adventure programme built around your expertise, what you want to build, and where you want to take your practice - with structured mentoring and a cohort of no more than 10.</p>
+  <p>Network School runs a rich programme of talks, workshops and events covering AI, decentralisation technologies, the digital economy and healthy living. You participate in all of that. Around it, we tailor the CREDU Academy experience for each cohort - presenting ideas, building projects, and working toward outcomes to improve our professional futures, together.</p>
+  <p>Applications are selective. We want high-agency, curious people ready to co-create the future of the profession. This isn't a passive course - it's a working residency.</p>
+  <p style="margin-top:0.5rem;"><a href="https://academy.credu.org/apply" class="btn btn-primary" target="_blank">Apply Now →</a></p>
+  <div class="programme-grid">
+    <div class="month-card">
+      <div class="month-num">Month 1</div>
+      <h3>Orient, Foundation & Discovery</h3>
+      <ul>
+        <li>Settle into Forest City life, join community programming, set up remote work routines</li>
+        <li>Define your domain expertise, where it intersects with emerging tech, and set goals with your cohort and mentor</li>
+        <li>Define your project - whether that's an AI use case, tech solution, or professional practice business model</li>
+        <li>Build your first working application with AI-assisted coding - or get technical feedback and advance an existing project</li>
+        <li>Foundations in blockchain, crypto accounting, decentralised operations, and foreign tax concepts</li>
+      </ul>
+    </div>
+    <div class="month-card">
+      <div class="month-num">Month 2</div>
+      <h3>Deepen, Build & Challenge</h3>
+      <ul>
+        <li>Further research and application of what was of most interest in Month 1</li>
+        <li>AI safety, governance and strategy for your profession and client industries</li>
+        <li>Critical assessment of current tools and vendor software, explore emerging tools</li>
+        <li>International tax practice, cross-border structures and evaluating AI-driven systems</li>
+        <li>Digital assets deep dive - use cases, classification, security, and reporting frameworks</li>
+        <li>Design a DAO - using blockchain technology to enable decentralised governance and decision-making</li>
+        <li>Network state concepts examined through a regulatory and tax lens</li>
+      </ul>
+    </div>
+    <div class="month-card">
+      <div class="month-num">Month 3</div>
+      <h3>Integrate, Ship & Contribute</h3>
+      <p style="font-size:0.88rem; color:var(--muted); margin-bottom:0.75rem; line-height:1.55;">This month will be shaped around the specific interests of the cohort. May include:</p>
+      <ul>
+        <li>Further developing and applying what we learned in Month 2</li>
+        <li>Build your professional practice action plan, based on assumptions about what's coming next - what you'll be working on in 1, 3 and 5 years, and how you're getting there</li>
+        <li>Finalise and present projects with a roadmap to take them further</li>
+        <li>Establish cross-border collaboration networks and a verified professional profile that markets your specialisation</li>
+        <li>Transnational tax coordination as a cohort policy project for network states</li>
+        <li>Contribute to development of a decentralised credentialing and peer-to-peer CPD model</li>
+      </ul>
+    </div>
+  </div>
+  <div class="throughout">
+    <h3>Throughout all 3 months</h3>
+    <ul>
+      <li>Participate in Network School programming - talks, workshops and community events</li>
+      <li>Maintain remote work or professional study commitments</li>
+      <li>Weekly cohort sessions and collaborative working in the faculty co-working space</li>
+      <li>Ongoing mentoring and one-to-one guidance from Electra Frost and other industry leaders</li>
+      <li>All CPD hours tracked and logged from day one</li>
+    </ul>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section class="outcomes" id="outcomes">
+  <div class="section-label">What you leave with</div>
+  <h2>Programme outcomes</h2>
+  <ul class="outcomes-list">
+    <li>A completed project - tool, framework or validated business model</li>
+    <li>Practical ability to build software using AI-assisted and agentic coding tools</li>
+    <li>Digital assets fluency - use cases, classification, security and reporting</li>
+    <li>AI safety, governance and strategy literacy for the profession</li>
+    <li>International tax and cross-border advisory knowledge</li>
+    <li>A professional practice action plan for the next 1, 3 and 5 years</li>
+    <li>A global professional peer network across jurisdictions</li>
+    <li>A verified professional profile on the CREDU credentialing network</li>
+    <li>Official CPD certificate recorded on blockchain</li>
+    <li>Founding member status in a global accounting faculty experiment</li>
+  </ul>
+  <p style="font-size:0.9rem; color:var(--teal); margin-top:1.25rem; font-weight:500;">Upon completion of the 3 month program, we verify your official CPD certificate with documented professional development hours, recorded on blockchain.</p>
+  
+  <div style="display:flex; justify-content:center; margin-top:1.5rem;">
+    <svg width="280" height="180" viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg" style="opacity:0.7;">
+      <!-- Certificate body -->
+      <rect x="10" y="10" width="260" height="160" rx="8" fill="white" stroke="#14594a" stroke-width="1.5"/>
+      <rect x="18" y="18" width="244" height="144" rx="5" fill="none" stroke="#14594a" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.4"/>
+      
+      <!-- Header line -->
+      <line x1="60" y1="42" x2="220" y2="42" stroke="#e7e2db" stroke-width="1"/>
+      
+      <!-- Certificate text -->
+      <text x="140" y="36" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="11" fill="#14594a" font-weight="400">CREDU Academy</text>
+      <text x="140" y="56" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="7" fill="#57534e" letter-spacing="0.12em" text-transform="uppercase">CERTIFICATE OF PROFESSIONAL DEVELOPMENT</text>
+      
+      <!-- Placeholder lines for content -->
+      <rect x="70" y="70" width="140" height="4" rx="2" fill="#e7e2db"/>
+      <rect x="85" y="82" width="110" height="4" rx="2" fill="#e7e2db"/>
+      <rect x="75" y="94" width="130" height="4" rx="2" fill="#e7e2db"/>
+      
+      <!-- Blockchain chain links -->
+      <g opacity="0.35">
+        <rect x="42" y="118" width="28" height="14" rx="3" fill="none" stroke="#14594a" stroke-width="1"/>
+        <line x1="70" y1="125" x2="78" y2="125" stroke="#14594a" stroke-width="1"/>
+        <rect x="78" y="118" width="28" height="14" rx="3" fill="none" stroke="#14594a" stroke-width="1"/>
+        <line x1="106" y1="125" x2="114" y2="125" stroke="#14594a" stroke-width="1"/>
+        <rect x="114" y="118" width="28" height="14" rx="3" fill="none" stroke="#14594a" stroke-width="1"/>
+        <line x1="142" y1="125" x2="150" y2="125" stroke="#14594a" stroke-width="1"/>
+        <rect x="150" y="118" width="28" height="14" rx="3" fill="none" stroke="#14594a" stroke-width="1"/>
+        <line x1="178" y1="125" x2="186" y2="125" stroke="#14594a" stroke-width="1"/>
+        <rect x="186" y="118" width="28" height="14" rx="3" fill="none" stroke="#14594a" stroke-width="1"/>
+      </g>
+      
+      <!-- Hash text in blocks -->
+      <text x="56" y="127" text-anchor="middle" font-family="monospace" font-size="5" fill="#14594a" opacity="0.3">0x3f</text>
+      <text x="92" y="127" text-anchor="middle" font-family="monospace" font-size="5" fill="#14594a" opacity="0.3">a7b2</text>
+      <text x="128" y="127" text-anchor="middle" font-family="monospace" font-size="5" fill="#14594a" opacity="0.3">c9e1</text>
+      <text x="164" y="127" text-anchor="middle" font-family="monospace" font-size="5" fill="#14594a" opacity="0.3">d4f8</text>
+      <text x="200" y="127" text-anchor="middle" font-family="monospace" font-size="5" fill="#14594a" opacity="0.3">2b6a</text>
+      
+      <!-- Verified text -->
+      <text x="140" y="150" text-anchor="middle" font-family="monospace" font-size="6" fill="#57534e" opacity="0.5" letter-spacing="0.1em">VERIFIED ON-CHAIN</text>
+      
+      <!-- Big verification tick -->
+      <circle cx="232" cy="42" r="18" fill="#14594a" opacity="0.12"/>
+      <circle cx="232" cy="42" r="14" fill="none" stroke="#14594a" stroke-width="1.5"/>
+      <path d="M224,42 L230,48 L242,34" stroke="#14594a" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <!-- Gold accent corners -->
+      <path d="M14,25 L14,14 L25,14" stroke="#c49a2a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <path d="M255,14 L266,14 L266,25" stroke="#c49a2a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <path d="M14,155 L14,166 L25,166" stroke="#c49a2a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <path d="M255,166 L266,166 L266,155" stroke="#c49a2a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+    </svg>
+  </div>
+</section>
+
+<!-- OPTIONS -->
+<section id="join">
+  <div class="section-label">How to join</div>
+  <h2>What's included</h2>
+  <p>You'll share a 3-4 bedroom apartment with one other CREDU Academy participant. Your Network School membership covers everything you need to live, work, and thrive - meals, gym, coworking, wifi, and all community programming. CREDU Academy adds structured mentoring, cohort facilitation, and the tailored programme on top.</p>
+
+  <div class="options-grid">
+    <div class="option-card featured">
+      <div class="option-icon">🏢</div>
+      <h3>3-Month Programme</h3>
+      <p class="option-desc"><strong>US$2,000 per month</strong> - $1,500 Network School membership (apartment accommodation, meals, gym, coworking, wifi, standard programming) + $500 CREDU Academy mentoring and programme facilitation.</p>
+      <p class="option-detail">Cohorts of up to 10 people. Applications are selective - we're looking for high-agency professionals who want to build. First cohort starts June 2026. After 3 months, continue at the standard NS rate of $1,500/month.</p>
+      <a href="https://academy.credu.org/apply" class="btn btn-primary" target="_blank">Apply Now →</a>
+    </div>
+    <div class="option-card">
+      <div class="option-icon">✈️</div>
+      <h3>Come Check It Out</h3>
+      <p class="option-desc">Not ready to commit to three months? Want to visit earlier? Book for one month, experience Network School, and decide if the CREDU pathway is right for you.</p>
+      <p class="option-detail">Hotel accommodation at Network School standard rates from $1,500 shared. Join community programming and get a taste of the environment before committing to the full residency.</p>
+      <a href="https://ns.com/electrafrost/apply" class="btn btn-outline" target="_blank">Apply for 1 Month →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BEYOND -->
+<section class="beyond">
+  <div class="section-label">Beyond the programme</div>
+  <h2>This is just the beginning</h2>
+  <p>After your 3-month residency, there are several paths forward depending on your goals and ambitions.</p>
+  <div class="beyond-options">
+    <span class="beyond-tag">Stay for 12 months</span>
+    <span class="beyond-tag">Develop a permanent faculty role</span>
+    <span class="beyond-tag">Return for future cohorts as a mentor</span>
+    <span class="beyond-tag">Continue collaborating remotely</span>
+  </div>
+  <p>Longer stay visas may be required. We can assist with the options and process.</p>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Interested? Let's talk.</h2>
+  <p>Book a conversation with Electra to learn more about the programme, discuss your goals, and figure out the right path for you.</p>
+  <div class="cta-buttons">
+    <a href="https://calendar.app.google/7CvGye8gGmcMm2Gf7" class="btn btn-primary" target="_blank">Book a Meeting with Electra →</a>
+    <a href="https://academy.credu.org/apply" class="btn btn-outline" target="_blank">Apply Directly →</a>
+  </div>
+</section>
+
+<footer>
+  <p>CREDU Academy — Accounting Technologist & International Tax Program — Network School, Malaysia</p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">CREDU is an ElectraFi professional practice initiative (ABN: 59 641 198 914) — Liability is limited by a scheme approved under Professional Standards legislation.</p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;"><a href="https://credu.academy/privacy" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="https://credu.academy/terms" style="color:var(--muted); text-decoration:none;">Terms</a> · <a href="https://credu.academy/about" style="color:var(--muted); text-decoration:none;">About</a> · <a href="https://credu.academy/support" style="color:var(--muted); text-decoration:none;">Support</a></p>
+</footer>
+
+<!-- Floating scroll to top -->
+<button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+  const scrollBtn = document.querySelector('.scroll-top');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
