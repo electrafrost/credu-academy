@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CREDU Academy — Accounting Technologist & International Tax Program</title>
+<title>CREDU Academy — Accounting Technologist & International Tax Programme</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -449,6 +449,30 @@
   .cta p { max-width: 500px; margin: 0 auto 2rem; }
   .cta-buttons { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
 
+  /* ─── MID-PAGE CTA ─── */
+  .mid-cta {
+    text-align: center;
+    padding: 3.5rem 2rem;
+    background: linear-gradient(170deg, #0a1f1a 0%, #0d3028 50%, #14453a 100%);
+    color: white;
+  }
+  .mid-cta h2 { color: white; margin-bottom: 0.75rem; }
+  .mid-cta p { color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto 2rem; }
+  .mid-cta .btn-primary { 
+    background: var(--accent-light); 
+    color: #0a1f1a; 
+    font-weight: 700;
+  }
+  .mid-cta .btn-primary:hover { 
+    background: #e8c84e; 
+    box-shadow: 0 4px 20px rgba(219,185,78,0.4); 
+  }
+
+  .btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+
   footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); }
 
   /* ─── HERO APPLY BUTTON ─── */
@@ -533,9 +557,362 @@
     .month-card:nth-child(3) { animation-delay: 0.3s; }
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
   }
+
+  /* ─── HAMBURGER MENU ─── */
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 101;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(255,255,255,0.8);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  /* ─── GOLD APPLICATIONS BANNER ─── */
+  .applications-banner {
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+    text-align: center;
+    padding: 0.6rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #0a1f1a;
+    letter-spacing: 0.03em;
+    position: sticky;
+    top: 0;
+    z-index: 101;
+  }
+
+  .applications-banner a {
+    color: #0a1f1a;
+    text-decoration: underline;
+    font-weight: 700;
+  }
+
+  /* ─── ACCORDION ─── */
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0;
+    user-select: none;
+  }
+
+  .accordion-header .accordion-icon {
+    font-size: 1.2rem;
+    color: var(--teal);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+
+  .accordion-header.active .accordion-icon {
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .accordion-content.open {
+    max-height: 800px;
+  }
+
+  /* ─── OUTCOME CARD HOVER ─── */
+  .outcomes-list li {
+    transition: all 0.25s ease;
+  }
+
+  .outcomes-list li:hover {
+    border-color: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+
+  /* ─── MOBILE RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    /* Nav */
+    .nav-toggle { display: block; }
+
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #081a16;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      z-index: 100;
+    }
+
+    .nav-links.open { display: flex; }
+
+    .nav-links a {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .nav-apply {
+      font-size: 1.1rem !important;
+      padding: 0.6rem 1.5rem;
+    }
+
+    .site-nav {
+      padding: 0.75rem 1.25rem;
+    }
+
+    .nav-toggle {
+      z-index: 102;
+    }
+
+    /* Banner mobile */
+    .applications-banner {
+      font-size: 0.75rem;
+      padding: 0.5rem 0.75rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .hero-brand {
+      font-size: 2.4rem;
+    }
+
+    .hero-programme {
+      font-size: 0.7rem;
+    }
+
+    .hero-title {
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .hero-badge {
+      font-size: 0.65rem;
+    }
+
+    .hero-meta {
+      font-size: 0.78rem;
+      gap: 0.75rem 1.5rem;
+    }
+
+    .btn-apply-hero {
+      font-size: 0.8rem;
+      padding: 0.5rem 1.5rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 2.5rem 1.25rem;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+    }
+
+    /* Who */
+    .who {
+      margin-top: 1.5rem;
+    }
+
+    .who-list li {
+      font-size: 0.9rem;
+    }
+
+    /* Location */
+    .location-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .location-card p {
+      font-size: 0.85rem;
+    }
+
+    /* Programme */
+    .month-card {
+      padding: 1.25rem;
+    }
+
+    .month-card h3 {
+      font-size: 1.05rem;
+    }
+
+    .month-card li {
+      font-size: 0.85rem;
+    }
+
+    .throughout {
+      padding: 1.25rem;
+    }
+
+    .throughout li {
+      font-size: 0.82rem;
+    }
+
+    /* Outcomes */
+    .outcomes-list {
+      grid-template-columns: 1fr;
+    }
+
+    .outcomes-list li {
+      font-size: 0.85rem;
+    }
+
+    /* Options */
+    .options-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .option-card {
+      padding: 1.5rem 1.25rem;
+    }
+
+    /* Beyond */
+    .beyond-options {
+      gap: 0.75rem;
+    }
+
+    .beyond-tag {
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 3rem 1.25rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+      text-align: center;
+      max-width: 300px;
+    }
+
+    /* Mid CTA */
+    .mid-cta {
+      padding: 2.5rem 1.25rem;
+    }
+
+    .mid-cta h2 {
+      font-size: 1.35rem;
+    }
+
+    .btn-lg {
+      padding: 0.9rem 2rem;
+      font-size: 0.95rem;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    /* Buttons - larger touch targets */
+    .btn {
+      padding: 0.85rem 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* Wave */
+    .wave-line {
+      width: 90%;
+      height: 160px;
+      bottom: -10px;
+      opacity: 0.07;
+    }
+
+    /* Video placeholder */
+    .video-placeholder {
+      padding: 2rem 1.25rem;
+    }
+
+    /* Certificate graphic */
+    .outcomes svg {
+      width: 240px;
+      height: auto;
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.5rem 1.25rem;
+      font-size: 0.75rem;
+    }
+
+    /* Scroll button */
+    .scroll-top {
+      bottom: 1.25rem;
+      right: 1.25rem;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  /* Small phones */
+  @media (max-width: 400px) {
+    .hero-brand {
+      font-size: 2rem;
+    }
+
+    .hero-sub {
+      font-size: 0.88rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    .hero-meta {
+      font-size: 0.72rem;
+    }
+  }
 </style>
 </head>
 <body>
+
+<!-- APPLICATIONS BANNER -->
+<div class="applications-banner">
+  NOW ACCEPTING APPLICATIONS — JUNE 2026 · <a href="https://credu.academy/apply" target="_blank">Apply Now →</a>
+</div>
 
 <!-- NAV -->
 <nav class="site-nav">
@@ -543,11 +920,14 @@
     <svg width="20" height="20" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><g transform="translate(40,40)"><rect x="-22" y="-22" width="18" height="18" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="4" y="-22" width="18" height="18" rx="3" fill="rgba(255,255,255,0.5)"/><rect x="-22" y="4" width="18" height="18" rx="3" fill="rgba(255,255,255,0.35)"/><rect x="4" y="4" width="18" height="18" rx="3" fill="rgba(255,255,255,0.2)"/><rect x="-5" y="-5" width="10" height="10" rx="2" fill="#dbb94e" transform="rotate(45)"/></g></svg>
     CREDU Academy
   </div>
+  <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('open');">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
-    <a href="#location">Location</a>
-    <a href="#programme">Programme</a>
-    <a href="#outcomes">Outcomes</a>
-    <a href="#meet">Meet</a>
+    <a href="#location" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('active');">Location</a>
+    <a href="#programme" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('active');">Programme</a>
+    <a href="#outcomes" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('active');">Outcomes</a>
+    <a href="#meet" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('active');">Meet</a>
     <a href="https://credu.academy/apply" target="_blank" class="nav-apply">Apply →</a>
   </div>
 </nav>
@@ -578,19 +958,15 @@
     </svg>
   </div>
   <div class="hero-inner">
-    <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:2rem;">
-      <div class="hero-badge" style="margin-bottom:0;">// Now accepting applications — June 2026</div>
-      <a href="https://credu.academy/apply" target="_blank" class="btn-apply-hero">Apply →</a>
-    </div>
     <div class="hero-brand">CREDU <em>Academy</em></div>
     <div class="hero-programme">Network School Residency</div>
-    <div class="hero-title">Accounting Technologist & International Tax Program</div>
-    <p class="hero-sub">A 3-month residency for accounting professionals learning to build solutions in AI, digital assets, decentralised governance and international tax - in a global tech and health campus with a professional community.</p>
+    <div class="hero-title">Accounting Technologist & International Tax Programme</div>
+    <p class="hero-sub">A 3-month residency for accounting professionals exploring their future practice across AI, digital assets, borderless business and international tax - in a global tech hub with a professional community.</p>
     <div class="hero-meta">
       <span><span class="dot"></span>Malaysia / Singapore</span>
-      <span><span class="dot"></span>3 months</span>
-      <span><span class="dot"></span>All inclusive</span>
-      <span><span class="dot"></span>Monthly cohorts</span>
+      <span><span class="dot"></span>Mentored</span>
+      <span><span class="dot"></span>Hands-on</span>
+      <span><span class="dot"></span>Rolling monthly cohorts</span>
     </div>
   </div>
 </header>
@@ -706,7 +1082,7 @@
     <div class="location-card">
       <div class="location-icon">🌏</div>
       <h3>Strategic for Asia-Pacific</h3>
-      <p>Easy access from Australia, India, China, and across Southeast Asia - with a comfortable timezone for working remotely. Singapore next door for flights and the broader tech and business ecosystem. Network School offers Malaysian visa support for longer stays.</p>
+      <p>Easy access from Australia, India, China, and across Southeast Asia - with a comfortable time zone for working remotely. Singapore next door for flights and the broader tech and business ecosystem. Network School offers Malaysian visa support for longer stays.</p>
     </div>
   </div>
 
@@ -719,25 +1095,32 @@
   <div class="section-label">The programme</div>
   <h2>Your programme, your path</h2>
   <p>This isn't a fixed curriculum. It's a choose-your-own-adventure programme built around your expertise, what you want to build, and where you want to take your practice - with structured mentoring and a cohort of no more than 10.</p>
-  <p>Network School runs a rich programme of talks, workshops and events covering AI, decentralisation technologies, the digital economy and healthy living. You participate in all of that. Around it, we tailor the CREDU Academy experience for each cohort - presenting ideas, building projects, and working toward outcomes to improve our professional futures, together.</p>
+  <p>Network School runs a rich programme of talks, workshops and events covering AI, decentralisation technologies, the digital economy and healthy living. You participate in all of that. Around it, we tailor the CREDU Academy experience for each cohort - presenting ideas, building projects, and working towards outcomes to improve our professional futures, together.</p>
   <p>Applications are selective. We want high-agency, curious people ready to co-create the future of the profession. This isn't a passive course - it's a working residency.</p>
   <p style="margin-top:0.5rem;"><a href="https://credu.academy/apply" class="btn btn-primary" target="_blank">Apply Now →</a></p>
   <div class="programme-grid">
     <div class="month-card">
-      <div class="month-num">Month 1</div>
-      <h3>Orient, Foundation & Discovery</h3>
-      <ul>
+      <div class="accordion-header active" onclick="toggleAccordion(this)">
+        <div><div class="month-num">Month 1</div><h3 style="margin-bottom:0;">Orient, Foundation & Discovery</h3></div>
+        <span class="accordion-icon">▼</span>
+      </div>
+      <div class="accordion-content open">
+      <ul style="margin-top:1rem;">
         <li>Settle into Forest City life, join community programming, set up remote work routines</li>
         <li>Define your domain expertise, where it intersects with emerging tech, and set goals with your cohort and mentor</li>
         <li>Define your project - whether that's an AI use case, tech solution, or professional practice business model</li>
         <li>Build your first working application with AI-assisted coding - or get technical feedback and advance an existing project</li>
         <li>Foundations in blockchain, crypto accounting, decentralised operations, and foreign tax concepts</li>
       </ul>
+      </div>
     </div>
     <div class="month-card">
-      <div class="month-num">Month 2</div>
-      <h3>Deepen, Build & Challenge</h3>
-      <ul>
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <div><div class="month-num">Month 2</div><h3 style="margin-bottom:0;">Deepen, Build & Challenge</h3></div>
+        <span class="accordion-icon">▼</span>
+      </div>
+      <div class="accordion-content">
+      <ul style="margin-top:1rem;">
         <li>Further research and application of what was of most interest in Month 1</li>
         <li>AI safety, governance and strategy for your profession and client industries</li>
         <li>Critical assessment of current tools and vendor software, explore emerging tools</li>
@@ -746,11 +1129,15 @@
         <li>Design a DAO - using blockchain technology to enable decentralised governance and decision-making</li>
         <li>Network state concepts examined through a regulatory and tax lens</li>
       </ul>
+      </div>
     </div>
     <div class="month-card">
-      <div class="month-num">Month 3</div>
-      <h3>Integrate, Ship & Contribute</h3>
-      <p style="font-size:0.88rem; color:var(--muted); margin-bottom:0.75rem; line-height:1.55;">This month will be shaped around the specific interests of the cohort. May include:</p>
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <div><div class="month-num">Month 3</div><h3 style="margin-bottom:0;">Integrate, Ship & Contribute</h3></div>
+        <span class="accordion-icon">▼</span>
+      </div>
+      <div class="accordion-content">
+      <p style="font-size:0.88rem; color:var(--muted); margin-bottom:0.75rem; margin-top:1rem; line-height:1.55;">This month will be shaped around the specific interests of the cohort. May include:</p>
       <ul>
         <li>Further developing and applying what we learned in Month 2</li>
         <li>Build your professional practice action plan, based on assumptions about what's coming next - what you'll be working on in 1, 3 and 5 years, and how you're getting there</li>
@@ -759,6 +1146,7 @@
         <li>Transnational tax coordination as a cohort policy project for network states</li>
         <li>Contribute to development of a decentralised credentialing and peer-to-peer CPD model</li>
       </ul>
+      </div>
     </div>
   </div>
   <div class="throughout">
@@ -766,7 +1154,7 @@
     <ul>
       <li>Participate in Network School programming - talks, workshops and community events</li>
       <li>Maintain remote work or professional study commitments</li>
-      <li>Weekly cohort sessions and collaborative working in the faculty co-working space</li>
+      <li>Weekly cohort sessions and collaborative working in the faculty coworking space</li>
       <li>Ongoing mentoring and one-to-one guidance from Electra Frost and other industry leaders</li>
       <li>All CPD hours tracked and logged from day one</li>
     </ul>
@@ -789,7 +1177,7 @@
     <li>Official CPD certificate recorded on blockchain</li>
     <li>Founding member status in a global accounting faculty experiment</li>
   </ul>
-  <p style="font-size:0.9rem; color:var(--teal); margin-top:1.25rem; font-weight:500;">Upon completion of the 3 month program, we verify your official CPD certificate with documented professional development hours, recorded on blockchain.</p>
+  <p style="font-size:0.9rem; color:var(--teal); margin-top:1.25rem; font-weight:500;">Upon completion of the 3 month programme, we verify your official CPD certificate with documented professional development hours, recorded on blockchain.</p>
   
   <div style="display:flex; justify-content:center; margin-top:1.5rem;">
     <svg width="280" height="180" viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg" style="opacity:0.7;">
@@ -846,18 +1234,26 @@
   </div>
 </section>
 
+<!-- MID-PAGE CTA -->
+<section class="mid-cta">
+  <h2>Ready to level-up?</h2>
+  <p>Cohorts are small and applications are selective. If you're curious and motivated, we want to hear from you.</p>
+  <a href="https://credu.academy/apply" class="btn btn-primary btn-lg" target="_blank">Apply Now →</a>
+  <p style="margin-top:1rem; font-size:0.85rem;"><a href="https://calendar.app.google/7CvGye8gGmcMm2Gf7" target="_blank" style="color:rgba(255,255,255,0.6); text-decoration:underline;">Not sure yet? Book a chat with Electra first →</a></p>
+</section>
+
 <!-- OPTIONS -->
 <section id="join">
   <div class="section-label">How to join</div>
   <h2>What's included</h2>
-  <p>You'll share a 3-4 bedroom apartment with one other CREDU Academy participant. Your Network School membership covers everything you need to live, work, and thrive - meals, gym, coworking, wifi, and all community programming. CREDU Academy adds structured mentoring, cohort facilitation, and the tailored programme on top.</p>
+  <p>You'll share a 3-4 bedroom apartment with one other CREDU Academy participant. Network School membership plus CREDU Academy mentoring and programme facilitation.</p>
 
   <div class="options-grid">
     <div class="option-card featured">
       <div class="option-icon">🏢</div>
       <h3>3-Month Programme</h3>
       <p class="option-desc"><strong>US$2,000 per month</strong> - $1,500 Network School membership (apartment accommodation, meals, gym, coworking, wifi, standard programming) + $500 CREDU Academy mentoring and programme facilitation.</p>
-      <p class="option-detail">Cohorts of up to 10 people. Applications are selective - we're looking for high-agency professionals who want to build. First cohort starts June 2026. After 3 months, continue at the standard NS rate of $1,500/month.</p>
+      <p class="option-detail">New cohorts of up to 10 each month. First cohort starts June 2026. After 3 months, you may stay on living, working and building at Network School at the standard NS membership rate.</p>
       <a href="https://credu.academy/apply" class="btn btn-primary" target="_blank">Apply Now →</a>
     </div>
     <div class="option-card">
@@ -895,7 +1291,7 @@
 </section>
 
 <footer>
-  <p>CREDU Academy — Accounting Technologist & International Tax Program — Network School, Malaysia</p>
+  <p>CREDU Academy — Accounting Technologist & International Tax Programme — at Network School, Malaysia</p>
   <p style="margin-top:0.5rem; font-size:0.75rem;">CREDU is an ElectraFi professional practice initiative (ABN: 59 641 198 914) — Liability is limited by a scheme approved under Professional Standards legislation.</p>
   <p style="margin-top:0.5rem; font-size:0.75rem;"><a href="https://credu.academy/privacy" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="https://credu.academy/terms" style="color:var(--muted); text-decoration:none;">Terms</a> · <a href="https://credu.academy/about" style="color:var(--muted); text-decoration:none;">About</a> · <a href="https://credu.academy/support" style="color:var(--muted); text-decoration:none;">Support</a></p>
 </footer>
@@ -908,6 +1304,21 @@
   window.addEventListener('scroll', () => {
     scrollBtn.classList.toggle('visible', window.scrollY > 400);
   });
+
+  function toggleAccordion(header) {
+    const content = header.nextElementSibling;
+    const isOpen = content.classList.contains('open');
+    
+    // Close all accordions
+    document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
+    document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
+    
+    // Open clicked one if it was closed
+    if (!isOpen) {
+      content.classList.add('open');
+      header.classList.add('active');
+    }
+  }
 </script>
 
 </body>
