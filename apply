@@ -1,0 +1,6 @@
+credu-academy/
+├── index.html          (landing page)
+├── og-image.png
+├── favicon.svg
+└── apply/
+    └── index.html      (apply form)
