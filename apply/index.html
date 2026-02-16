@@ -8,81 +8,104 @@
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#1c1917;--warm:#f5f2ed;--cream:#faf9f7;--accent:#c49a2a;--accent-light:#dbb94e;--muted:#57534e;--border:#e7e2db;--teal:#14594a;--teal-mid:#1a6b5a;--teal-light:#e6f0ed; }
-  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-  body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
-  .site-nav{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1.75rem;background:#081a16;border-bottom:1px solid rgba(255,255,255,0.06)}
-  .nav-brand{display:flex;align-items:center;gap:0.5rem;font-family:'SF Mono','Fira Code','Courier New',monospace;font-size:0.82rem;font-weight:700;color:rgba(255,255,255,0.85);letter-spacing:0.04em;text-decoration:none}
-  .nav-links{display:flex;align-items:center;gap:1.5rem}
-  .nav-links a{font-family:'SF Mono','Fira Code','Courier New',monospace;font-size:0.75rem;font-weight:500;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;letter-spacing:0.03em}
-  .nav-links a:hover{color:rgba(255,255,255,0.85)}
-  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;z-index:101}
-  .nav-toggle span{display:block;width:22px;height:2px;background:rgba(255,255,255,0.8);margin:5px 0;transition:all 0.3s ease;border-radius:2px}
-  .nav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-  .nav-toggle.active span:nth-child(2){opacity:0}
-  .nav-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-  .apply-header{background:linear-gradient(175deg,#060f0d 0%,#0a1f1a 40%,#10332b 100%);color:white;padding:3.5rem 2rem 3rem;text-align:center;border-bottom:1px solid rgba(219,185,78,0.15)}
-  .apply-header h1{font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;margin-bottom:0.75rem}
-  .apply-header p{color:rgba(255,255,255,0.7);font-size:0.95rem;max-width:520px;margin:0 auto;line-height:1.7}
-  .apply-context{max-width:620px;margin:0 auto;padding:2.5rem 2rem 1rem}
-  .apply-context h2{font-family:'DM Serif Display',serif;font-size:1.3rem;font-weight:400;margin-bottom:1rem}
-  .apply-context p{color:var(--muted);font-size:0.9rem;margin-bottom:0.75rem}
-  .apply-context ul{list-style:none;margin:1rem 0}
-  .apply-context li{font-size:0.9rem;color:var(--muted);padding-left:1.25rem;position:relative;margin-bottom:0.5rem;line-height:1.55}
-  .apply-context li::before{content:'—';position:absolute;left:0;color:var(--accent)}
-  .apply-process{max-width:620px;margin:0 auto;padding:0 2rem 2rem}
-  .apply-process h2{font-family:'DM Serif Display',serif;font-size:1.3rem;font-weight:400;margin-bottom:1rem}
-  .apply-process p{color:var(--muted);font-size:0.9rem;margin-bottom:0.75rem}
-  .apply-process ol{margin:1rem 0;padding-left:1.5rem}
-  .apply-process li{font-size:0.9rem;color:var(--muted);margin-bottom:0.5rem;line-height:1.55}
-  .apply-form{max-width:620px;margin:0 auto;padding:0 2rem 3rem}
-  .form-section-title{font-family:'DM Serif Display',serif;font-size:1.1rem;font-weight:400;margin:2rem 0 1rem;padding-top:1.5rem;border-top:1px solid var(--border);color:var(--ink)}
-  .form-section-title:first-child{border-top:none;padding-top:0}
-  .form-group{margin-bottom:1.25rem}
-  .form-group label{display:block;font-size:0.85rem;font-weight:600;color:var(--ink);margin-bottom:0.35rem}
-  .form-group .hint{font-size:0.78rem;color:var(--muted);margin-bottom:0.35rem}
-  input[type="text"],input[type="email"],input[type="url"],select,textarea{width:100%;padding:0.65rem 0.75rem;border:1px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--ink);background:white;transition:border-color 0.2s}
-  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal)}
-  textarea{min-height:100px;resize:vertical}
-  select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 5l3 3 3-3' stroke='%2357534e' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0.75rem center;padding-right:2rem}
-  .checkbox-group{display:flex;align-items:flex-start;gap:0.5rem;margin-top:0.5rem}
-  .checkbox-group input[type="checkbox"]{margin-top:0.25rem;accent-color:var(--teal);width:16px;height:16px}
-  .checkbox-group label{font-size:0.85rem;color:var(--muted);font-weight:400}
-  .btn{display:inline-block;padding:0.85rem 2.5rem;border-radius:6px;font-size:0.95rem;font-weight:600;text-decoration:none;transition:all 0.25s ease;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
-  .btn-primary{background:var(--teal);color:white}
-  .btn-primary:hover{background:#155a4a;transform:translateY(-1px);box-shadow:0 4px 12px rgba(26,107,90,0.3)}
-  .btn-primary:disabled{opacity:0.6;cursor:not-allowed;transform:none;box-shadow:none}
-  .form-success,.form-error{display:none;padding:1.5rem;border-radius:8px;text-align:center;margin-top:1.5rem}
-  .form-success{background:var(--teal-light);color:var(--teal)}
-  .form-error{background:#fef2f2;color:#991b1b}
-  .form-success.visible,.form-error.visible{display:block}
-  footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-size:0.8rem;color:var(--muted)}
-  @media(max-width:768px){
-    .nav-toggle{display:block}.nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#081a16;flex-direction:column;justify-content:center;align-items:center;gap:2rem;z-index:100}
-    .nav-links.open{display:flex}.nav-links a{font-size:1.1rem;color:rgba(255,255,255,0.7)}.site-nav{padding:0.75rem 1.25rem}.nav-toggle{z-index:102}
-    .apply-header{padding:2.5rem 1.25rem 2rem}.apply-header h1{font-size:1.6rem}
-    .apply-context,.apply-process,.apply-form{padding-left:1.25rem;padding-right:1.25rem}
-    footer{padding:1.5rem 1.25rem;font-size:0.75rem}
+  :root {
+    --ink: #1c1917; --warm: #f5f2ed; --cream: #faf9f7;
+    --accent: #c49a2a; --accent-light: #dbb94e; --muted: #57534e;
+    --border: #e7e2db; --teal: #14594a; --teal-mid: #1a6b5a; --teal-light: #e6f0ed;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--ink); background: var(--cream); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  .site-nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.75rem; background: #081a16; border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; z-index: 100; }
+  .nav-brand { display: flex; align-items: center; gap: 0.5rem; font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace; font-size: 0.82rem; font-weight: 700; color: rgba(255,255,255,0.85); letter-spacing: 0.04em; text-decoration: none; }
+  .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-links a { font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace; font-size: 0.75rem; font-weight: 500; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; letter-spacing: 0.03em; }
+  .nav-links a:hover { color: rgba(255,255,255,0.85); }
+  .nav-back { color: rgba(255,255,255,0.5) !important; }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 101; }
+  .nav-toggle span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.8); margin: 5px 0; transition: all 0.3s ease; border-radius: 2px; }
+  .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  .page-header { background: linear-gradient(175deg, #060f0d 0%, #0a1f1a 30%, #10332b 65%, #14453a 100%); color: white; padding: 3.5rem 2rem 3rem; text-align: center; border-bottom: 1px solid rgba(219,185,78,0.15); }
+  .page-header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 400; margin-bottom: 0.5rem; }
+  .page-header h1 em { color: var(--accent-light); font-style: italic; }
+  .page-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; max-width: 500px; margin: 0 auto; }
+
+  .apply-context { max-width: 640px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+  .apply-context h2 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; font-weight: 400; margin-bottom: 0.75rem; }
+  .apply-context p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; line-height: 1.7; }
+  .apply-context ul { list-style: none; margin: 0.75rem 0 1.5rem; }
+  .apply-context li { font-size: 0.9rem; color: var(--muted); padding-left: 1.25rem; position: relative; margin-bottom: 0.4rem; line-height: 1.55; }
+  .apply-context li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+  .apply-context ol { margin: 0.75rem 0 1rem; padding-left: 1.5rem; }
+  .apply-context ol li { padding-left: 0; }
+  .apply-context ol li::before { content: none; }
+
+  .form-container { max-width: 640px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+  .form-intro { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.7; }
+  .form-group { margin-bottom: 1.5rem; }
+  .form-group label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+  .form-group .hint { display: block; font-size: 0.78rem; color: var(--muted); margin-bottom: 0.4rem; }
+  .form-group .optional { font-weight: 400; color: var(--muted); font-size: 0.78rem; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.7rem 0.9rem; border: 1px solid var(--border); border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--ink); background: white; transition: border-color 0.2s, box-shadow 0.2s; -webkit-appearance: none; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(20,89,74,0.1); }
+  .form-group textarea { min-height: 100px; resize: vertical; }
+  .form-group select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2357534e' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.9rem center; padding-right: 2.5rem; }
+  .form-divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  .form-section-label { font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 1.25rem; }
+  .btn-submit { display: inline-block; padding: 0.85rem 2.5rem; border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; background: var(--teal); color: white; transition: all 0.25s ease; width: 100%; max-width: 300px; }
+  .btn-submit:hover { background: #155a4a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(26,107,90,0.3); }
+  .btn-submit:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; transform: none; box-shadow: none; }
+  .form-submit-area { text-align: center; margin-top: 2rem; }
+  .form-submit-area p { font-size: 0.8rem; color: var(--muted); margin-top: 1rem; }
+  .form-submit-area a { color: var(--teal); }
+
+  .form-message { display: none; text-align: center; padding: 3rem 2rem; max-width: 500px; margin: 0 auto; }
+  .form-message.show { display: block; }
+  .form-message h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 0.75rem; color: var(--ink); }
+  .form-message p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+  .form-message .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .form-message a { color: var(--teal); font-weight: 600; }
+
+  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); }
+
+  @media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #081a16; flex-direction: column; justify-content: center; align-items: center; gap: 2rem; z-index: 100; }
+    .nav-links.open { display: flex; }
+    .nav-links a { font-size: 1.1rem; color: rgba(255,255,255,0.7); }
+    .site-nav { padding: 0.75rem 1.25rem; }
+    .page-header { padding: 2.5rem 1.25rem 2rem; }
+    .apply-context { padding: 2rem 1.25rem 0; }
+    .form-container { padding: 1.5rem 1.25rem 3rem; }
+    .form-group input, .form-group select, .form-group textarea { font-size: 16px; }
+    .btn-submit { width: 100%; max-width: none; }
   }
 </style>
 </head>
 <body>
+
 <nav class="site-nav">
-  <a href="https://credu.academy" class="nav-brand">
+  <a href="/" class="nav-brand">
     <svg width="20" height="20" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><g transform="translate(40,40)"><rect x="-22" y="-22" width="18" height="18" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="4" y="-22" width="18" height="18" rx="3" fill="rgba(255,255,255,0.5)"/><rect x="-22" y="4" width="18" height="18" rx="3" fill="rgba(255,255,255,0.35)"/><rect x="4" y="4" width="18" height="18" rx="3" fill="rgba(255,255,255,0.2)"/><rect x="-5" y="-5" width="10" height="10" rx="2" fill="#dbb94e" transform="rotate(45)"/></g></svg>
     CREDU Academy
   </a>
-  <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('open');"><span></span><span></span><span></span></button>
+  <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('open');">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
-    <a href="https://credu.academy">Home</a>
-    <a href="https://credu.academy#programme">Programme</a>
-    <a href="https://credu.academy#faq">FAQ</a>
+    <a href="/" class="nav-back" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('active');">← Back to Programme</a>
   </div>
 </nav>
-<div class="apply-header">
-  <h1>Apply to CREDU Academy</h1>
+
+<header class="page-header">
+  <h1>Apply to CREDU <em>Academy</em></h1>
   <p>Cohorts are limited to ten to preserve build velocity and mentoring depth.</p>
-</div>
+</header>
+
 <div class="apply-context">
   <h2>Before applying, consider</h2>
   <ul>
@@ -91,8 +114,7 @@
     <li>You can commit consistent weekly time (minimum 10 hours) for three months</li>
     <li>You are comfortable working alongside highly autonomous peers</li>
   </ul>
-</div>
-<div class="apply-process">
+
   <h2>How it works</h2>
   <p>All assessment is self-assessment. We're not gatekeeping your competence — we're looking for people who are honest about where they are and serious about where they're going.</p>
   <ol>
@@ -102,113 +124,149 @@
   </ol>
   <p>If accepted, you'll receive onboarding details, an invoice requiring payment to reserve your place, visa guidance and preparatory reading.</p>
 </div>
-<div class="apply-form">
-  <form id="applicationForm" onsubmit="return submitForm(event)">
-    <div class="form-section-title">About you</div>
-    <div class="form-group"><label for="name">Full name *</label><input type="text" id="name" name="name" required></div>
-    <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required></div>
-    <div class="form-group"><label for="country">Country of residence *</label><input type="text" id="country" name="country" required></div>
-    <div class="form-group"><label for="track">Which best describes you? *</label>
+
+<div class="form-container" id="formArea">
+  <form id="applyForm" onsubmit="submitForm(event)">
+
+    <div class="form-section-label">About you</div>
+
+    <div class="form-group">
+      <label for="name">Full name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country of residence</label>
+      <input type="text" id="country" name="country" required>
+    </div>
+
+    <div class="form-group">
+      <label for="track">Which best describes you?</label>
       <select id="track" name="track" required>
-        <option value="">Select...</option>
-        <option value="Practitioner">Practitioner — adapting my own practice</option>
-        <option value="Firm delegate">Firm delegate — sent by my firm to bring capability back</option>
-        <option value="Graduate">Graduate — early career, seeking mentorship and direction</option>
-        <option value="Builder">Builder — in accounting tech, looking for my next build</option>
-        <option value="Career changer">Career changer — pursuing qualification with specialisation</option>
+        <option value="" disabled selected>Select one</option>
+        <option value="Experienced professional">Experienced professional</option>
+        <option value="Recent graduate">Recent graduate</option>
+        <option value="Career changer">Career changer</option>
       </select>
     </div>
-    <div class="form-group"><label for="role">Current role or situation *</label><input type="text" id="role" name="role" required></div>
-    <div class="form-group"><label for="qualifications">Professional qualifications</label><p class="hint">Optional — or note if you're currently studying for one</p><input type="text" id="qualifications" name="qualifications"></div>
-    <div class="form-group"><label for="remote">Are you currently working remotely? *</label>
-      <select id="remote" name="remote" required>
-        <option value="">Select...</option>
-        <option value="Fully remote">Fully remote</option>
-        <option value="Hybrid">Hybrid</option>
-        <option value="Office-based">Office-based — will need to arrange remote work</option>
-        <option value="Self-employed">Self-employed / running my own practice</option>
-        <option value="Studying">Currently studying</option>
-        <option value="Between roles">Between roles</option>
-      </select>
+
+    <div class="form-group">
+      <label for="role">Current role and organisation</label>
+      <input type="text" id="role" name="role" required>
     </div>
-    <div class="form-group"><label for="sponsor">Who is funding your participation? *</label>
-      <select id="sponsor" name="sponsor" required>
-        <option value="">Select...</option>
-        <option value="Self-funded">Self-funded</option>
-        <option value="Employer/firm">My employer or firm</option>
-        <option value="Exploring options">Still exploring options</option>
-      </select>
+
+    <div class="form-group">
+      <label for="qualifications">Professional qualifications <span class="optional">(optional)</span></label>
+      <span class="hint">e.g. CA, CPA, IPA, ACCA, or none yet</span>
+      <input type="text" id="qualifications" name="qualifications">
     </div>
-    <div class="form-group"><label for="linkedin">LinkedIn or professional website *</label><input type="url" id="linkedin" name="linkedin" placeholder="https://" required></div>
-    <div class="form-section-title">Your interest</div>
-    <div class="form-group"><label for="interest">What are you looking to build, solve or develop during the residency? *</label><textarea id="interest" name="interest" required></textarea></div>
-    <div class="form-group"><label for="explore">Anything specific you want to explore?</label><p class="hint">Optional — technologies, problems, client challenges, business ideas</p><textarea id="explore" name="explore"></textarea></div>
-    <div class="form-group"><label for="startdate">Preferred start date *</label>
-      <select id="startdate" name="startdate" required>
-        <option value="">Select...</option>
-        <option value="June 2026">June 2026 (first cohort)</option>
-        <option value="Later in 2026">Later in 2026</option>
+
+    <div class="form-group">
+      <label for="linkedin">LinkedIn profile or personal website</label>
+      <input type="url" id="linkedin" name="linkedin" required placeholder="https://...">
+    </div>
+
+    <hr class="form-divider">
+    <div class="form-section-label">Your interest</div>
+
+    <div class="form-group">
+      <label for="interest">What interests you most about the programme?</label>
+      <textarea id="interest" name="interest" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="explore">What would you like to explore or build during the residency? <span class="optional">(optional)</span></label>
+      <textarea id="explore" name="explore"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="start_date">Preferred start date</label>
+      <select id="start_date" name="start_date" required>
+        <option value="" disabled selected>Select one</option>
+        <option value="June 2026">June 2026</option>
+        <option value="Later cohort">Later cohort</option>
         <option value="Not sure yet">Not sure yet</option>
       </select>
     </div>
-    <div class="form-section-title">Anything else</div>
-    <div class="form-group"><label for="referral">How did you hear about CREDU Academy?</label>
-      <select id="referral" name="referral">
-        <option value="">Select...</option>
-        <option value="Network School">Network School</option>
-        <option value="Social media">Social media</option>
-        <option value="Colleague/friend">Colleague or friend</option>
-        <option value="Professional body">Professional body or event</option>
-        <option value="Electra directly">Electra directly</option>
-        <option value="Search">Search engine</option>
-        <option value="Other">Other</option>
-      </select>
+
+    <hr class="form-divider">
+    <div class="form-section-label">Final questions</div>
+
+    <div class="form-group">
+      <label for="other">Anything else you'd like us to know? <span class="optional">(optional)</span></label>
+      <textarea id="other" name="other"></textarea>
     </div>
-    <div class="form-group"><label for="other">Anything else you'd like us to know?</label><textarea id="other" name="other"></textarea></div>
-    <div class="form-group"><div class="checkbox-group"><input type="checkbox" id="newsletter" name="newsletter"><label for="newsletter">Keep me updated about CREDU Academy and future cohorts</label></div></div>
-    <button type="submit" class="btn btn-primary" id="submitBtn">Submit Application →</button>
+
+    <div class="form-group" style="display:flex; align-items:flex-start; gap:0.6rem;">
+      <input type="checkbox" id="newsletter" name="newsletter" value="Yes" style="width:auto; margin-top:0.25rem;">
+      <label for="newsletter" style="font-weight:400; font-size:0.85rem; color:var(--muted); cursor:pointer;">Would you like to receive news and updates about the programme by email?</label>
+    </div>
+
+    <div class="form-submit-area">
+      <button type="submit" class="btn-submit" id="submitBtn">Submit Application →</button>
+      <p>We'll respond within a few days. Questions? <a href="mailto:apply@credu.academy">apply@credu.academy</a></p>
+    </div>
+
   </form>
-  <div class="form-success" id="formSuccess"><strong>Application received.</strong><br>We'll be in touch soon. In the meantime, <a href="https://calendar.app.google/7CvGye8gGmcMm2Gf7" target="_blank" style="color:var(--teal);">book a conversation with Electra</a> if you'd like to discuss your goals.</div>
-  <div class="form-success" id="formSuccess"><strong>Application received.</strong><br>We'll be in touch soon. In the meantime, <a href="https://calendar.app.google/7CvGye8gGmcMm2Gf7" target="_blank" style="color:var(--teal);">book a conversation with Electra</a> if you'd like to discuss your goals.</div>
-  <div class="form-error" id="formError"><strong>Something went wrong.</strong><br>Please try again or email <a href="/cdn-cgi/l/email-protection#b6c5c3c6c6d9c4c2f6d5c4d3d2c398d7d5d7d2d3dbcf" style="color:#991b1b;"><span class="__cf_email__" data-cfemail="daa9afaaaab5a8ae9ab9a8bfbeaff4bbb9bbbebfb7a3">[email&#160;protected]</span></a></div>
 </div>
+
+<div class="form-message" id="successMessage">
+  <div class="icon">✓</div>
+  <h2>Application received</h2>
+  <p>Thanks for your interest in CREDU Academy. We'll review your application and be in touch shortly to discuss next steps.</p>
+  <p style="margin-top:1.5rem;"><a href="/">← Back to CREDU Academy</a></p>
+</div>
+
+<div class="form-message" id="errorMessage">
+  <div class="icon">⚠</div>
+  <h2>Something went wrong</h2>
+  <p>Your application couldn't be submitted. Please try again, or email us directly at <a href="mailto:apply@credu.academy">apply@credu.academy</a>.</p>
+  <p style="margin-top:1rem;"><a href="#" onclick="document.getElementById('errorMessage').classList.remove('show'); document.getElementById('formArea').style.display='block'; return false;">← Try again</a></p>
+</div>
+
 <footer>
   <p>CREDU Academy — Accounting Technologist & International Tax Programme — at Network School, Malaysia</p>
   <p style="margin-top:0.5rem; font-size:0.75rem;">CREDU is an ElectraFi professional practice initiative (ABN: 59 641 198 914) — Liability is limited by a scheme approved under Professional Standards legislation.</p>
-  <p style="margin-top:0.5rem; font-size:0.75rem;"><a href="https://credu.academy/terms" style="color:var(--muted); text-decoration:none;">Terms</a> · <a href="https://credu.academy/privacy" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="https://credu.academy/about" style="color:var(--muted); text-decoration:none;">About</a> · <a href="/cdn-cgi/l/email-protection#added8ddddc2dfd9edcedfc8c9d883ccceccc9c8c0d4" style="color:var(--muted); text-decoration:none;">Support</a></p>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzQM3ugDvBZYVePLZZcDhVtzYeY87YCS_EfsoUC9_2kGF-TR5nr1i8vTzLzcKH77qWR/exec';
 
-function submitForm(e) {
-  e.preventDefault();
-  const btn = document.getElementById('submitBtn');
-  btn.disabled = true;
-  btn.textContent = 'Submitting...';
+<script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzQM3ugDvBZYVePLZZcDhVtzYeY87YCS_EfsoUC9_2kGF-TR5nr1i8vTzLzcKH77qWR/exec';
 
-  const data = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    country: document.getElementById('country').value,
-    track: document.getElementById('track').value,
-    role: document.getElementById('role').value,
-    qualifications: document.getElementById('qualifications').value,
-    remote: document.getElementById('remote').value,
-    sponsor: document.getElementById('sponsor').value,
-    interest: document.getElementById('interest').value,
-    explore: document.getElementById('explore').value,
-    startdate: document.getElementById('startdate').value,
-    linkedin: document.getElementById('linkedin').value,
-    referral: document.getElementById('referral').value,
-    other: document.getElementById('other').value,
-    newsletter: document.getElementById('newsletter').checked ? 'Yes' : 'No'
-  };
+  async function submitForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
 
-  fetch(SCRIPT_URL, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: { 'Content-Type': 'text/plain;charset=utf-8' }
-  })
-  .then(r => r.json())
-  .then(result => {
-    document.getElementById('applicationForm').style.display = 'no
+    const form = document.getElementById('applyForm');
+    const data = new FormData(form);
+    const obj = {};
+    data.forEach((val, key) => obj[key] = val);
+    if (!obj.newsletter) obj.newsletter = 'No';
+
+    try {
+      const res = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(obj)
+      });
+
+      document.getElementById('formArea').style.display = 'none';
+      document.getElementById('successMessage').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      document.getElementById('formArea').style.display = 'none';
+      document.getElementById('errorMessage').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+</script>
+
+</body>
+</html>
