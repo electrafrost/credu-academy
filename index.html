@@ -842,17 +842,13 @@
 <footer>
   <p>CREDU Academy — Accounting Technologist & International Tax Programme — at Network School, Malaysia</p>
   <p style="margin-top:0.5rem; font-size:0.75rem;">CREDU is an ElectraFi professional practice initiative (ABN: 59 641 198 914) — Liability is limited by a scheme approved under Professional Standards legislation.</p>
-  <p style="margin-top:0.5rem; font-size:0.75rem;"><a href="https://credu.academy/privacy" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="https://credu.academy/terms" style="color:var(--muted); text-decoration:none;">Terms</a> · <a href="https://credu.academy/about" style="color:var(--muted); text-decoration:none;">About</a> · <a href="/cdn-cgi/l/email-protection#d0a3a5a0a0bfa2a490b3a2b5b4a5feb1b3b1b4b5bda9" style="color:var(--muted); text-decoration:none;">Support</a></p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;"><a href="https://credu.academy/privacy" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="https://credu.academy/terms" style="color:var(--muted); text-decoration:none;">Terms</a> · <a href="https://credu.academy/about" style="color:var(--muted); text-decoration:none;">About</a> · <a href="mailto:support@credu.academy" style="color:var(--muted); text-decoration:none;">Support</a></p>
 </footer>
 
 <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const scrollBtn = document.querySelector('.scroll-top');
-  window.addEventListener('scroll', () => {
-    scrollBtn.classList.toggle('visible', window.scrollY > 400);
-  });
-
+<script>
+  // Critical: these must load first
   function toggleAccordion(header) {
     const content = header.nextElementSibling;
     const isOpen = content.classList.contains('open');
@@ -864,4 +860,30 @@
   function toggleFaq(question) {
     const answer = question.nextElementSibling;
     const isOpen = answer.classList.contains('open');
-    document.querySelectorAll('.faq-answer').
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+    if (!isOpen) { answer.classList.add('open'); question.classList.add('active'); }
+  }
+
+  // Non-critical UI enhancements
+  try {
+    const scrollBtn = document.querySelector('.scroll-top');
+    if (scrollBtn) {
+      window.addEventListener('scroll', () => {
+        scrollBtn.classList.toggle('visible', window.scrollY > 400);
+      });
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    }
+  } catch(e) { console.warn('UI enhancement error:', e); }
+</script>
+
+</body>
+</html>
