@@ -103,24 +103,24 @@
 
 <header class="page-header">
   <h1>Apply to CREDU <em>Academy</em></h1>
-  <p>Cohorts are limited to ten to preserve build velocity and mentoring depth.</p>
+  <p style="font-weight:600; color:var(--accent-light); margin-bottom:0.75rem;">Congratulations for taking action! 🙌</p>
+  <blockquote style="border-left:3px solid var(--accent); padding-left:1rem; margin-bottom:1.25rem; font-style:italic; color:rgba(255,255,255,0.85); font-size:0.95rem;">The accountants who adapt now will define the profession. The ones who wait will follow someone else's playbook. This is your chance to write your own.</blockquote>
 </header>
 
 <div class="apply-context">
   <h2>Before applying, consider</h2>
   <ul>
-    <li>You will remain professionally active during the residency</li>
-    <li>You are prepared to build and execute on something that matters to you</li>
+    <li>You are prepared to learn and build a first version of something that matters to you</li>
     <li>You can commit consistent weekly time (minimum 10 hours) for three months</li>
     <li>You are comfortable working alongside highly autonomous peers</li>
   </ul>
 
   <h2>How it works</h2>
-  <p>All assessment is self-assessment. We're not gatekeeping your competence — we're looking for people who are honest about where they are and serious about where they're going.</p>
+  <p>All assessment is self-assessment. We're not gatekeeping your competence - we're looking for people who are honest about where they are and serious about where they're going.</p>
   <ol>
     <li>Submit the application form below</li>
     <li>Shortlisted applicants are invited to a conversation</li>
-    <li>Offers are issued on a rolling basis</li>
+    <li>Offers are issued on a rolling basis with a prioritised waitlist</li>
   </ol>
   <p>If accepted, you'll receive onboarding details, an invoice requiring payment to reserve your place, visa guidance and preparatory reading.</p>
 </div>
@@ -234,23 +234,24 @@
   <p style="margin-top:0.5rem; font-size:0.75rem;">CREDU is an ElectraFi professional practice initiative (ABN: 59 641 198 914) — Liability is limited by a scheme approved under Professional Standards legislation.</p>
 </footer>
 
+
 <script>
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzQM3ugDvBZYVePLZZcDhVtzYeY87YCS_EfsoUC9_2kGF-TR5nr1i8vTzLzcKH77qWR/exec';
 
   async function submitForm(e) {
     e.preventDefault();
-    const btn = document.getElementById('submitBtn');
+    var btn = document.getElementById('submitBtn');
     btn.disabled = true;
     btn.textContent = 'Submitting...';
 
-    const form = document.getElementById('applyForm');
-    const data = new FormData(form);
-    const obj = {};
-    data.forEach((val, key) => obj[key] = val);
+    var form = document.getElementById('applyForm');
+    var data = new FormData(form);
+    var obj = {};
+    data.forEach(function(val, key) { obj[key] = val; });
     if (!obj.newsletter) obj.newsletter = 'No';
 
     try {
-      const res = await fetch(SCRIPT_URL, {
+      await fetch(SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
@@ -258,9 +259,9 @@
       });
 
       document.getElementById('formArea').style.display = 'none';
-      document.getElementById('successMessage').classList.add('show');
+      document.getElementById('successMessage').style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } catch (err) {
+    } catch(err) {
       document.getElementById('formArea').style.display = 'none';
       document.getElementById('errorMessage').classList.add('show');
       window.scrollTo({ top: 0, behavior: 'smooth' });
