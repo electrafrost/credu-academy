@@ -601,7 +601,7 @@
   <div class="programme-grid">
     <div class="month-card">
       <div class="accordion-header active" onclick="toggleAccordion(this)">
-        <div><div class="month-num">Month 1</div><h3 style="margin-bottom:0;">Evaluate & Prototype</h3></div>
+        <div><div class="month-num">Month 1</div><h3 style="margin-bottom:0;">Explore</h3></div>
         <span class="accordion-icon">▼</span>
       </div>
       <div class="accordion-content open">
@@ -615,7 +615,7 @@
     </div>
     <div class="month-card">
       <div class="accordion-header" onclick="toggleAccordion(this)">
-        <div><div class="month-num">Month 2</div><h3 style="margin-bottom:0;">Stress-Test & Deploy</h3></div>
+        <div><div class="month-num">Month 2</div><h3 style="margin-bottom:0;">Build</h3></div>
         <span class="accordion-icon">▼</span>
       </div>
       <div class="accordion-content">
@@ -625,12 +625,12 @@
         <li>Building AI systems with data governance, controls and professional oversight</li>
         <li>Apply digital asset reporting and cross-border compliance to real-world scenarios</li>
       </ul>
-      <p class="month-mandate">By the end of Month 2, something must work and create value for you.</p>
+      <p class="month-mandate">By the end of Month 2, you'll be on your way to building your future practice in accounting.</p>
       </div>
     </div>
     <div class="month-card">
       <div class="accordion-header" onclick="toggleAccordion(this)">
-        <div><div class="month-num">Month 3</div><h3 style="margin-bottom:0;">Integrate & Plan Forward</h3></div>
+        <div><div class="month-num">Month 3</div><h3 style="margin-bottom:0;">Launch</h3></div>
         <span class="accordion-icon">▼</span>
       </div>
       <div class="accordion-content">
@@ -840,14 +840,49 @@
 </section>
 
 <footer>
-  <p>CREDU Academy — Accounting Technologist & International Tax Programme — at Network School, Malaysia/Singapore</p>
+  <p>CREDU Academy — Accounting Technologist & International Tax Programme — at Network School, Malaysia</p>
   <p style="margin-top:0.5rem; font-size:0.75rem;">CREDU is an ElectraFi professional practice initiative (ABN: 59 641 198 914) — Liability is limited by a scheme approved under Professional Standards legislation.</p>
   <p style="margin-top:0.5rem; font-size:0.75rem;"><a href="https://credu.academy/privacy" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="https://credu.academy/terms" style="color:var(--muted); text-decoration:none;">Terms</a> · <a href="https://credu.academy/about" style="color:var(--muted); text-decoration:none;">About</a> · <a href="mailto:support@credu.academy" style="color:var(--muted); text-decoration:none;">Support</a></p>
 </footer>
 
 <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
-<script src="site.js"></script>
+
+<script>
+function toggleAccordion(header) {
+  var content = header.nextElementSibling;
+  var isOpen = content.classList.contains('open');
+  document.querySelectorAll('.accordion-content').forEach(function(c) { c.classList.remove('open'); });
+  document.querySelectorAll('.accordion-header').forEach(function(h) { h.classList.remove('active'); });
+  if (!isOpen) { content.classList.add('open'); header.classList.add('active'); }
+}
+
+function toggleFaq(question) {
+  var answer = question.nextElementSibling;
+  var isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-answer').forEach(function(a) { a.classList.remove('open'); });
+  document.querySelectorAll('.faq-question').forEach(function(q) { q.classList.remove('active'); });
+  if (!isOpen) { answer.classList.add('open'); question.classList.add('active'); }
+}
+
+try {
+  var scrollBtn = document.querySelector('.scroll-top');
+  if (scrollBtn) {
+    window.addEventListener('scroll', function() {
+      scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+  }
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+  }
+} catch(e) {}
+</script>
 
 </body>
 </html>
+
