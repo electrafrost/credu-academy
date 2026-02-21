@@ -216,24 +216,41 @@
   }
 
   /* ─── GALLERY ─── */
+  .gallery-wrap { position: relative; }
   .gallery-strip {
-    display: flex !important; gap: 0.75rem; overflow-x: auto; scroll-snap-type: x mandatory;
+    display: flex !important; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory;
     padding: 0.5rem 0 1.5rem; margin-bottom: 1rem;
     -webkit-overflow-scrolling: touch; scrollbar-width: none;
-    flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important; scroll-behavior: smooth;
   }
   .gallery-strip::-webkit-scrollbar { display: none; }
   .gallery-item {
-    flex: 0 0 220px !important; width: 220px !important; min-width: 220px;
+    flex: 0 0 330px !important; width: 330px !important; min-width: 330px;
     scroll-snap-align: start; position: relative;
   }
   .gallery-item img {
-    width: 220px !important; height: 160px !important; object-fit: cover; border-radius: 10px;
-    display: block; max-width: 220px !important;
+    width: 330px !important; height: 240px !important; object-fit: cover; border-radius: 10px;
+    display: block; max-width: 330px !important;
   }
   .gallery-caption {
-    display: block; text-align: center; font-size: 0.75rem; color: var(--muted);
+    display: block; text-align: center; font-size: 0.78rem; color: var(--muted);
     margin-top: 0.4rem;
+  }
+  .gallery-arrow {
+    position: absolute; top: 110px; width: 36px; height: 36px;
+    background: white; border: 1px solid var(--border); border-radius: 50%;
+    cursor: pointer; font-size: 1rem; color: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 2;
+    transition: all 0.2s ease;
+  }
+  .gallery-arrow:hover { background: var(--teal); color: white; }
+  .gallery-arrow-left { left: -8px; }
+  .gallery-arrow-right { right: -8px; }
+  @media (max-width: 768px) {
+    .gallery-item { flex: 0 0 280px !important; width: 280px !important; min-width: 280px; }
+    .gallery-item img { width: 280px !important; height: 200px !important; max-width: 280px !important; }
+    .gallery-arrow { display: none; }
   }
 
   /* ─── LOCATION ─── */
@@ -585,12 +602,16 @@
   <div class="section-label">The environment</div>
   <h2>Designed to enable your progress</h2>
 
-  <div class="gallery-strip">
-    <div class="gallery-item"><img src="images/view.jpg" alt="Forest City waterfront view" loading="lazy"><span class="gallery-caption">Forest City, Malaysia</span></div>
-    <div class="gallery-item"><img src="images/ns-coworking.jpeg" alt="Network School coworking space" loading="lazy"><span class="gallery-caption">Coworking</span></div>
-    <div class="gallery-item"><img src="images/hotel.jpg" alt="Apartment living" loading="lazy"><span class="gallery-caption">Apartments</span></div>
-    <div class="gallery-item"><img src="images/ns-gym.jpeg" alt="Network School gym" loading="lazy"><span class="gallery-caption">Gym</span></div>
-    <div class="gallery-item"><img src="images/pool.png" alt="Pool at Forest City" loading="lazy"><span class="gallery-caption">Pool</span></div>
+  <div class="gallery-wrap">
+    <button class="gallery-arrow gallery-arrow-left" onclick="document.getElementById('gallery').scrollBy({left:-340,behavior:'smooth'})" aria-label="Scroll left">‹</button>
+    <div class="gallery-strip" id="gallery">
+      <div class="gallery-item"><img src="images/view.jpg" alt="Forest City waterfront view" loading="lazy"><span class="gallery-caption">Forest City, Malaysia</span></div>
+      <div class="gallery-item"><img src="images/ns-coworking.jpeg" alt="Network School coworking space" loading="lazy"><span class="gallery-caption">Coworking</span></div>
+      <div class="gallery-item"><img src="images/hotel.jpg" alt="School lobby" loading="lazy"><span class="gallery-caption">School Lobby</span></div>
+      <div class="gallery-item"><img src="images/ns-gym.jpeg" alt="Network School gym" loading="lazy"><span class="gallery-caption">Gym</span></div>
+      <div class="gallery-item"><img src="images/pool.png" alt="Poolside facilities" loading="lazy"><span class="gallery-caption">Poolside Facilities</span></div>
+    </div>
+    <button class="gallery-arrow gallery-arrow-right" onclick="document.getElementById('gallery').scrollBy({left:340,behavior:'smooth'})" aria-label="Scroll right">›</button>
   </div>
 
   <p>Network School is located on Forest City, a modern island development in Johor, Malaysia — forty minutes from Singapore's Changi Airport. Cost of living is significantly less than Singapore, Australia or any major Western city.</p>
@@ -872,13 +893,13 @@
 <footer>
   <p>CREDU Academy — Accounting Technologist & International Tax Programme — at Network School, Malaysia</p>
   <p style="margin-top:0.5rem; font-size:0.75rem;">CREDU is an ElectraFi professional practice initiative (ABN: 59 641 198 914) — Liability is limited by a scheme approved under Professional Standards legislation.</p>
-  <p style="margin-top:0.5rem; font-size:0.75rem;"><a href="https://credu.academy/privacy" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="https://credu.academy/terms" style="color:var(--muted); text-decoration:none;">Terms</a> · <a href="https://credu.academy/about" style="color:var(--muted); text-decoration:none;">About</a> · <a href="/cdn-cgi/l/email-protection#ff8c8a8f8f908d8bbf9c8d9a9b8ad19e9c9e9b9a9286" style="color:var(--muted); text-decoration:none;">Support</a></p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;"><a href="https://credu.academy/privacy" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="https://credu.academy/terms" style="color:var(--muted); text-decoration:none;">Terms</a> · <a href="https://credu.academy/about" style="color:var(--muted); text-decoration:none;">About</a> · <a href="mailto:support@credu.academy" style="color:var(--muted); text-decoration:none;">Support</a></p>
 </footer>
 
 <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function toggleAccordion(header) {
   var content = header.nextElementSibling;
   var isOpen = content.classList.contains('open');
@@ -907,4 +928,12 @@ try {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
       });
-    }, { thr
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+  }
+} catch(e) {}
+</script>
+
+</body>
+</html>
+
