@@ -215,6 +215,27 @@
     margin-top: 1.5rem; font-size: 0.95rem; font-weight: 600; color: var(--ink);
   }
 
+  /* ─── GALLERY ─── */
+  .gallery-strip {
+    display: flex !important; gap: 0.75rem; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding: 0.5rem 0 1.5rem; margin-bottom: 1rem;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    flex-wrap: nowrap !important;
+  }
+  .gallery-strip::-webkit-scrollbar { display: none; }
+  .gallery-item {
+    flex: 0 0 220px !important; width: 220px !important; min-width: 220px;
+    scroll-snap-align: start; position: relative;
+  }
+  .gallery-item img {
+    width: 220px !important; height: 160px !important; object-fit: cover; border-radius: 10px;
+    display: block; max-width: 220px !important;
+  }
+  .gallery-caption {
+    display: block; text-align: center; font-size: 0.75rem; color: var(--muted);
+    margin-top: 0.4rem;
+  }
+
   /* ─── LOCATION ─── */
   .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
   @media (max-width: 600px) { .location-grid { grid-template-columns: 1fr; } }
@@ -564,14 +585,14 @@
   <div class="section-label">The environment</div>
   <h2>Designed to enable your progress</h2>
 
-    <div class="gallery-strip">
+  <div class="gallery-strip">
     <div class="gallery-item"><img src="images/view.jpg" alt="Forest City waterfront view" loading="lazy"><span class="gallery-caption">Forest City, Malaysia</span></div>
     <div class="gallery-item"><img src="images/ns-coworking.jpeg" alt="Network School coworking space" loading="lazy"><span class="gallery-caption">Coworking</span></div>
     <div class="gallery-item"><img src="images/hotel.jpg" alt="Apartment living" loading="lazy"><span class="gallery-caption">Apartments</span></div>
     <div class="gallery-item"><img src="images/ns-gym.jpeg" alt="Network School gym" loading="lazy"><span class="gallery-caption">Gym</span></div>
     <div class="gallery-item"><img src="images/pool.png" alt="Pool at Forest City" loading="lazy"><span class="gallery-caption">Pool</span></div>
   </div>
-  
+
   <p>Network School is located on Forest City, a modern island development in Johor, Malaysia — forty minutes from Singapore's Changi Airport. Cost of living is significantly less than Singapore, Australia or any major Western city.</p>
   <p>The advantage here is continuity of attention.</p>
   <p>Serviced accommodation, meals, gym training and shared working spaces are all onsite. No commuting. No cooking. No domestic logistics. Remove the daily tasks that fragment your cognitive bandwidth. When you're not constantly switching contexts between life's usual demands, you can actually make progress.</p>
@@ -734,13 +755,13 @@
   <p>This is structured execution time, not a retreat.</p>
 
   <div class="included-card">
-    <h3>3-Month Residency — from US$2,000 per month</h3>
+    <h3>3-Month Residency — US$2,000 per month</h3>
     <ul class="included-details">
-      <li><strong>Network School membership</strong> — typically with shared apartment, three meals a day, gym training, coworking, wifi, regular programming. Accommodation options for solo, couples and families.</li>
+      <li><strong>Network School membership</strong> — shared apartment accommodation (2 pax or 1 couple/family), meals, gym, coworking, wifi, regular programming</li>
       <li><strong>PLUS:</strong> CREDU Academy mentoring and programme facilitation</li>
     </ul>
     <a href="https://credu.academy/apply" class="btn btn-primary">Apply Now →</a>
-    <p class="included-note">New cohorts of up to 10 each month. First cohort starts June 2026. After three months, you may apply to stay on at Network School under their standard membership.</p>
+    <p class="included-note">New cohorts of up to 10 each month. First cohort starts June 2026. After three months, you may apply for a longer term visa to stay on at Network School under their standard membership.</p>
   </div>
 
   <div class="included-card" style="border-color: var(--border); box-shadow: none; margin-top: 1.25rem;">
@@ -850,14 +871,14 @@
 
 <footer>
   <p>CREDU Academy — Accounting Technologist & International Tax Programme — at Network School, Malaysia</p>
-  <p style="margin-top:0.5rem; font-size:0.75rem;">CREDU is a professional community and systems design initiative led by Electra Frost.</p>
-  <p style="margin-top:0.5rem; font-size:0.75rem;"><a href="https://credu.academy/privacy" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="https://credu.academy/terms" style="color:var(--muted); text-decoration:none;">Terms</a> · <a href="https://credu.academy/about" style="color:var(--muted); text-decoration:none;">About</a> · <a href="mailto:support@credu.academy" style="color:var(--muted); text-decoration:none;">Support</a></p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">CREDU is an ElectraFi professional practice initiative (ABN: 59 641 198 914) — Liability is limited by a scheme approved under Professional Standards legislation.</p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;"><a href="https://credu.academy/privacy" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="https://credu.academy/terms" style="color:var(--muted); text-decoration:none;">Terms</a> · <a href="https://credu.academy/about" style="color:var(--muted); text-decoration:none;">About</a> · <a href="/cdn-cgi/l/email-protection#ff8c8a8f8f908d8bbf9c8d9a9b8ad19e9c9e9b9a9286" style="color:var(--muted); text-decoration:none;">Support</a></p>
 </footer>
 
 <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function toggleAccordion(header) {
   var content = header.nextElementSibling;
   var isOpen = content.classList.contains('open');
@@ -886,11 +907,4 @@ try {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
-  }
-} catch(e) {}
-</script>
-
-</body>
-</html>
+    }, { thr
