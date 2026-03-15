@@ -3,937 +3,857 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CREDU Academy — Accounting Technologist & International Tax Programme</title>
-<meta name="description" content="Three months of protected time to learn and apply your expertise and creativity to deploy capability on advanced systems - with AI, digital assets, blockchain, international tax coordination, and cross-border practitioner networks.">
-<meta property="og:title" content="CREDU Academy — Network School Accountants Residency">
-<meta property="og:description" content="Three months of protected time to learn and apply your expertise and creativity to deploy capability on advanced systems - with AI, digital assets, blockchain, international tax coordination, and cross-border practitioner networks.">
-<meta property="og:image" content="https://credu.academy/og-image.png">
-<meta property="og:url" content="https://credu.academy">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CREDU Academy — Network School Accountants Residency">
-<meta name="twitter:description" content="Three months of protected time to learn and apply your expertise and creativity to deploy capability on advanced systems - with AI, digital assets, blockchain, international tax coordination, and cross-border practitioner networks.">
-<meta name="twitter:image" content="https://credu.academy/og-image.png">
+<title>CREDU Academy — Network School Accountants Residency</title>
+<meta name="description" content="CREDU Academy — a 3-month working residency at Network School for accounting professionals.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #1c1917;
-    --warm: #f5f2ed;
-    --cream: #faf9f7;
-    --accent: #c49a2a;
-    --accent-light: #dbb94e;
-    --muted: #57534e;
-    --border: #e7e2db;
-    --teal: #14594a;
-    --teal-mid: #1a6b5a;
-    --teal-light: #e6f0ed;
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --ink: #0a0f0d;
+  --paper: #f4f1eb;
+  --paper-warm: #ede8df;
+  --accent: #c45d2c;
+  --accent-light: #e8946a;
+  --teal: #1a6b5a;
+  --teal-light: #2a8f78;
+  --slate: #4a5568;
+  --mist: #d4cfc6;
+  --gold: #b8860b;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'Instrument Sans', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+/* Grain */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 9999; opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* Nav */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.25rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background 0.4s, backdrop-filter 0.4s;
+}
+nav.scrolled {
+  background: rgba(244,241,235,0.85);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(10,15,13,0.06);
+}
+.nav-logo {
+  font-family: var(--mono); font-weight: 500; font-size: 0.8rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+}
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a {
+  font-size: 0.82rem; letter-spacing: 0.04em; color: var(--slate);
+  text-decoration: none; transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links .nav-apply {
+  background: var(--ink); color: var(--paper); padding: 0.55rem 1.4rem;
+  border-radius: 2px; font-weight: 600; font-size: 0.78rem;
+  letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.3s;
+}
+.nav-links .nav-apply:hover { background: var(--teal); color: #fff; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--ink); margin: 5px 0; transition: 0.3s; }
+
+/* Hero */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+  position: relative; padding: 8rem 2rem 4rem; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -20%; right: -10%;
+  width: 60vw; height: 60vw; border-radius: 50%;
+  background: radial-gradient(circle, rgba(26,107,90,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--mist), transparent);
+}
+.hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; }
+.hero-tag {
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 2rem;
+  display: flex; align-items: center; gap: 0.75rem;
+  opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s;
+}
+.hero-tag::before { content: ''; width: 32px; height: 1px; background: var(--accent); }
+.hero h1 {
+  font-family: var(--serif); font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s;
+}
+.hero h1 em { font-style: italic; color: var(--teal); }
+.hero-programme {
+  font-family: var(--mono); font-size: 0.82rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.8s ease forwards 0.5s;
+}
+.hero-desc {
+  max-width: 580px; font-size: 1.1rem; line-height: 1.75; color: var(--slate); margin-bottom: 1rem;
+  opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s;
+}
+.hero-aside {
+  max-width: 580px; font-size: 1rem; line-height: 1.75; color: var(--slate);
+  font-style: italic; margin-bottom: 3rem;
+  opacity: 0; animation: fadeUp 0.8s ease forwards 0.9s;
+}
+.hero-meta {
+  display: flex; gap: 3rem; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.8s ease forwards 1s;
+}
+.hero-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.hero-meta-label {
+  font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--mist);
+}
+.hero-meta-value { font-weight: 600; font-size: 0.95rem; }
+.hero-cta {
+  margin-top: 3rem; display: flex; gap: 1.25rem; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.8s ease forwards 1.2s;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--ink); color: var(--paper); padding: 1rem 2.2rem;
+  font-family: var(--sans); font-weight: 600; font-size: 0.85rem;
+  letter-spacing: 0.04em; border: none; cursor: pointer;
+  text-decoration: none; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); border-radius: 2px;
+}
+.btn-primary:hover {
+  background: var(--teal); transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(26,107,90,0.2);
+}
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: transparent; color: var(--ink); padding: 1rem 2.2rem;
+  font-family: var(--sans); font-weight: 600; font-size: 0.85rem;
+  letter-spacing: 0.04em; border: 1.5px solid var(--mist); cursor: pointer;
+  text-decoration: none; transition: all 0.35s; border-radius: 2px;
+}
+.btn-secondary:hover { border-color: var(--ink); background: rgba(10,15,13,0.03); }
+
+/* Sections */
+section { padding: 7rem 0; position: relative; }
+.section-label {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+.section-title {
+  font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 1.5rem;
+}
+.section-subtitle { font-size: 1.05rem; line-height: 1.7; color: var(--slate); max-width: 600px; }
+
+/* Audience */
+.audience-section p.closer {
+  margin-top: 2rem; font-weight: 600; font-size: 0.92rem; color: var(--teal);
+}
+.audience-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem; margin-top: 3rem;
+}
+.audience-card {
+  background: #fff; border: 1px solid rgba(10,15,13,0.06); padding: 2rem;
+  border-radius: 3px; transition: all 0.35s;
+}
+.audience-card:hover {
+  border-color: var(--teal); box-shadow: 0 4px 24px rgba(26,107,90,0.06); transform: translateY(-2px);
+}
+.audience-card-type {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem;
+}
+.audience-card p { font-size: 0.92rem; color: var(--slate); line-height: 1.65; }
+
+/* Environment (dark) */
+.env-section { background: var(--ink); color: var(--paper); padding: 7rem 0; overflow: hidden; }
+.env-section .section-label { color: var(--accent-light); }
+.env-section .section-label::before { background: var(--accent-light); }
+.env-section .section-subtitle { color: rgba(244,241,235,0.6); }
+.env-gallery {
+  margin-top: 3.5rem; display: grid; grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto; gap: 1rem;
+}
+.env-gallery-item { border-radius: 4px; overflow: hidden; position: relative; }
+.env-gallery-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.env-gallery-item:hover img { transform: scale(1.04); }
+.env-gallery-item:nth-child(1) { grid-column: 1/8; grid-row: 1; min-height: 340px; }
+.env-gallery-item:nth-child(2) { grid-column: 8/13; grid-row: 1; min-height: 340px; }
+.env-gallery-item:nth-child(3) { grid-column: 1/5; grid-row: 2; min-height: 260px; }
+.env-gallery-item:nth-child(4) { grid-column: 5/9; grid-row: 2; min-height: 260px; }
+.env-gallery-item:nth-child(5) { grid-column: 9/13; grid-row: 2; min-height: 260px; }
+.env-gallery-label {
+  position: absolute; bottom: 0.75rem; left: 0.75rem;
+  font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+  background: rgba(10,15,13,0.7); backdrop-filter: blur(8px);
+  color: var(--paper); padding: 0.35rem 0.65rem; border-radius: 2px;
+}
+.env-prose {
+  margin-top: 3rem; max-width: 700px;
+}
+.env-prose p { font-size: 0.95rem; color: rgba(244,241,235,0.6); line-height: 1.75; margin-bottom: 1rem; }
+.env-prose .callout {
+  font-family: var(--serif); font-size: 1.3rem; font-style: italic;
+  color: var(--paper); margin: 1.5rem 0; line-height: 1.4;
+}
+.env-features {
+  margin-top: 4rem; display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2.5rem;
+}
+.env-feature h3 {
+  font-family: var(--sans); font-weight: 700; font-size: 1rem;
+  margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.5rem;
+}
+.env-feature-icon { font-size: 1.2rem; }
+.env-feature p { font-size: 0.88rem; line-height: 1.7; color: rgba(244,241,235,0.55); }
+
+/* Programme timeline */
+.programme-intro { max-width: 600px; margin-bottom: 1.5rem; }
+.programme-intro p { font-size: 1.05rem; line-height: 1.7; color: var(--slate); margin-bottom: 1rem; }
+.programme-cta-wrap { margin-bottom: 3.5rem; }
+.programme-timeline { position: relative; margin-top: 3.5rem; }
+.programme-timeline::before {
+  content: ''; position: absolute; left: 1.5rem; top: 0; bottom: 0; width: 1px;
+  background: linear-gradient(to bottom, var(--teal), var(--mist));
+}
+.month-block { position: relative; padding-left: 5rem; padding-bottom: 3.5rem; }
+.month-block:last-child { padding-bottom: 0; }
+.month-marker {
+  position: absolute; left: 0; top: 0; width: 3rem; height: 3rem; border-radius: 50%;
+  background: var(--paper); border: 2px solid var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 500; color: var(--teal); z-index: 1;
+  transition: background 0.3s, color 0.3s;
+}
+.month-block:hover .month-marker { background: var(--teal); color: #fff; }
+.month-title { font-family: var(--serif); font-size: 1.7rem; margin-bottom: 0.25rem; }
+.month-subtitle {
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+}
+.month-items { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.month-items li {
+  font-size: 0.92rem; color: var(--slate); line-height: 1.6;
+  padding-left: 1.25rem; position: relative;
+}
+.month-items li::before {
+  content: ''; position: absolute; left: 0; top: 0.6rem;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--teal);
+}
+.month-note { font-style: italic; font-size: 0.92rem; color: var(--teal); margin-top: 1rem; }
+.programme-ongoing {
+  margin-top: 3.5rem; background: rgba(26,107,90,0.04);
+  border: 1px solid rgba(26,107,90,0.1); border-radius: 4px; padding: 2.5rem;
+}
+.programme-ongoing h3 { font-family: var(--serif); font-size: 1.4rem; margin-bottom: 1rem; }
+.ongoing-items {
+  list-style: none; display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.6rem;
+}
+.ongoing-items li {
+  font-size: 0.88rem; color: var(--slate); line-height: 1.6;
+  padding-left: 1.25rem; position: relative;
+}
+.ongoing-items li::before {
+  content: ''; position: absolute; left: 0; top: 0.6rem;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
+}
+
+/* Outcomes */
+.outcomes-grid { margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.outcomes-list { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+.outcomes-list li {
+  font-size: 0.95rem; color: var(--slate); line-height: 1.65;
+  padding-left: 2rem; position: relative;
+}
+.outcomes-list li::before { content: '\2192'; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+.outcomes-cert-note {
+  margin-top: 1.5rem; font-style: italic; font-size: 0.92rem; color: var(--slate); line-height: 1.7;
+}
+/* Certificate */
+.cert-container { display: flex; align-items: flex-start; justify-content: center; padding-top: 1rem; }
+.cert {
+  width: 100%; max-width: 400px;
+  background: linear-gradient(160deg, #0c1a15 0%, #0f2219 35%, #122b20 70%, #0e1f17 100%);
+  border-radius: 8px; padding: 3rem 2.75rem;
+  display: flex; flex-direction: column; gap: 0;
+  position: relative; overflow: hidden;
+  box-shadow: 0 30px 80px rgba(10,15,13,0.25), 0 1px 3px rgba(10,15,13,0.1);
+  border: 1px solid rgba(26,107,90,0.12);
+}
+.cert::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, rgba(26,107,90,0.12) 0%, transparent 40%),
+    linear-gradient(315deg, rgba(196,93,44,0.06) 0%, transparent 40%);
+  pointer-events: none;
+}
+.cert::after {
+  content: ''; position: absolute; inset: 12px; border: 1px solid rgba(244,241,235,0.04);
+  border-radius: 4px; pointer-events: none;
+}
+.cert-header, .cert-body, .cert-footer { position: relative; z-index: 1; }
+.cert-header { margin-bottom: 2.5rem; }
+.cert-logo {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: rgba(244,241,235,0.35); margin-bottom: 0.5rem;
+}
+.cert-rule { width: 28px; height: 1px; background: var(--teal-light); margin: 1.25rem 0; opacity: 0.5; }
+.cert-title {
+  font-family: var(--serif); font-size: 1.6rem; color: var(--paper);
+  line-height: 1.25; letter-spacing: -0.01em;
+}
+.cert-body {
+  flex: 1; display: flex; flex-direction: column; justify-content: flex-end;
+  padding-top: 4rem;
+}
+.cert-label {
+  font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(244,241,235,0.2); margin-bottom: 0.6rem;
+}
+.cert-hashes {
+  display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem;
+}
+.cert-hash-tag {
+  font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.04em;
+  color: rgba(244,241,235,0.2); background: rgba(244,241,235,0.03);
+  padding: 0.3rem 0.55rem; border-radius: 2px; border: 1px solid rgba(244,241,235,0.05);
+}
+.cert-footer {
+  padding-top: 1.25rem; border-top: 1px solid rgba(244,241,235,0.06);
+}
+.cert-verify {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--teal-light);
+}
+.cert-verify::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--teal-light); animation: pulse 2s ease infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+/* Urgency */
+.urgency-band {
+  background: linear-gradient(135deg, var(--teal), #1a5c4e);
+  color: #fff; padding: 5rem 0; text-align: center; position: relative; overflow: hidden;
+}
+.urgency-band::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
+}
+.urgency-band h2 {
+  font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.4rem);
+  max-width: 700px; margin: 0 auto 0.75rem; line-height: 1.25; position: relative;
+}
+.urgency-band p { font-size: 0.95rem; opacity: 0.7; margin-bottom: 0.5rem; position: relative; }
+.urgency-band .btn-links { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; position: relative; }
+.urgency-band .btn-primary { background: #fff; color: var(--ink); }
+.urgency-band .btn-primary:hover { background: var(--paper); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+.urgency-band .btn-secondary { border-color: rgba(255,255,255,0.3); color: #fff; }
+.urgency-band .btn-secondary:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+/* Pricing */
+.pricing-cards { margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.pricing-card {
+  background: #fff; border: 1px solid rgba(10,15,13,0.06);
+  border-radius: 4px; padding: 2.5rem; position: relative;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.pricing-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); border-color: var(--teal); }
+.pricing-card.featured { border-color: var(--teal); box-shadow: 0 8px 40px rgba(26,107,90,0.08); }
+.pricing-card.featured::before {
+  content: 'Recommended'; position: absolute; top: -0.6rem; right: 1.5rem;
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+  background: var(--teal); color: #fff; padding: 0.25rem 0.75rem; border-radius: 2px;
+}
+.pricing-card h3 { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; margin-bottom: 1rem; line-height: 1.35; }
+.pricing-card .pricing-detail { font-size: 0.9rem; color: var(--slate); line-height: 1.7; margin-bottom: 1rem; }
+.pricing-card ul { list-style: none; margin-bottom: 1.5rem; }
+.pricing-card li {
+  font-size: 0.88rem; color: var(--slate); line-height: 1.65; margin-bottom: 0.4rem;
+  padding-left: 1.25rem; position: relative;
+}
+.pricing-card li::before { content: '\2713'; position: absolute; left: 0; color: var(--teal); font-weight: 700; font-size: 0.8rem; }
+.pricing-card li strong { color: var(--ink); }
+.pricing-card .card-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--ink); color: var(--paper); padding: 0.75rem 1.8rem;
+  font-family: var(--sans); font-weight: 600; font-size: 0.82rem;
+  letter-spacing: 0.04em; text-decoration: none; border-radius: 2px;
+  transition: all 0.3s; border: none; cursor: pointer; width: 100%; justify-content: center;
+}
+.pricing-card .card-cta:hover { background: var(--teal); }
+.pricing-card .card-note { font-size: 0.82rem; color: var(--slate); margin-top: 1rem; line-height: 1.6; }
+.pricing-intro { max-width: 600px; }
+.pricing-intro p { font-size: 1.05rem; line-height: 1.7; color: var(--slate); margin-bottom: 0.75rem; }
+.pricing-intro .note { font-weight: 600; color: var(--ink); }
+
+/* After */
+.after-paths { margin-top: 3rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.after-path {
+  background: #fff; border: 1px solid rgba(10,15,13,0.06); border-radius: 3px;
+  padding: 1.2rem 1.8rem; font-size: 0.88rem; font-weight: 500; color: var(--ink);
+  transition: all 0.3s; cursor: default;
+}
+.after-path:hover { border-color: var(--teal); background: rgba(26,107,90,0.03); transform: translateY(-2px); }
+.after-note { font-size: 0.9rem; color: var(--slate); font-style: italic; margin-top: 1.5rem; }
+
+/* FAQ */
+.faq-section { background: var(--paper-warm); }
+.faq-grid { margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.faq-item { background: #fff; border-radius: 4px; border: 1px solid rgba(10,15,13,0.04); overflow: hidden; transition: border-color 0.3s; }
+.faq-item:hover { border-color: rgba(196,93,44,0.25); }
+.faq-question {
+  width: 100%; background: none; border: none; padding: 1.5rem 2rem;
+  text-align: left; cursor: pointer; font-family: var(--sans);
+  font-weight: 600; font-size: 0.92rem; color: var(--ink);
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.faq-question::after {
+  content: '+'; font-size: 1.2rem; font-weight: 400; color: var(--slate);
+  transition: transform 0.3s; flex-shrink: 0;
+}
+.faq-item.open .faq-question::after { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+.faq-answer-inner { padding: 0 2rem 1.5rem; font-size: 0.88rem; color: var(--slate); line-height: 1.7; }
+
+/* Quote */
+.quote-section { padding: 5rem 0; text-align: center; }
+.quote-text {
+  font-family: var(--serif); font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  font-style: italic; line-height: 1.55; color: var(--ink);
+  max-width: 700px; margin: 0 auto; position: relative; padding: 0 2rem;
+}
+.quote-text::before {
+  content: '\201C'; position: absolute; left: -0.5rem; top: -0.75rem;
+  font-size: 4.5rem; color: var(--accent); opacity: 0.2; font-family: var(--serif); line-height: 1;
+}
+
+/* Final CTA */
+.final-cta { padding: 8rem 0; text-align: center; }
+.final-cta .section-label { justify-content: center; }
+.final-cta .section-label::before { display: none; }
+.final-cta .section-title { max-width: 600px; margin: 0 auto 1rem; }
+.final-cta .section-subtitle { max-width: 500px; margin: 0 auto 2.5rem; text-align: center; }
+.final-cta-buttons { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; }
+
+/* Footer */
+footer { border-top: 1px solid rgba(10,15,13,0.06); padding: 3rem 0; }
+.footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+.footer-brand { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate); line-height: 2; }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.78rem; color: var(--slate); text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: var(--ink); }
+.footer-legal { font-size: 0.72rem; color: var(--mist); margin-top: 1.5rem; line-height: 1.7; max-width: 600px; }
+
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .outcomes-grid, .pricing-cards, .faq-grid { grid-template-columns: 1fr; }
+  .env-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .env-gallery-item:nth-child(1) { grid-column: 1/3; min-height: 260px; }
+  .env-gallery-item:nth-child(2) { grid-column: 1/2; min-height: 200px; }
+  .env-gallery-item:nth-child(3) { grid-column: 2/3; min-height: 200px; }
+  .env-gallery-item:nth-child(4) { grid-column: 1/2; min-height: 200px; }
+  .env-gallery-item:nth-child(5) { grid-column: 2/3; min-height: 200px; }
+}
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(244,241,235,0.97); backdrop-filter: blur(20px);
+    padding: 1.5rem 2rem; gap: 1rem; border-bottom: 1px solid rgba(10,15,13,0.06);
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    color: var(--ink);
-    background: var(--cream);
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ─── NAV ─── */
-  .site-nav {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0.75rem 1.75rem; background: #081a16;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    position: sticky; top: 0; z-index: 100;
-  }
-
-  .nav-brand {
-    display: flex; align-items: center; gap: 0.5rem;
-    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-    font-size: 0.82rem; font-weight: 700;
-    color: rgba(255,255,255,0.85); letter-spacing: 0.04em;
-  }
-
-  .nav-links { display: flex; align-items: center; gap: 1.5rem; }
-
-  .nav-links a {
-    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-    font-size: 0.75rem; font-weight: 500;
-    color: rgba(255,255,255,0.5); text-decoration: none;
-    transition: color 0.2s; letter-spacing: 0.03em;
-  }
-
-  .nav-links a:hover { color: rgba(255,255,255,0.85); }
-
-  .nav-apply {
-    color: var(--accent-light) !important; font-weight: 600;
-    padding: 0.3rem 0.9rem; background: transparent;
-    border: 1px solid rgba(219,185,78,0.5); border-radius: 3px;
-  }
-  .nav-apply:hover { background: rgba(219,185,78,0.1); }
-
-  /* ─── HERO ─── */
-  .hero {
-    background: linear-gradient(175deg, #060f0d 0%, #0a1f1a 30%, #10332b 65%, #14453a 100%);
-    color: white; padding: 5.5rem 2rem 6rem;
-    position: relative; overflow: hidden;
-    border-bottom: 1px solid rgba(219,185,78,0.15);
-  }
-
-  .hero::before {
-    content: ''; position: absolute; top: -40%; right: -15%;
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(196,154,42,0.1) 0%, transparent 65%);
-    pointer-events: none;
-  }
-
-  .hero::after {
-    content: ''; position: absolute; bottom: -30%; left: -10%;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(20,89,74,0.3) 0%, transparent 65%);
-    pointer-events: none;
-  }
-
-  .hero-tiles {
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    pointer-events: none; z-index: 0;
-  }
-
-  .hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
-
-  .hero-brand {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.8rem, 6vw, 4rem); line-height: 1.1;
-    margin-bottom: 0.5rem; font-weight: 400;
-  }
-  .hero-brand em { font-style: italic; color: var(--accent-light); }
-
-  .hero-programme {
-    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
-    text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.75rem;
-  }
-
-  .hero-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(1.25rem, 2.8vw, 1.6rem);
-    color: rgba(255,255,255,0.9); font-weight: 400; font-style: italic;
-    margin-bottom: 2.5rem;
-  }
-
-  .hero-sub {
-    font-size: 1.05rem; color: rgba(255,255,255,0.85);
-    max-width: 620px; margin-bottom: 1.5rem; line-height: 1.75;
-  }
-
-  .hero-operational {
-    font-size: 0.95rem; color: rgba(255,255,255,0.95);
-    font-weight: 600; margin-bottom: 2.5rem;
-  }
-
-  .hero-meta {
-    display: flex; flex-wrap: wrap; gap: 1.25rem 2rem;
-    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-    font-size: 0.88rem; color: rgba(255,255,255,0.7);
-  }
-  .hero-meta span { display: flex; align-items: center; gap: 0.5rem; }
-  .hero-meta .dot { width: 5px; height: 5px; background: var(--accent-light); border-radius: 50%; }
-
-  /* ─── SECTIONS ─── */
-  section { max-width: 780px; margin: 0 auto; padding: 3.5rem 2rem; }
-
-  .section-label {
-    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--teal-mid);
-    margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;
-  }
-
-  .section-label::before {
-    content: ''; display: inline-block; width: 14px; height: 14px;
-    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(40,40)'%3E%3Crect x='-22' y='-22' width='18' height='18' rx='3' fill='%231a6b5a' opacity='0.7'/%3E%3Crect x='4' y='-22' width='18' height='18' rx='3' fill='%231a6b5a' opacity='0.5'/%3E%3Crect x='-22' y='4' width='18' height='18' rx='3' fill='%231a6b5a' opacity='0.35'/%3E%3Crect x='4' y='4' width='18' height='18' rx='3' fill='%231a6b5a' opacity='0.2'/%3E%3Crect x='-5' y='-5' width='10' height='10' rx='2' fill='%23c49a2a' transform='rotate(45)'/%3E%3C/g%3E%3C/svg%3E");
-    background-size: contain; background-repeat: no-repeat; flex-shrink: 0;
-  }
-
-  .beyond .section-label::before, .mid-cta .section-label::before {
-    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(40,40)'%3E%3Crect x='-22' y='-22' width='18' height='18' rx='3' fill='white' opacity='0.7'/%3E%3Crect x='4' y='-22' width='18' height='18' rx='3' fill='white' opacity='0.5'/%3E%3Crect x='-22' y='4' width='18' height='18' rx='3' fill='white' opacity='0.35'/%3E%3Crect x='4' y='4' width='18' height='18' rx='3' fill='white' opacity='0.2'/%3E%3Crect x='-5' y='-5' width='10' height='10' rx='2' fill='%23dbb94e' transform='rotate(45)'/%3E%3C/g%3E%3C/svg%3E");
-  }
-
-  h2 { font-family: 'DM Serif Display', serif; font-size: 1.75rem; font-weight: 400; margin-bottom: 1.25rem; line-height: 1.3; }
-  p { color: var(--muted); margin-bottom: 1rem; font-size: 0.95rem; }
-
-  /* ─── MANIFESTO ─── */
-  .manifesto-band {
-    background: linear-gradient(170deg, #0a1f1a 0%, #0d3028 50%, #14453a 100%);
-    padding: 3rem 2rem;
-    text-align: center;
-  }
-
-  .manifesto-band blockquote {
-    max-width: 580px;
-    margin: 0 auto;
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.7;
-    font-style: italic;
-    border: none;
-    padding: 0;
-  }
-
-  /* ─── WHO ─── */
-  .who {
-    background: var(--warm); border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border); position: relative;
-    overflow: hidden; padding-bottom: 2rem; margin-top: 2.5rem;
-  }
-
-  .who-signal {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.05rem; color: var(--teal); font-style: italic;
-    margin-bottom: 1.25rem; line-height: 1.6;
-  }
-
-  .who-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
-
-  .who-list li {
-    display: flex; align-items: flex-start; gap: 0.75rem;
-    font-size: 0.95rem; color: var(--ink);
-  }
-
-  .who-list li::before {
-    content: ''; width: 8px; height: 8px; min-width: 8px;
-    background: var(--teal); border-radius: 50%; margin-top: 0.5rem;
-  }
-
-  .who-list li strong { color: var(--teal); }
-
-  .who-coda {
-    margin-top: 1.5rem; font-size: 0.95rem; font-weight: 600; color: var(--ink);
-  }
-
-  /* ─── GALLERY ─── */
-  .gallery-wrap { position: relative; }
-  .gallery-strip {
-    display: flex !important; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory;
-    padding: 0.5rem 0 1.5rem; margin-bottom: 1rem;
-    -webkit-overflow-scrolling: touch; scrollbar-width: none;
-    flex-wrap: nowrap !important; scroll-behavior: smooth;
-  }
-  .gallery-strip::-webkit-scrollbar { display: none; }
-  .gallery-item {
-    flex: 0 0 330px !important; width: 330px !important; min-width: 330px;
-    scroll-snap-align: start; position: relative;
-  }
-  .gallery-item img {
-    width: 330px !important; height: 240px !important; object-fit: cover; border-radius: 10px;
-    display: block; max-width: 330px !important;
-  }
-  .gallery-caption {
-    display: block; text-align: center; font-size: 0.78rem; color: var(--muted);
-    margin-top: 0.4rem;
-  }
-  .gallery-arrow {
-    position: absolute; top: 110px; width: 36px; height: 36px;
-    background: white; border: 1px solid var(--border); border-radius: 50%;
-    cursor: pointer; font-size: 1rem; color: var(--teal);
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 2;
-    transition: all 0.2s ease;
-  }
-  .gallery-arrow:hover { background: var(--teal); color: white; }
-  .gallery-arrow-left { left: -8px; }
-  .gallery-arrow-right { right: -8px; }
-  @media (max-width: 768px) {
-    .gallery-item { flex: 0 0 280px !important; width: 280px !important; min-width: 280px; }
-    .gallery-item img { width: 280px !important; height: 200px !important; max-width: 280px !important; }
-    .gallery-arrow { display: none; }
-  }
-
-  /* ─── LOCATION ─── */
-  .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
-  @media (max-width: 600px) { .location-grid { grid-template-columns: 1fr; } }
-
-  .location-card {
-    background: white; border: 1px solid var(--border);
-    border-radius: 10px; padding: 1.5rem;
-  }
-  .location-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
-  .location-card h3 { font-family: 'DM Serif Display', serif; font-size: 1rem; font-weight: 400; margin-bottom: 0.5rem; color: var(--ink); }
-  .location-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; margin: 0; }
-
-  /* ─── PROGRAMME ─── */
-  .programme-grid { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
-
-  .month-card {
-    background: white; border: 1px solid var(--border); border-radius: 12px;
-    padding: 1.75rem; transition: box-shadow 0.3s ease;
-  }
-  .month-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-
-  .month-num {
-    font-family: 'DM Serif Display', serif; font-size: 0.8rem;
-    color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;
-  }
-
-  .month-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 1rem; }
-  .month-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .month-card li { font-size: 0.88rem; color: var(--muted); padding-left: 1.25rem; position: relative; line-height: 1.55; }
-  .month-card li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
-
-  .month-mandate {
-    margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border);
-    font-size: 0.9rem; font-weight: 600; color: var(--teal);
-  }
-
-  .throughout {
-    background: var(--teal-light); border-radius: 12px; padding: 1.75rem; margin-top: 2rem;
-  }
-  .throughout h3 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 0.75rem; }
-  .throughout ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-  .throughout li { font-size: 0.85rem; color: var(--muted); padding-left: 1.25rem; position: relative; }
-  .throughout li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
-
-  /* ─── ACCORDION ─── */
-  .accordion-header {
-    display: flex; align-items: center; justify-content: space-between;
-    cursor: pointer; padding: 0; user-select: none;
-  }
-  .accordion-header > * { pointer-events: none; }
-  .accordion-header .accordion-icon {
-    font-size: 1.2rem; color: var(--teal); transition: transform 0.3s ease;
-    flex-shrink: 0; margin-left: 1rem;
-  }
-  .accordion-header.active .accordion-icon { transform: rotate(180deg); }
-  .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-  .accordion-content.open { max-height: 800px; }
-
-  /* ─── OUTCOMES ─── */
-  .outcomes {
-    background: var(--warm); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-  }
-  .outcomes-intro { margin-bottom: 1.25rem; }
-  .outcomes-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem; }
-  .outcomes-list li {
-    font-size: 0.88rem; color: var(--ink); padding: 1rem;
-    background: white; border-radius: 8px; border: 1px solid var(--border);
-    line-height: 1.5; transition: all 0.25s ease;
-  }
-  .outcomes-list li:hover {
-    border-color: var(--accent-light); transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  }
-  @media (max-width: 600px) { .outcomes-list { grid-template-columns: 1fr; } }
-
-  .outcomes-coda {
-    margin-top: 1.5rem; font-size: 0.9rem; color: var(--teal); line-height: 1.7;
-  }
-
-  /* ─── MID-PAGE CTA ─── */
-  .mid-cta {
-    text-align: center; padding: 3.5rem 2rem;
-    background: linear-gradient(170deg, #0a1f1a 0%, #0d3028 50%, #14453a 100%); color: white;
-  }
-  .mid-cta h2 { color: white; margin-bottom: 0.75rem; }
-  .mid-cta p { color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto 2rem; }
-  .mid-cta .btn-primary { background: var(--accent-light); color: #0a1f1a; font-weight: 700; }
-  .mid-cta .btn-primary:hover { background: #e8c84e; box-shadow: 0 4px 20px rgba(219,185,78,0.4); }
-
-  /* ─── INCLUDED ─── */
-  .included-card {
-    background: white; border: 2px solid var(--teal); border-radius: 12px;
-    padding: 2rem 1.5rem; text-align: center; margin-top: 1.5rem;
-    box-shadow: 0 4px 24px rgba(26,107,90,0.12); position: relative;
-  }
-  .included-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; }
-  .included-details { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; text-align: left; }
-  .included-details li { margin-bottom: 0.5rem; }
-  .included-note { font-size: 0.83rem; color: var(--muted); margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); line-height: 1.6; }
-
-  /* ─── BEYOND ─── */
-  .beyond {
-    background: linear-gradient(170deg, #0a1f1a 0%, #0d3028 50%, #14453a 100%);
-    color: white; text-align: center;
-  }
-  .beyond .section-label { color: var(--accent-light); }
-  .beyond h2 { color: white; }
-  .beyond p { color: rgba(255,255,255,0.75); }
-  .beyond-options { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1.5rem 0; }
-  .beyond-tag { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); padding: 0.5rem 1.25rem; border-radius: 2rem; font-size: 0.85rem; }
-
-  /* ─── FAQ ─── */
-  .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
-  .faq-item:last-child { border-bottom: none; }
-
-  .faq-question {
-    display: flex; align-items: center; justify-content: space-between;
-    cursor: pointer; font-weight: 600; font-size: 0.92rem; color: var(--ink);
-    user-select: none;
-  }
-  .faq-question > * { pointer-events: none; }
-  .faq-question .faq-icon {
-    font-size: 1.2rem; color: var(--teal); transition: transform 0.3s ease;
-    flex-shrink: 0; margin-left: 1rem;
-  }
-  .faq-question.active .faq-icon { transform: rotate(180deg); }
-
-  .faq-answer {
-    max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
-    font-size: 0.88rem; color: var(--muted); line-height: 1.65;
-  }
-  .faq-answer.open { max-height: 300px; padding-top: 0.75rem; }
-
-  /* ─── VISITING ─── */
-  .visiting {
-    text-align: center; padding: 2rem 2rem;
-    font-size: 0.88rem; color: var(--muted);
-  }
-  .visiting a { color: var(--teal); }
-
-  /* ─── CTA ─── */
-  .cta { text-align: center; padding: 4rem 2rem; }
-  .cta h2 { margin-bottom: 0.75rem; }
-  .cta p { max-width: 500px; margin: 0 auto 2rem; }
-  .cta-buttons { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-
-  /* ─── BUTTONS ─── */
-  .btn {
-    display: inline-block; padding: 0.75rem 2rem; border-radius: 6px;
-    font-size: 0.9rem; font-weight: 600; text-decoration: none;
-    transition: all 0.25s ease; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif;
-  }
-  .btn-primary { background: var(--teal); color: white; }
-  .btn-primary:hover { background: #155a4a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(26,107,90,0.3); }
-  .btn-outline { background: transparent; color: var(--teal); border: 2px solid var(--teal); }
-  .btn-outline:hover { background: var(--teal-light); }
-  .btn-lg { padding: 1rem 2.5rem; font-size: 1rem; }
-
-  .btn-apply-hero {
-    display: inline-block; font-family: 'DM Sans', sans-serif;
-    font-size: 0.75rem; font-weight: 700; color: #0a1f1a;
-    background: var(--accent-light); padding: 0.4rem 1.2rem;
-    border-radius: 4px; text-decoration: none; transition: all 0.25s ease; letter-spacing: 0.02em;
-  }
-  .btn-apply-hero:hover { background: #e8c84e; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(219,185,78,0.4); }
-
-  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); }
-
-  /* ─── GOLD APPLICATIONS BANNER ─── */
-  .applications-banner {
-    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
-    text-align: center; padding: 0.6rem 1rem;
-    font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600;
-    color: #0a1f1a; letter-spacing: 0.03em;
-  }
-  .applications-banner a { color: #0a1f1a; text-decoration: underline; font-weight: 700; }
-
-  /* ─── FLOATING SCROLL BUTTON ─── */
-  .scroll-top {
-    position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px;
-    background: var(--teal); color: white; border: none; border-radius: 50%;
-    font-size: 1.2rem; cursor: pointer; opacity: 0; transform: translateY(10px);
-    transition: all 0.3s ease; z-index: 99; box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-  }
-  .scroll-top.visible { opacity: 1; transform: translateY(0); }
-  .scroll-top:hover { background: #155a4a; transform: translateY(-2px); box-shadow: 0 4px 16px rgba(20,89,74,0.4); }
-
-  /* ─── HAMBURGER MENU ─── */
-  .nav-toggle {
-    display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 101;
-  }
-  .nav-toggle span {
-    display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.8);
-    margin: 5px 0; transition: all 0.3s ease; border-radius: 2px;
-  }
-  .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-  .nav-toggle.active span:nth-child(2) { opacity: 0; }
-  .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
-  /* ─── ANIMATIONS ─── */
-  @media (prefers-reduced-motion: no-preference) {
-    .outcomes-list li { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
-    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-  }
-
-  /* ─── MOBILE RESPONSIVE ─── */
-  @media (max-width: 768px) {
-    .nav-toggle { display: block; }
-    .nav-links {
-      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-      background: #081a16; flex-direction: column; justify-content: center;
-      align-items: center; gap: 2rem; z-index: 100;
-    }
-    .nav-links.open { display: flex; }
-    .nav-links a { font-size: 1.1rem; color: rgba(255,255,255,0.7); }
-    .nav-apply { font-size: 1.1rem !important; padding: 0.6rem 1.5rem; }
-    .site-nav { padding: 0.75rem 1.25rem; }
-    .nav-toggle { z-index: 102; }
-    .applications-banner { font-size: 0.75rem; padding: 0.5rem 0.75rem; }
-    .hero { padding: 2.5rem 1.25rem 3rem; }
-    .hero-brand { font-size: 2.4rem; }
-    .hero-programme { font-size: 0.7rem; }
-    .hero-title { font-size: 1.05rem; margin-bottom: 1.5rem; }
-    .hero-sub { font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem; }
-    .manifesto-band { padding: 2rem 1.25rem; }
-    .manifesto-band blockquote { font-size: 1rem; }
-    .hero-meta { font-size: 0.78rem; gap: 0.75rem 1.5rem; }
-    .btn-apply-hero { font-size: 0.8rem; padding: 0.5rem 1.5rem; }
-    section { padding: 2.5rem 1.25rem; }
-    h2 { font-size: 1.45rem; margin-bottom: 1rem; }
-    p { font-size: 0.9rem; }
-    .section-label { font-size: 0.68rem; }
-    .manifesto { padding: 2rem 1.25rem 0.5rem; }
-    .manifesto blockquote { padding: 1rem 1.25rem; font-size: 0.9rem; }
-    .who-list li { font-size: 0.9rem; }
-    .location-grid { grid-template-columns: 1fr; }
-    .location-card p { font-size: 0.85rem; }
-    .month-card { padding: 1.25rem; }
-    .month-card h3 { font-size: 1.05rem; }
-    .month-card li { font-size: 0.85rem; }
-    .throughout { padding: 1.25rem; }
-    .throughout li { font-size: 0.82rem; }
-    .outcomes-list { grid-template-columns: 1fr; }
-    .outcomes-list li { font-size: 0.85rem; }
-    .included-card { padding: 1.5rem 1.25rem; }
-    .beyond-options { gap: 0.75rem; }
-    .beyond-tag { font-size: 0.8rem; padding: 0.4rem 1rem; }
-    .cta { padding: 3rem 1.25rem; }
-    .cta-buttons { flex-direction: column; align-items: center; }
-    .cta-buttons .btn { width: 100%; text-align: center; max-width: 300px; }
-    .mid-cta { padding: 2.5rem 1.25rem; }
-    .mid-cta h2 { font-size: 1.35rem; }
-    .btn-lg { padding: 0.9rem 2rem; font-size: 0.95rem; width: 100%; max-width: 300px; }
-    .btn { padding: 0.85rem 2rem; font-size: 0.95rem; }
-    footer { padding: 1.5rem 1.25rem; font-size: 0.75rem; }
-    .scroll-top { bottom: 1.25rem; right: 1.25rem; width: 40px; height: 40px; }
-  }
-
-  @media (max-width: 400px) {
-    .hero-brand { font-size: 2rem; }
-    .hero-sub { font-size: 0.88rem; }
-    h2 { font-size: 1.3rem; }
-    .hero-meta { font-size: 0.72rem; }
-  }
+  .nav-toggle { display: block; }
+  .hero { min-height: auto; padding: 7rem 1.5rem 4rem; }
+  .hero h1 { font-size: 2.6rem; }
+  .hero-meta { gap: 1.5rem; }
+  section { padding: 4rem 0; }
+  .container { padding: 0 1.5rem; }
+  .audience-grid { grid-template-columns: 1fr; }
+  .env-gallery { grid-template-columns: 1fr; }
+  .env-gallery-item:nth-child(n) { grid-column: auto; min-height: 220px; }
+  .programme-timeline::before { left: 1.25rem; }
+  .month-block { padding-left: 4rem; }
+  .month-marker { width: 2.5rem; height: 2.5rem; font-size: 0.6rem; }
+  .cert { max-width: 320px; }
+  .urgency-band .btn-links, .final-cta-buttons, .hero-cta { flex-direction: column; align-items: stretch; text-align: center; }
+  .urgency-band .btn-links .btn-primary, .urgency-band .btn-links .btn-secondary,
+  .final-cta-buttons .btn-primary, .final-cta-buttons .btn-secondary,
+  .hero-cta .btn-primary, .hero-cta .btn-secondary { justify-content: center; }
+}
 </style>
 </head>
 <body>
 
-<!-- APPLICATIONS BANNER -->
-<div class="applications-banner">
-  NOW ACCEPTING APPLICATIONS — JUNE 2026 · <a href="https://credu.academy/apply">Apply Now →</a>
-</div>
-
-<!-- NAV -->
-<nav class="site-nav">
-  <div class="nav-brand">
-    <svg width="20" height="20" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><g transform="translate(40,40)"><rect x="-22" y="-22" width="18" height="18" rx="3" fill="rgba(255,255,255,0.7)"/><rect x="4" y="-22" width="18" height="18" rx="3" fill="rgba(255,255,255,0.5)"/><rect x="-22" y="4" width="18" height="18" rx="3" fill="rgba(255,255,255,0.35)"/><rect x="4" y="4" width="18" height="18" rx="3" fill="rgba(255,255,255,0.2)"/><rect x="-5" y="-5" width="10" height="10" rx="2" fill="#dbb94e" transform="rotate(45)"/></g></svg>
-    CREDU Academy
-  </div>
-  <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('open');">
+<nav id="nav">
+  <a href="#" class="nav-logo">CREDU Academy</a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links">
-    <a href="#environment" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('active');">Environment</a>
-    <a href="#programme" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('active');">Programme</a>
-    <a href="#outcomes" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('active');">Outcomes</a>
-    <a href="#faq" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('active');">FAQ</a>
-    <a href="https://credu.academy/apply" class="nav-apply">Apply →</a>
+    <a href="#environment">Environment</a>
+    <a href="#programme">Programme</a>
+    <a href="#outcomes">Outcomes</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://credu.academy/apply" target="_blank" class="nav-apply">Apply</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="hero">
-  <div class="hero-tiles">
-    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-      <defs>
-        <pattern id="tile" x="0" y="0" width="72" height="65" patternUnits="userSpaceOnUse">
-          <g transform="translate(36,32)">
-            <rect x="-14" y="-14" width="12" height="12" rx="2" fill="white"/>
-            <rect x="2" y="-14" width="12" height="12" rx="2" fill="white" opacity="0.7"/>
-            <rect x="-14" y="2" width="12" height="12" rx="2" fill="white" opacity="0.5"/>
-            <rect x="2" y="2" width="12" height="12" rx="2" fill="white" opacity="0.3"/>
-            <rect x="-3.5" y="-3.5" width="7" height="7" rx="1.5" fill="#dbb94e" transform="rotate(45)"/>
-          </g>
-        </pattern>
-        <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="white" stop-opacity="0.01"/>
-          <stop offset="100%" stop-color="white" stop-opacity="0.06"/>
-        </linearGradient>
-        <mask id="fadeMask">
-          <rect width="100%" height="100%" fill="url(#fade)"/>
-        </mask>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#tile)" mask="url(#fadeMask)"/>
-    </svg>
-  </div>
+<section class="hero">
   <div class="hero-inner">
-    <div class="hero-brand">CREDU <em>Academy</em></div>
-    <div class="hero-programme">Network School Residency</div>
-    <div class="hero-title">Accounting Technologist & International Tax Programme</div>
-    <p class="hero-sub">Three months of protected time to learn and apply your expertise and creativity to deploy capability on advanced systems - with AI, digital assets, blockchain, international tax coordination, and cross-border practitioner networks.</p>
-    <p class="hero-operational">Stay in your role, remotely. Daily life tasks are handled. Focus on progress.</p>
+    <div class="hero-tag">Now accepting applications — June 2026</div>
+    <h1>CREDU<br><em>Academy</em></h1>
+    <p class="hero-programme">Accounting Technologist &amp; International Tax Programme</p>
+    <p class="hero-desc">Three months of protected time to learn and apply your expertise and creativity to deploy capability on advanced systems — with AI, digital assets, blockchain, international tax coordination, and cross-border practitioner networks.</p>
+    <p class="hero-aside">Stay in your role, remotely. Daily life tasks are handled. Focus on progress.</p>
     <div class="hero-meta">
-      <span><span class="dot"></span>Malaysia / Singapore</span>
-      <span><span class="dot"></span>Rolling monthly cohorts</span>
-      <span><span class="dot"></span>Limited to 10</span>
+      <div class="hero-meta-item"><span class="hero-meta-label">Location</span><span class="hero-meta-value">Malaysia / Singapore</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Cohorts</span><span class="hero-meta-value">Rolling monthly</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Size</span><span class="hero-meta-value">Limited to 10</span></div>
     </div>
-  </div>
-</header>
-
-<!-- WHO IT'S FOR -->
-<section class="who">
-  <div class="section-label">Who it's for</div>
-  <h2>Professionals adapting deliberately</h2>
-  <p class="who-signal">In the coming years, we will be evaluated by what we have built, not by credentials alone.</p>
-  <ul class="who-list">
-    <li><strong>Practitioners</strong> — adapting their own practice, or sent by their firm to bring capability back</li>
-    <li><strong>Graduates</strong> — seeking mentorship, direction and advanced skills early</li>
-    <li><strong>Builders</strong> — working in the accounting domain on their next venture</li>
-    <li><strong>Career changers</strong> — pursuing qualification with specialisation from day one</li>
-  </ul>
-  <p class="who-coda">No spectators. Everyone builds something they can use, defend, and take forward.</p>
-</section>
-
-<!-- THE ENVIRONMENT -->
-<section id="environment">
-  <div class="section-label">The environment</div>
-  <h2>Designed to enable your progress</h2>
-
-  <div class="gallery-wrap">
-    <button class="gallery-arrow gallery-arrow-left" onclick="document.getElementById('gallery').scrollBy({left:-340,behavior:'smooth'})" aria-label="Scroll left">‹</button>
-    <div class="gallery-strip" id="gallery">
-      <div class="gallery-item"><img src="images/view.jpg" alt="Forest City waterfront view" loading="lazy"><span class="gallery-caption">Forest City, Malaysia</span></div>
-      <div class="gallery-item"><img src="images/ns-coworking.jpeg" alt="Network School coworking space" loading="lazy"><span class="gallery-caption">Coworking</span></div>
-      <div class="gallery-item"><img src="images/hotel.jpg" alt="School lobby" loading="lazy"><span class="gallery-caption">School Lobby</span></div>
-      <div class="gallery-item"><img src="images/ns-gym.jpeg" alt="Network School gym" loading="lazy"><span class="gallery-caption">Gym</span></div>
-      <div class="gallery-item"><img src="images/pool.png" alt="Poolside facilities" loading="lazy"><span class="gallery-caption">Poolside Facilities</span></div>
-    </div>
-    <button class="gallery-arrow gallery-arrow-right" onclick="document.getElementById('gallery').scrollBy({left:340,behavior:'smooth'})" aria-label="Scroll right">›</button>
-  </div>
-
-  <p>Network School is located on Forest City, a modern island development in Johor, Malaysia — forty minutes from Singapore's Changi Airport. Cost of living is significantly less than Singapore, Australia or any major Western city.</p>
-  <p>The advantage here is continuity of attention.</p>
-  <p>Serviced accommodation, meals, gym training and shared working spaces are all onsite. No commuting. No cooking. No domestic logistics. Remove the daily tasks that fragment your cognitive bandwidth. When you're not constantly switching contexts between life's usual demands, you can actually make progress.</p>
-  <p>You'll work within a global community of innovators and technologists while remaining active in your own practice or remote role. Singapore is across the strait for conferences and business engagements.</p>
-  <div class="location-grid">
-    <div class="location-card">
-      <div class="location-icon">🏫</div>
-      <h3>Network School</h3>
-      <p>A global community of remote workers, founders, professionals and technologists. Membership covers accommodation, coworking, high-speed wifi, gym with personal trainers, three healthy daily meals, and access to all programming — talks, workshops and events. It's a serviced lifestyle.</p>
-    </div>
-    <div class="location-card">
-      <div class="location-icon">🎤</div>
-      <h3>High-calibre presenters</h3>
-      <p>Network School runs a full and active calendar of sessions led by experienced technologists and founders from diverse fields. Daily sessions cover applying AI tools, learning by building, content creation, and taking products to market. The calendar changes weekly, but the format stays consistent: active, participant-driven learning.</p>
-    </div>
-    <div class="location-card">
-      <div class="location-icon">🏠</div>
-      <h3>Apartment living</h3>
-      <p>CREDU Academy participants share serviced apartments — with full living spaces, and room to work, study and live for three months. Suitable for those with a partner or children. This is a working residency, not a hotel stay.</p>
-    </div>
-    <div class="location-card">
-      <div class="location-icon">🌏</div>
-      <h3>Strategic for Asia-Pacific</h3>
-      <p>Easy access from Australia, India, China and across Southeast Asia — with a comfortable time zone for working remotely. Singapore next door for flights and the broader tech and business ecosystem. Network School offers Malaysian visa support for longer stays.</p>
+    <div class="hero-cta">
+      <a href="https://credu.academy/apply" target="_blank" class="btn-primary">Apply Now →</a>
+      <a href="https://calendar.app.google/7CvGye8gGmcMm2Gf7" target="_blank" class="btn-secondary">Book a Chat with Electra</a>
     </div>
   </div>
 </section>
 
-<!-- THE CREDU PROGRAMME -->
+<!-- WHO -->
+<section class="audience-section" id="audience">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Who it's for</div>
+      <h2 class="section-title">Professionals adapting deliberately</h2>
+      <p class="section-subtitle">In the coming years, we will be evaluated by what we have built, not by credentials alone.</p>
+    </div>
+    <div class="audience-grid reveal">
+      <div class="audience-card">
+        <div class="audience-card-type">Practitioners</div>
+        <p>Adapting their own practice, or sent by their firm to bring capability back.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-card-type">Graduates</div>
+        <p>Seeking mentorship, direction and advanced skills early.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-card-type">Builders</div>
+        <p>Working in the accounting domain on their next venture.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-card-type">Career changers</div>
+        <p>Pursuing qualification with specialisation from day one.</p>
+      </div>
+    </div>
+    <p class="closer reveal">No spectators. Everyone builds something they can use, defend, and take forward.</p>
+  </div>
+</section>
+
+<!-- ENVIRONMENT -->
+<section class="env-section" id="environment">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">The environment</div>
+      <h2 class="section-title" style="color:var(--paper);">Designed to enable your progress</h2>
+    </div>
+
+    <div class="env-gallery reveal">
+      <div class="env-gallery-item"><img src="https://credu.academy/images/view.jpg" alt="Forest City waterfront view" loading="lazy"><span class="env-gallery-label">Forest City, Malaysia</span></div>
+      <div class="env-gallery-item"><img src="https://credu.academy/images/ns-coworking.jpeg" alt="Network School coworking space" loading="lazy"><span class="env-gallery-label">Coworking</span></div>
+      <div class="env-gallery-item"><img src="https://credu.academy/images/hotel.jpg" alt="School lobby" loading="lazy"><span class="env-gallery-label">School Lobby</span></div>
+      <div class="env-gallery-item"><img src="https://credu.academy/images/ns-gym.jpeg" alt="Network School gym" loading="lazy"><span class="env-gallery-label">Gym</span></div>
+      <div class="env-gallery-item"><img src="https://credu.academy/images/pool.png" alt="Poolside facilities" loading="lazy"><span class="env-gallery-label">Poolside</span></div>
+    </div>
+
+    <div class="env-prose reveal">
+      <p>Network School is located on Forest City, a modern island development in Johor, Malaysia — forty minutes from Singapore's Changi Airport. Cost of living is significantly less than Singapore, Australia or any major Western city.</p>
+      <p class="callout">The advantage here is continuity of attention.</p>
+      <p>Serviced accommodation, meals, gym training and shared working spaces are all onsite. No commuting. No cooking. No domestic logistics. Remove the daily tasks that fragment your cognitive bandwidth. When you're not constantly switching contexts between life's usual demands, you can actually make progress.</p>
+      <p>You'll work within a global community of innovators and technologists while remaining active in your own practice or remote role. Singapore is across the strait for conferences and business engagements.</p>
+    </div>
+
+    <div class="env-features reveal">
+      <div class="env-feature"><h3><span class="env-feature-icon">🏫</span> Network School</h3><p>A global community of remote workers, founders, professionals and technologists. Membership covers accommodation, coworking, high-speed wifi, gym with personal trainers, three healthy daily meals, and access to all programming — talks, workshops and events. It's a serviced lifestyle.</p></div>
+      <div class="env-feature"><h3><span class="env-feature-icon">🎤</span> High-calibre presenters</h3><p>Network School runs a full and active calendar of sessions led by experienced technologists and founders from diverse fields. Daily sessions cover applying AI tools, learning by building, content creation, and taking products to market. The calendar changes weekly, but the format stays consistent: active, participant-driven learning.</p></div>
+      <div class="env-feature"><h3><span class="env-feature-icon">🏠</span> Apartment living</h3><p>CREDU Academy participants share serviced apartments — with full living spaces, and room to work, study and live for three months. Suitable for those with a partner or children. This is a working residency, not a hotel stay.</p></div>
+      <div class="env-feature"><h3><span class="env-feature-icon">🌏</span> Strategic for Asia-Pacific</h3><p>Easy access from Australia, India, China and across Southeast Asia — with a comfortable time zone for working remotely. Singapore next door for flights and the broader tech and business ecosystem. Network School offers Malaysian visa support for longer stays.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
 <section id="programme">
-  <div class="section-label">The CREDU programme</div>
-  <h2>Learn Hands-On & Implement</h2>
-  <p>This is a working residency, not a curriculum. There are no spectators, no tracks, no levels.</p>
-  <p>Three months of structured immersion produces more applied output than a much longer period of fragmented evenings and online study. CREDU adds accounting industry focus to Network School's regular programming and is customised around what each cohort brings and where they need to get to.</p>
-  <p style="margin-top:0.5rem;"><a href="https://credu.academy/apply" class="btn btn-primary">Apply Now →</a></p>
-  <div class="programme-grid">
-    <div class="month-card">
-      <div class="accordion-header active" onclick="toggleAccordion(this)">
-        <div><div class="month-num">Month 1</div><h3 style="margin-bottom:0;">Explore</h3></div>
-        <span class="accordion-icon">▼</span>
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">The CREDU programme</div>
+      <h2 class="section-title">Learn Hands-On &amp; Implement</h2>
+      <div class="programme-intro">
+        <p>This is a working residency, not a curriculum. There are no spectators, no tracks, no levels.</p>
+        <p>Three months of structured immersion produces more applied output than a much longer period of fragmented evenings and online study. CREDU adds accounting industry focus to Network School's regular programming and is customised around what each cohort brings and where they need to get to.</p>
       </div>
-      <div class="accordion-content open">
-      <ul style="margin-top:1rem;">
-        <li>Evaluate your services and workflows against AI capabilities, digital assets, regulatory constraints and social changes — identify what will be transformed in your current model</li>
-        <li>Define what you're solving for and building: a tool, a new practice, a service model, a strategy</li>
-        <li>Build your first working application using AI-assisted coding — or advance an existing project with structured feedback</li>
-        <li>Bitcoin, blockchain and international tax in practice, not just theory</li>
-      </ul>
+      <div class="programme-cta-wrap"><a href="https://credu.academy/apply" target="_blank" class="btn-primary">Apply Now →</a></div>
+    </div>
+
+    <div class="programme-timeline reveal">
+      <div class="month-block">
+        <div class="month-marker">01</div>
+        <h3 class="month-title">Explore</h3>
+        <div class="month-subtitle">Orientation &amp; Discovery</div>
+        <ul class="month-items">
+          <li>Evaluate your services and workflows against AI capabilities, digital assets, regulatory constraints and social changes — identify what will be transformed in your current model</li>
+          <li>Define what you're solving for and building: a tool, a new practice, a service model, a strategy</li>
+          <li>Build your first working application using AI-assisted coding — or advance an existing project with structured feedback</li>
+          <li>Bitcoin, blockchain and international tax in practice, not just theory</li>
+        </ul>
+      </div>
+      <div class="month-block">
+        <div class="month-marker">02</div>
+        <h3 class="month-title">Build</h3>
+        <div class="month-subtitle">Refinement &amp; Validation</div>
+        <ul class="month-items">
+          <li>Refine and harden what you built in Month 1 against real-world constraints and validation</li>
+          <li>Critically assess your SaaS stack when you see what you can custom-build yourself</li>
+          <li>Building AI systems with data governance, controls and professional oversight</li>
+          <li>Apply digital asset reporting and cross-border compliance to real-world scenarios</li>
+        </ul>
+        <p class="month-note">By the end of Month 2, you'll be on your way to building your future practice in accounting.</p>
+      </div>
+      <div class="month-block">
+        <div class="month-marker">03</div>
+        <h3 class="month-title">Launch</h3>
+        <div class="month-subtitle">Deployment &amp; Strategy</div>
+        <ul class="month-items">
+          <li>Finalise and present projects with a deployment roadmap</li>
+          <li>Build your professional development strategy — what you'll be working on in 1, 3 and 5 years, and how you're getting there</li>
+          <li>Establish cross-border collaboration structures and a verified professional profile</li>
+          <li>Contribute to the initial proof of concept for CREDU's decentralised credentialing framework — a borderless expertise-signalling system being developed onsite</li>
+        </ul>
       </div>
     </div>
-    <div class="month-card">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        <div><div class="month-num">Month 2</div><h3 style="margin-bottom:0;">Build</h3></div>
-        <span class="accordion-icon">▼</span>
-      </div>
-      <div class="accordion-content">
-      <ul style="margin-top:1rem;">
-        <li>Refine and harden what you built in Month 1 against real-world constraints and validation</li>
-        <li>Critically assess your SaaS stack when you see what you can custom-build yourself</li>
-        <li>Building AI systems with data governance, controls and professional oversight</li>
-        <li>Apply digital asset reporting and cross-border compliance to real-world scenarios</li>
+
+    <div class="programme-ongoing reveal">
+      <h3>Throughout all 3 months</h3>
+      <ul class="ongoing-items">
+        <li>Participate in CREDU and Network School programming that fits your interests and schedule</li>
+        <li>Maintain remote work or professional study commitments — this environment is designed for it</li>
+        <li>Regular cohort sessions and collaborative projects</li>
+        <li>Ongoing mentoring and one-to-one guidance from Electra Frost and industry practitioners</li>
+        <li>All CPD hours self-assessed, tracked and logged from day one</li>
       </ul>
-      <p class="month-mandate">By the end of Month 2, you'll be on your way to building your future practice in accounting.</p>
-      </div>
     </div>
-    <div class="month-card">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        <div><div class="month-num">Month 3</div><h3 style="margin-bottom:0;">Launch</h3></div>
-        <span class="accordion-icon">▼</span>
-      </div>
-      <div class="accordion-content">
-      <ul style="margin-top:1rem;">
-        <li>Finalise and present projects with a deployment roadmap</li>
-        <li>Build your professional development strategy — what you'll be working on in 1, 3 and 5 years, and how you're getting there</li>
-        <li>Establish cross-border collaboration structures and a verified professional profile</li>
-        <li>Contribute to the initial proof of concept for CREDU's decentralised credentialing framework — a borderless expertise-signalling system being developed onsite</li>
-      </ul>
-      </div>
-    </div>
-  </div>
-  <div class="throughout">
-    <h3>Throughout all 3 months</h3>
-    <ul>
-      <li>Participate in CREDU and Network School programming that fits your interests and schedule</li>
-      <li>Maintain remote work or professional study commitments — this environment is designed for it</li>
-      <li>Regular cohort sessions and collaborative projects</li>
-      <li>Ongoing mentoring and one-to-one guidance from Electra Frost and industry practitioners</li>
-      <li>All CPD hours self-assessed, tracked and logged from day one</li>
-    </ul>
   </div>
 </section>
 
 <!-- OUTCOMES -->
-<section class="outcomes" id="outcomes">
-  <div class="section-label">What's possible for you</div>
-  <h2>You set the ambition. We support the execution.</h2>
-  <p class="outcomes-intro">Some participants will ship a working product. Others will develop a strategy. Everyone will leave with more capability than they arrived with.</p>
-  <ul class="outcomes-list">
-    <li>Deployable systems, workflows or prototypes you built</li>
-    <li>Practical ability to build and modify software using AI-assisted tools</li>
-    <li>A professional development strategy on your own terms</li>
-    <li>Working relationships across jurisdictions</li>
-    <li>Self-assessed CPD hours recorded on blockchain</li>
-    <li>Contribution to CREDU's decentralised credentialing proof of concept</li>
-  </ul>
-  <p class="outcomes-coda">The certificate is evidence of application and output. It is not the objective. It is also the first artefact in a credentialing system you helped build.</p>
-
-  <div style="display:flex; justify-content:center; margin-top:1.5rem;">
-    <svg width="280" height="180" viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg" style="opacity:0.7;">
-      <rect x="10" y="10" width="260" height="160" rx="8" fill="white" stroke="#14594a" stroke-width="1.5"/>
-      <rect x="18" y="18" width="244" height="144" rx="5" fill="none" stroke="#14594a" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.4"/>
-      <line x1="60" y1="42" x2="220" y2="42" stroke="#e7e2db" stroke-width="1"/>
-      <text x="140" y="36" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="11" fill="#14594a" font-weight="400">CREDU Academy</text>
-      <text x="140" y="56" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="7" fill="#57534e" letter-spacing="0.12em">CERTIFICATE OF PROFESSIONAL DEVELOPMENT</text>
-      <rect x="70" y="70" width="140" height="4" rx="2" fill="#e7e2db"/>
-      <rect x="85" y="82" width="110" height="4" rx="2" fill="#e7e2db"/>
-      <rect x="75" y="94" width="130" height="4" rx="2" fill="#e7e2db"/>
-      <g opacity="0.35">
-        <rect x="42" y="118" width="28" height="14" rx="3" fill="none" stroke="#14594a" stroke-width="1"/>
-        <line x1="70" y1="125" x2="78" y2="125" stroke="#14594a" stroke-width="1"/>
-        <rect x="78" y="118" width="28" height="14" rx="3" fill="none" stroke="#14594a" stroke-width="1"/>
-        <line x1="106" y1="125" x2="114" y2="125" stroke="#14594a" stroke-width="1"/>
-        <rect x="114" y="118" width="28" height="14" rx="3" fill="none" stroke="#14594a" stroke-width="1"/>
-        <line x1="142" y1="125" x2="150" y2="125" stroke="#14594a" stroke-width="1"/>
-        <rect x="150" y="118" width="28" height="14" rx="3" fill="none" stroke="#14594a" stroke-width="1"/>
-        <line x1="178" y1="125" x2="186" y2="125" stroke="#14594a" stroke-width="1"/>
-        <rect x="186" y="118" width="28" height="14" rx="3" fill="none" stroke="#14594a" stroke-width="1"/>
-      </g>
-      <text x="56" y="127" text-anchor="middle" font-family="monospace" font-size="5" fill="#14594a" opacity="0.3">0x3f</text>
-      <text x="92" y="127" text-anchor="middle" font-family="monospace" font-size="5" fill="#14594a" opacity="0.3">a7b2</text>
-      <text x="128" y="127" text-anchor="middle" font-family="monospace" font-size="5" fill="#14594a" opacity="0.3">c9e1</text>
-      <text x="164" y="127" text-anchor="middle" font-family="monospace" font-size="5" fill="#14594a" opacity="0.3">d4f8</text>
-      <text x="200" y="127" text-anchor="middle" font-family="monospace" font-size="5" fill="#14594a" opacity="0.3">2b6a</text>
-      <text x="140" y="150" text-anchor="middle" font-family="monospace" font-size="6" fill="#57534e" opacity="0.5" letter-spacing="0.1em">VERIFIED ON-CHAIN</text>
-      <circle cx="232" cy="42" r="18" fill="#14594a" opacity="0.12"/>
-      <circle cx="232" cy="42" r="14" fill="none" stroke="#14594a" stroke-width="1.5"/>
-      <path d="M224,42 L230,48 L242,34" stroke="#14594a" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14,25 L14,14 L25,14" stroke="#c49a2a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
-      <path d="M255,14 L266,14 L266,25" stroke="#c49a2a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
-      <path d="M14,155 L14,166 L25,166" stroke="#c49a2a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
-      <path d="M255,166 L266,166 L266,155" stroke="#c49a2a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
-    </svg>
+<section id="outcomes" style="background:var(--paper-warm);">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">What's possible for you</div>
+      <h2 class="section-title">You set the ambition.<br>We support the execution.</h2>
+      <p class="section-subtitle" style="margin-bottom:2rem;">Some participants will ship a working product. Others will develop a strategy. Everyone will leave with more capability than they arrived with.</p>
+    </div>
+    <div class="outcomes-grid">
+      <div class="reveal">
+        <ul class="outcomes-list">
+          <li>Deployable systems, workflows or prototypes you built</li>
+          <li>Practical ability to build and modify software using AI-assisted tools</li>
+          <li>A professional development strategy on your own terms</li>
+          <li>Working relationships across jurisdictions</li>
+          <li>Self-assessed CPD hours recorded on blockchain</li>
+          <li>Contribution to CREDU's decentralised credentialing proof of concept</li>
+        </ul>
+        <p class="outcomes-cert-note">The certificate is evidence of application and output. It is not the objective. It is also the first artefact in a credentialing system you helped build.</p>
+      </div>
+      <div class="cert-container reveal">
+        <div class="cert">
+          <div class="cert-header">
+            <div class="cert-logo">CREDU Academy</div>
+            <div class="cert-rule"></div>
+            <div class="cert-title">Certificate of<br>Professional Development</div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-label">Credential hash</div>
+            <div class="cert-hashes">
+              <span class="cert-hash-tag">0x3fa7b2</span>
+              <span class="cert-hash-tag">c9e1d4f8</span>
+              <span class="cert-hash-tag">2b6ae7f1</span>
+              <span class="cert-hash-tag">a3b8c2d9</span>
+            </div>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-verify">Verified on-chain</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- MID-PAGE CTA -->
-<section class="mid-cta">
-  <h2>The risk isn't joining too early. It's adapting too late.</h2>
-  <p>This gives you protected time and an environment you cannot create yourself — and that changes how fast you can move.</p>
-  <p>Cohorts are small. Applications are selective.</p>
-  <a href="https://credu.academy/apply" class="btn btn-primary btn-lg">Apply Now →</a>
-  <p style="margin-top:1rem; font-size:0.85rem;"><a href="https://calendar.app.google/7CvGye8gGmcMm2Gf7" target="_blank" style="color:rgba(255,255,255,0.6); text-decoration:underline;">Not sure yet? Book a chat with Electra first →</a></p>
+<!-- URGENCY -->
+<section class="urgency-band">
+  <div class="container">
+    <h2 class="reveal">The risk isn't joining too early.<br>It's adapting too late.</h2>
+    <p class="reveal">This gives you protected time and an environment you cannot create yourself — and that changes how fast you can move.</p>
+    <p class="reveal">Cohorts are small. Applications are selective.</p>
+    <div class="btn-links reveal">
+      <a href="https://credu.academy/apply" target="_blank" class="btn-primary">Apply Now →</a>
+      <a href="https://calendar.app.google/7CvGye8gGmcMm2Gf7" target="_blank" class="btn-secondary">Not sure yet? Book a chat with Electra first →</a>
+    </div>
+  </div>
 </section>
 
-<!-- WHAT'S INCLUDED -->
-<section id="join">
-  <div class="section-label">What's included</div>
-  <h2>Everything handled so you can focus</h2>
-  <p>Housing, meals, gym, coworking, wifi — included as removal of the domestic tasks that fragment your cognitive bandwidth. Support is available to help you select your own travel, visas and childcare (if needed).</p>
-  <p>This is structured execution time, not a retreat.</p>
-
-  <div class="included-card">
-    <h3>3-Month Residency — US$2,000 per month</h3>
-    <ul class="included-details">
-      <li><strong>Network School membership</strong> — shared apartment accommodation (2 pax or 1 couple/family), meals, gym, coworking, wifi, regular programming</li>
-      <li><strong>PLUS:</strong> CREDU Academy mentoring and programme facilitation</li>
-    </ul>
-    <a href="https://credu.academy/apply" class="btn btn-primary">Apply Now →</a>
-    <p class="included-note">New cohorts of up to 10 each month. First cohort starts June 2026. After three months, you may apply for a longer term visa to stay on at Network School under their standard membership.</p>
-  </div>
-
-  <div class="included-card" style="border-color: var(--border); box-shadow: none; margin-top: 1.25rem;">
-    <h3>1-Month Visit — explore before you commit</h3>
-    <p class="included-details" style="text-align: center;">Not ready for three months? Visit Network School for one month, experience the environment and community, and decide if CREDU Academy is right for you. Many participants may choose to join the next cohort.</p>
-    <a href="https://ns.com/electrafrost/apply" class="btn btn-outline" target="_blank">Apply for 1 Month →</a>
-    <p class="included-note">Hotel accommodation at Network School standard rates from $1,500 shared. Includes community programming and full access to the environment.</p>
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">What's included</div>
+      <h2 class="section-title">Everything handled so you can focus</h2>
+      <div class="pricing-intro">
+        <p>Housing, meals, gym, coworking, wifi — included as removal of the domestic tasks that fragment your cognitive bandwidth. Support is available to help you select your own travel, visas and childcare (if needed).</p>
+        <p class="note">This is structured execution time, not a retreat.</p>
+      </div>
+    </div>
+    <div class="pricing-cards reveal">
+      <div class="pricing-card featured">
+        <h3>3-Month Residency — from US$2,000 per month pp</h3>
+        <ul>
+          <li><strong>Network School membership</strong> — solo or shared serviced apartment or hotel accommodation - plus meals, gym, coworking, wifi, regular events and programming</li>
+          <li><strong>PLUS:</strong> CREDU mentoring and programme facilitation</li>
+        </ul>
+        <a href="https://credu.academy/apply" target="_blank" class="card-cta">Apply Now →</a>
+        <p class="card-note">New cohorts of up to 10 each month. First cohort starts June 2026. After three months, you may stay on at Network School under their standard membership. Ask about 12-month option.</p>
+      </div>
+      <div class="pricing-card">
+        <h3>1-Month Visit — explore before you commit</h3>
+        <p class="pricing-detail">Not ready for three months? Visit Network School for one month, experience the environment and community, and decide if CREDU Academy is right for you. Many participants may choose to join the next cohort.</p>
+        <a href="https://ns.com/electrafrost/apply" target="_blank" class="card-cta" style="background:transparent; color:var(--ink); border:1.5px solid var(--mist);">Apply for 1 Month →</a>
+        <p class="card-note">Hotel accommodation at Network School standard rates from $1,500 shared. Includes community programming and full access to the environment.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- BEYOND -->
-<section class="beyond">
-  <div class="section-label">Beyond the residency</div>
-  <h2>What happens after</h2>
-  <p>After your three months, several paths are available depending on your goals.</p>
-  <div class="beyond-options">
-    <span class="beyond-tag">Extend to twelve months</span>
-    <span class="beyond-tag">Contribute as faculty</span>
-    <span class="beyond-tag">Return as mentor</span>
-    <span class="beyond-tag">Continue collaboration remotely</span>
+<section>
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Beyond the residency</div>
+      <h2 class="section-title">What happens after</h2>
+      <p class="section-subtitle">After your three months, several paths are available depending on your goals.</p>
+    </div>
+    <div class="after-paths reveal">
+      <div class="after-path">Extend to twelve months</div>
+      <div class="after-path">Contribute as faculty</div>
+      <div class="after-path">Return as mentor</div>
+      <div class="after-path">Continue collaboration remotely</div>
+    </div>
+    <p class="after-note reveal">Visa guidance provided where required. (See FAQ below or ask Electra)</p>
   </div>
-  <p>Visa guidance provided where required. (See FAQ below or ask Electra)</p>
 </section>
 
 <!-- FAQ -->
-<section id="faq">
-  <div class="section-label">FAQ</div>
-  <h2>Practical questions</h2>
-
-  <div class="faq-item">
-    <div class="faq-question active" onclick="toggleFaq(this)">
-      Can I continue to work for my employer or run my practice?
-      <span class="faq-icon">▼</span>
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Practical questions</h2>
     </div>
-    <div class="faq-answer open">
-      Yes. Participants are expected to remain professionally active. The environment is designed to support uninterrupted remote work with high-speed internet and proximity to Asia-Pacific time zones. The residency does not require you to pause your income.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFaq(this)">
-      What does a typical day look like?
-      <span class="faq-icon">▼</span>
-    </div>
-    <div class="faq-answer">
-      There is structure without rigidity: dedicated build blocks during weekdays, a weekly cohort working session, and one-to-one mentoring. Evenings and weekends are flexible for your own professional work or study. The residency is paced for sustained execution, not burnout.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFaq(this)">
-      What is the accommodation like?
-      <span class="faq-icon">▼</span>
-    </div>
-    <div class="faq-answer">
-      Serviced apartments within Forest City, shared with other residents. Kitchen facilities and living spaces included. Meals are provided daily. The focus is on removing logistical friction rather than hotel-style luxury.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFaq(this)">
-      Who is this NOT for?
-      <span class="faq-icon">▼</span>
-    </div>
-    <div class="faq-answer">
-      This residency is not for those seeking passive instruction, a holiday, or a speculative trading programme. It requires autonomy, discipline and a willingness to learn new things and experiment.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFaq(this)">
-      Do I need to be a coder?
-      <span class="faq-icon">▼</span>
-    </div>
-    <div class="faq-answer">
-      No. AI-assisted development tools allow professionals to build functional systems without a traditional computer science background. We value professional judgement and domain expertise over prior syntax knowledge.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question" onclick="toggleFaq(this)">
-      Is this CPD accredited?
-      <span class="faq-icon">▼</span>
-    </div>
-    <div class="faq-answer">
-      CPD hours are self-assessed by participants and logged throughout the programme. Most professional accounting bodies recognise structured technical development and relevant mentoring. We recommend self-assessing against your specific body's framework. Hours are recorded on blockchain as part of CREDU's credentialing proof-of-concept that you are participating in (early mover!).
+    <div class="faq-grid reveal">
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Can I continue to work for my employer or run my practice?</button><div class="faq-answer"><div class="faq-answer-inner">Yes. Participants are expected to remain professionally active. The environment is designed to support uninterrupted remote work with high-speed internet and proximity to Asia-Pacific time zones. The residency does not require you to pause your income.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What does a typical day look like?</button><div class="faq-answer"><div class="faq-answer-inner">There is structure without rigidity: dedicated build blocks during weekdays, a weekly cohort working session, and one-to-one mentoring. Evenings and weekends are flexible for your own professional work or study. The residency is paced for sustained execution, not burnout.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What is the accommodation like?</button><div class="faq-answer"><div class="faq-answer-inner">Serviced apartments within Forest City, shared with other residents. Kitchen facilities and living spaces included. Meals are provided daily. The focus is on removing logistical friction rather than hotel-style luxury.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Who is this NOT for?</button><div class="faq-answer"><div class="faq-answer-inner">This residency is not for those seeking passive instruction, a holiday, or a speculative trading programme. It requires autonomy, discipline and a willingness to learn new things and experiment.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Do I need to be a coder?</button><div class="faq-answer"><div class="faq-answer-inner">No. AI-assisted development tools allow professionals to build functional systems without a traditional computer science background. We value professional judgement and domain expertise over prior syntax knowledge.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Is this CPD accredited?</button><div class="faq-answer"><div class="faq-answer-inner">CPD hours are self-assessed by participants and logged throughout the programme. Most professional accounting bodies recognise structured technical development and relevant mentoring. We recommend self-assessing against your specific body's framework. Hours are recorded on blockchain as part of CREDU's credentialing proof-of-concept that you are participating in (early mover!).</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- MANIFESTO -->
-<div class="manifesto-band">
-  <blockquote>
-    Professional standing is no longer secured by credentials and passive adoption alone. Your credentials got you this far. What you can actually build and deploy is what takes you forward. CREDU gives you three months to do the work instead of just talking about it.
-  </blockquote>
-</div>
+<!-- QUOTE -->
+<section class="quote-section">
+  <blockquote class="quote-text reveal">Professional standing is no longer secured by credentials and passive adoption alone. Your credentials got you this far. What you can actually build and deploy is what takes you forward. CREDU gives you three months to do the work instead of just talking about it.</blockquote>
+</section>
 
-<!-- CTA -->
-<section class="cta" id="contact">
-  <h2>Ready?</h2>
-  <p>Book a conversation with Electra to discuss your situation, your goals, and whether this is the right move for you right now.</p>
-  <div class="cta-buttons">
-    <a href="https://calendar.app.google/7CvGye8gGmcMm2Gf7" class="btn btn-primary" target="_blank">Book a Meeting with Electra →</a>
-    <a href="https://credu.academy/apply" class="btn btn-outline">Apply Directly →</a>
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Ready?</div>
+      <h2 class="section-title">Book a conversation with Electra</h2>
+      <p class="section-subtitle" style="text-align:center;">Discuss your situation, your goals, and whether this is the right move for you right now.</p>
+      <div class="final-cta-buttons">
+        <a href="https://calendar.app.google/7CvGye8gGmcMm2Gf7" target="_blank" class="btn-primary">Book a Meeting with Electra →</a>
+        <a href="https://credu.academy/apply" target="_blank" class="btn-secondary">Apply Directly →</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
-  <p>CREDU Academy — Accounting Technologist & International Tax Programme — at Network School, Malaysia</p>
-  <p style="margin-top:0.5rem; font-size:0.75rem;">CREDU is an ElectraFi professional practice initiative (ABN: 59 641 198 914) — Liability is limited by a scheme approved under Professional Standards legislation.</p>
-  <p style="margin-top:0.5rem; font-size:0.75rem;"><a href="https://credu.academy/privacy" style="color:var(--muted); text-decoration:none;">Privacy</a> · <a href="https://credu.academy/terms" style="color:var(--muted); text-decoration:none;">Terms</a> · <a href="https://credu.academy/about" style="color:var(--muted); text-decoration:none;">About</a> · <a href="mailto:support@credu.academy" style="color:var(--muted); text-decoration:none;">Support</a></p>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">CREDU Academy — Accounting Technologist &amp; International Tax Programme — at Network School, Malaysia</div>
+      </div>
+      <div class="footer-links">
+        <a href="https://credu.academy/privacy">Privacy</a>
+        <a href="https://credu.academy/terms">Terms</a>
+        <a href="https://credu.academy/about">About</a>
+        <a href="mailto:support@credu.academy">Support</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
-
-
 <script>
-function toggleAccordion(header) {
-  var content = header.nextElementSibling;
-  var isOpen = content.classList.contains('open');
-  document.querySelectorAll('.accordion-content').forEach(function(c) { c.classList.remove('open'); });
-  document.querySelectorAll('.accordion-header').forEach(function(h) { h.classList.remove('active'); });
-  if (!isOpen) { content.classList.add('open'); header.classList.add('active'); }
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+const ro = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const ans = item.querySelector('.faq-answer');
+  if (item.classList.contains('open')) { ans.style.maxHeight = '0'; item.classList.remove('open'); }
+  else { ans.style.maxHeight = ans.scrollHeight + 'px'; item.classList.add('open'); }
 }
-
-function toggleFaq(question) {
-  var answer = question.nextElementSibling;
-  var isOpen = answer.classList.contains('open');
-  document.querySelectorAll('.faq-answer').forEach(function(a) { a.classList.remove('open'); });
-  document.querySelectorAll('.faq-question').forEach(function(q) { q.classList.remove('active'); });
-  if (!isOpen) { answer.classList.add('open'); question.classList.add('active'); }
-}
-
-try {
-  var scrollBtn = document.querySelector('.scroll-top');
-  if (scrollBtn) {
-    window.addEventListener('scroll', function() {
-      scrollBtn.classList.toggle('visible', window.scrollY > 400);
-    });
-  }
-  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
-  }
-} catch(e) {}
 </script>
-
 </body>
 </html>
-
