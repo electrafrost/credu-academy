@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://credu.academy">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CREDU Academy — Network School Accountants Residency">
-<meta name="twitter:description" content="1, 3 or 12 months of protected time to build capability across AI, digital assets, international tax and your future practice - at Network School.">
+<meta name="twitter:description" content="Three months of protected time at Network School to build capability across AI, digital assets, international tax, and cross-border practice.">
 <meta name="twitter:image" content="https://credu.academy/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,10 +74,10 @@ nav.scrolled {
 }
 .nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links a {
-  font-size: 0.82rem; letter-spacing: 0.04em; color: var(--slate);
-  text-decoration: none; transition: color 0.3s;
+  font-size: 0.82rem; letter-spacing: 0.04em; color: var(--ink);
+  text-decoration: none; transition: color 0.3s; opacity: 0.7;
 }
-.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover { opacity: 1; }
 .nav-links .nav-apply {
   background: var(--ink); color: var(--paper); padding: 0.55rem 1.4rem;
   border-radius: 2px; font-weight: 600; font-size: 0.78rem;
@@ -92,23 +92,38 @@ nav.scrolled {
   min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
   position: relative; padding: 8rem 2rem 4rem; overflow: hidden;
 }
-.hero::before {
-  content: ''; position: absolute; top: -20%; right: -10%;
-  width: 60vw; height: 60vw; border-radius: 50%;
-  background: radial-gradient(circle, rgba(26,107,90,0.06) 0%, transparent 70%);
-  pointer-events: none;
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('ns-campus-hero.webp') center/cover no-repeat;
+  filter: blur(1.5px);
+  transform: scale(1.01);
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: rgba(244,241,235,0.35);
+}
+.hero-grad {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, 
+    rgba(244,241,235,0.92) 0%, 
+    rgba(244,241,235,0.75) 40%, 
+    rgba(244,241,235,0.25) 65%,
+    rgba(244,241,235,0.08) 100%);
 }
 .hero::after {
   content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
   background: linear-gradient(90deg, transparent, var(--mist), transparent);
+  z-index: 2;
 }
-.hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; }
+.hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
 .hero-tag {
   font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--accent); margin-bottom: 2rem;
-  display: flex; align-items: center; gap: 0.75rem;
+  display: flex; align-items: center; gap: 0.75rem; font-weight: 600;
+  text-decoration: none; transition: color 0.3s;
   opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s;
 }
+.hero-tag:hover { color: var(--teal); }
 .hero-tag::before { content: ''; width: 32px; height: 1px; background: var(--accent); }
 .hero h1 {
   font-family: var(--serif); font-size: clamp(3rem, 7vw, 6.5rem);
@@ -117,12 +132,12 @@ nav.scrolled {
 }
 .hero h1 em { font-style: italic; color: var(--teal); }
 .hero-programme {
-  font-family: var(--mono); font-size: 0.82rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--teal); margin-bottom: 2rem;
+  font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.12em; font-weight: 500;
+  text-transform: uppercase; color: var(--ink); margin-bottom: 2rem;
   opacity: 0; animation: fadeUp 0.8s ease forwards 0.5s;
 }
 .hero-desc {
-  max-width: 580px; font-size: 1.1rem; line-height: 1.75; color: var(--slate); margin-bottom: 1rem;
+  max-width: 580px; font-size: 1.1rem; line-height: 1.75; color: var(--ink); margin-bottom: 1rem;
   opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s;
 }
 .hero-aside {
@@ -137,9 +152,9 @@ nav.scrolled {
 .hero-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
 .hero-meta-label {
   font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--mist);
+  text-transform: uppercase; color: var(--slate);
 }
-.hero-meta-value { font-weight: 600; font-size: 0.95rem; }
+.hero-meta-value { font-weight: 700; font-size: 0.95rem; color: var(--ink); }
 .hero-cta {
   margin-top: 3rem; display: flex; gap: 1.25rem; flex-wrap: wrap;
   opacity: 0; animation: fadeUp 0.8s ease forwards 1.2s;
@@ -161,7 +176,7 @@ nav.scrolled {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: transparent; color: var(--ink); padding: 1rem 2.2rem;
   font-family: var(--sans); font-weight: 600; font-size: 0.85rem;
-  letter-spacing: 0.04em; border: 1.5px solid var(--mist); cursor: pointer;
+  letter-spacing: 0.04em; border: 1.5px solid var(--slate); cursor: pointer;
   text-decoration: none; transition: all 0.35s; border-radius: 2px;
 }
 .btn-secondary:hover { border-color: var(--ink); background: rgba(10,15,13,0.03); }
@@ -372,6 +387,51 @@ section { padding: 7rem 0; position: relative; }
 }
 @keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
 
+/* CREDU.io */
+.credu-io-section { background: var(--paper); }
+.credu-io-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  margin-top: 3rem; align-items: center;
+}
+.credu-io-card {
+  background: var(--ink); border-radius: 6px; padding: 3rem 2.5rem;
+  color: var(--paper); position: relative; overflow: hidden;
+}
+.credu-io-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(26,107,90,0.15) 0%, transparent 50%, rgba(196,93,44,0.06) 100%);
+  pointer-events: none;
+}
+.credu-io-card .card-label {
+  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--accent-light); margin-bottom: 1rem;
+  position: relative;
+}
+.credu-io-card h3 {
+  font-family: var(--serif); font-size: 1.5rem; font-weight: 400;
+  line-height: 1.25; margin-bottom: 1rem; position: relative;
+}
+.credu-io-card p {
+  font-size: 0.9rem; line-height: 1.7; color: rgba(244,241,235,0.6);
+  position: relative; margin-bottom: 1rem;
+}
+.credu-io-card .card-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+  color: var(--accent-light); text-decoration: none; position: relative;
+  transition: color 0.3s;
+}
+.credu-io-card .card-link:hover { color: #fff; }
+.credu-io-bullets { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+.credu-io-bullets li {
+  font-size: 0.95rem; color: var(--slate); line-height: 1.65;
+  padding-left: 2rem; position: relative;
+}
+.credu-io-bullets li::before {
+  content: ''; position: absolute; left: 0; top: 0.55rem;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--teal);
+}
+
 /* Urgency */
 .urgency-band {
   background: linear-gradient(135deg, var(--teal), #1a5c4e);
@@ -485,6 +545,24 @@ footer { border-top: 1px solid rgba(10,15,13,0.06); padding: 3rem 0; }
 .footer-links a { font-size: 0.78rem; color: var(--slate); text-decoration: none; transition: color 0.3s; }
 .footer-links a:hover { color: var(--ink); }
 .footer-legal { font-size: 0.72rem; color: var(--mist); margin-top: 1.5rem; line-height: 1.7; max-width: 600px; }
+.footer-contact { font-size: 0.78rem; color: var(--slate); margin-top: 0.5rem; }
+.footer-contact a { color: var(--teal); text-decoration: none; }
+.footer-contact a:hover { color: var(--ink); }
+
+/* Scroll to top */
+.scroll-top {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 90;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--ink); color: var(--paper);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; line-height: 1;
+  opacity: 0; transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s, background 0.3s;
+  pointer-events: none;
+}
+.scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.scroll-top:hover { background: var(--teal); }
 
 /* Animations */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -493,7 +571,7 @@ footer { border-top: 1px solid rgba(10,15,13,0.06); padding: 3rem 0; }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .outcomes-grid, .pricing-cards, .faq-grid { grid-template-columns: 1fr; }
+  .outcomes-grid, .pricing-cards, .faq-grid, .credu-io-grid { grid-template-columns: 1fr; }
   .env-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .env-gallery-item:nth-child(1) { grid-column: 1/3; min-height: 260px; }
   .env-gallery-item:nth-child(2) { grid-column: 1/2; min-height: 200px; }
@@ -550,8 +628,11 @@ footer { border-top: 1px solid rgba(10,15,13,0.06); padding: 3rem 0; }
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grad"></div>
   <div class="hero-inner">
-    <div class="hero-tag">Now accepting applications — June 2026</div>
+    <a href="https://credu.academy/apply" target="_blank" class="hero-tag">Now accepting applications — June 2026</a>
     <h1>CREDU<br><em>Academy</em></h1>
     <p class="hero-programme">Accounting Technologist &amp; International Tax Programme</p>
     <p class="hero-desc">Three months of protected time to learn and apply your expertise and creativity to deploy capability on advanced systems — with AI, digital assets, blockchain, international tax coordination, and cross-border practitioner networks.</p>
@@ -738,6 +819,34 @@ footer { border-top: 1px solid rgba(10,15,13,0.06); padding: 3rem 0; }
   </div>
 </section>
 
+<!-- CREDU.IO -->
+<section class="credu-io-section" style="padding:7rem 0;">
+  <div class="container">
+    <div class="credu-io-grid">
+      <div class="reveal">
+        <div class="section-label">The bigger picture</div>
+        <h2 class="section-title">You're not just learning.<br>You're building the infrastructure.</h2>
+        <p class="section-subtitle" style="margin-bottom:2rem;">CREDU Academy participants are the first contributors to CREDU — a verified credentialing and peer-to-peer marketplace for accountants being built onsite.</p>
+        <ul class="credu-io-bullets">
+          <li>Your CPD hours are logged on-chain as part of the credentialing proof of concept</li>
+          <li>You help shape the peer-to-peer and agent-to-agent framework for how accountants will attain, prove, and monetise their credentials</li>
+          <li>Early participants become founding contributors to a system designed to replace passive credentialing with verifiable output</li>
+          <li>What you build during the residency becomes the first evidence in your verified professional profile</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="credu-io-card">
+          <div class="card-label">CREDU.io</div>
+          <h3>Verified Credentialing &<br>P2P-A2A Marketplace<br>for Accountants</h3>
+          <p>A new standard for how accountants attain, prove and monetise their credentials. Peer-to-peer, agent-to-agent — where accountants and AI agents collaborate to learn, verify credentials, and transact.</p>
+          <p>Academy participants are building this from the inside.</p>
+          <a href="https://credu.io" target="_blank" class="card-link">Explore CREDU.io →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- URGENCY -->
 <section class="urgency-band">
   <div class="container">
@@ -838,11 +947,14 @@ footer { border-top: 1px solid rgba(10,15,13,0.06); padding: 3rem 0; }
   </div>
 </section>
 
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
 <footer>
   <div class="container">
     <div class="footer-inner">
       <div>
         <div class="footer-brand">CREDU Academy — Accounting Technologist &amp; International Tax Programme — at Network School, Malaysia</div>
+        <div class="footer-contact">Contact: <a href="mailto:support@credu.academy">support@credu.academy</a></div>
       </div>
       <div class="footer-links">
         <a href="https://credu.academy/privacy">Privacy</a>
@@ -856,7 +968,11 @@ footer { border-top: 1px solid rgba(10,15,13,0.06); padding: 3rem 0; }
 
 <script>
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+const scrollBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+});
 const ro = new IntersectionObserver(es => {
   es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
