@@ -98,7 +98,9 @@ footer p{font-size:.78rem;color:var(--mist);line-height:1.7}
 .reveal-delay-2{transition-delay:.2s}
 .scroll-top{position:fixed;bottom:2rem;right:2rem;width:40px;height:40px;border-radius:50%;background:var(--teal);color:var(--paper);border:none;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(10px);transition:all .3s;z-index:50}
 .scroll-top.show{opacity:1;transform:translateY(0)}
-@media(max-width:768px){.hero{padding:8rem 0 3rem}.nav-links{display:none}section{padding:3rem 0}}
+@media(max-width:768px){.hero{padding:8rem 0 3rem}.nav-links{display:none}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(247,243,237,0.97);backdrop-filter:blur(20px);padding:1.5rem 2rem;gap:1rem}section{padding:3rem 0}.nav-toggle{display:block}}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0}
 </style>
 </head>
 <body>
@@ -108,6 +110,7 @@ footer p{font-size:.78rem;color:var(--mist);line-height:1.7}
     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/><rect x="18" y="2" width="12" height="12" rx="2" fill="currentColor"/><rect x="2" y="18" width="12" height="12" rx="2" fill="currentColor"/><rect x="22" y="18" width="8" height="8" rx="1" transform="rotate(45 26 22)" fill="#C49A2A"/></svg>
     CREDU <em>Professional Services Hub</em>
   </a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
   <div class="nav-links">
     <a href="https://credu.academy/">Academy</a>
     <a href="https://credu.academy/services">Services</a>
@@ -194,8 +197,8 @@ footer p{font-size:.78rem;color:var(--mist);line-height:1.7}
       </div>
       <div class="step reveal reveal-delay-1">
         <div class="step-num">02</div>
-        <h3>Upload once (no emails)</h3>
-        <p>Relevant source documents identified and sorted for coordinated use. Private, permissioned access.</p>
+        <h3>Upload once</h3>
+        <p>Relevant source documents identified and sorted for coordinated use. Private, only for you and your accountants.</p>
       </div>
       <div class="step reveal reveal-delay-1">
         <div class="step-num">03</div>
