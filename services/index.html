@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Services - CREDU Academy</title>
+<meta name="description" content="International tax and professional services for Network School global citizens.">
+<meta property="og:title" content="Professional Services - CREDU Academy">
+<meta property="og:description" content="Qualified, cross-border, crypto-savvy tax and accounting professionals serving the Network School community.">
+<meta property="og:image" content="https://credu.academy/og-image.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='2' y='2' width='12' height='12' rx='2' fill='%231A6B5C'/><rect x='18' y='2' width='12' height='12' rx='2' fill='%231A6B5C'/><rect x='2' y='18' width='12' height='12' rx='2' fill='%231A6B5C'/><rect x='22' y='18' width='8' height='8' rx='1' transform='rotate(45 26 22)' fill='%23C49A2A'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F7F3ED;--paper-warm:#F2EDE5;--ink:#081A16;--ink-light:rgba(8,26,22,0.7);--ink-faint:rgba(8,26,22,0.45);--teal:#1A6B5C;--teal-light:#2A8B74;--teal-faint:rgba(26,107,92,0.08);--gold:#C49A2A;--mist:rgba(8,26,22,0.35);--font-display:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',-apple-system,sans-serif;--font-mono:'JetBrains Mono',monospace}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+.container{max-width:1080px;margin:0 auto;padding:0 2rem}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;transition:all .4s;background:transparent}
+nav.scrolled{background:rgba(247,243,237,0.95);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(8,26,22,0.06);padding:.8rem 2rem}
+.nav-logo{font-family:var(--font-display);font-size:1.3rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.nav-logo em{font-style:italic;color:var(--teal)}
+.nav-logo svg{width:24px;height:24px}
+.nav-links{display:flex;gap:1.8rem;align-items:center}
+.nav-links a{font-family:var(--font-mono);font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;transition:color .3s}
+.nav-links a:hover{color:var(--teal)}
+.nav-links a.nav-cta{background:var(--teal);color:var(--paper);padding:.5rem 1.2rem;border-radius:100px}
+.hero{padding:10rem 0 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:0;bottom:0;left:0;background:url('images/credu_map.png') center/contain no-repeat;opacity:0.12;pointer-events:none}
+.hero-label{font-family:var(--font-mono);font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;position:relative}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,3.4rem);font-weight:400;line-height:1.15;margin-bottom:1.5rem;max-width:700px;position:relative}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero-sub{font-size:1.05rem;color:var(--ink-light);line-height:1.7;max-width:580px;position:relative}
+.divider{height:1px;margin:0 10%;background:linear-gradient(90deg,transparent,var(--mist),transparent)}
+section{padding:4rem 0}
+.section-label{font-family:var(--font-mono);font-size:.68rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+.section-title{font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2rem);font-weight:400;line-height:1.25;margin-bottom:1.5rem}
+.problem-section{background:var(--ink);color:var(--paper);padding:4rem 0}
+.problem-section .section-label{color:var(--gold)}
+.problem-section .section-title{color:var(--paper);font-size:clamp(1.8rem,4vw,2.6rem)}
+.problem-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-top:1.5rem}
+.problem-item h3{font-family:var(--font-display);font-size:1.05rem;color:var(--gold);margin-bottom:.4rem}
+.problem-item p{font-size:.88rem;color:rgba(247,243,237,0.65);line-height:1.6}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:1.5rem}
+.svc{padding:1.8rem;border-radius:12px;border:1px solid rgba(8,26,22,0.06);background:white;transition:all .3s}
+.svc:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(8,26,22,0.05);border-color:rgba(26,107,92,0.15)}
+.svc h3{font-family:var(--font-display);font-size:1rem;margin-bottom:.4rem}
+.svc p{font-size:.85rem;color:var(--ink-light);line-height:1.6}
+.how-section{background:var(--paper-warm);padding:4rem 0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.5rem}
+@media(max-width:768px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
+.step{padding:1.5rem;background:white;border-radius:12px;border:1px solid rgba(8,26,22,0.06)}
+.step-num{font-family:var(--font-mono);font-size:.6rem;font-weight:500;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:.5rem}
+.step h3{font-family:var(--font-display);font-size:.95rem;margin-bottom:.3rem}
+.step p{font-size:.82rem;color:var(--ink-light);line-height:1.55}
+.flywheel-section{padding:4rem 0}
+.flywheel-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:1.5rem}
+@media(max-width:768px){.flywheel-layout{grid-template-columns:1fr}}
+.flywheel-text{font-size:.95rem;color:var(--ink-light);line-height:1.7}
+.flywheel-text p+p{margin-top:.8rem}
+.benefits{display:grid;gap:.8rem}
+.ben{padding:1.2rem 1.4rem;border-radius:10px;border-left:3px solid}
+.ben.u{background:rgba(26,107,92,0.04);border-color:var(--teal)}
+.ben.a{background:rgba(196,154,42,0.06);border-color:var(--gold)}
+.ben.p{background:rgba(8,26,22,0.03);border-color:var(--ink)}
+.ben-label{font-family:var(--font-mono);font-size:.58rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.25rem}
+.ben.u .ben-label{color:var(--teal)}
+.ben.a .ben-label{color:var(--gold)}
+.ben.p .ben-label{color:var(--ink-faint)}
+.ben p{font-size:.82rem;color:var(--ink-light);line-height:1.5}
+.network-section{background:var(--ink);color:var(--paper);padding:4rem 0}
+.network-section .section-label{color:var(--gold)}
+.network-section .section-title{color:var(--paper)}
+.net-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:1.5rem}
+@media(max-width:600px){.net-grid{grid-template-columns:1fr}}
+.net-card{padding:1.5rem;border-radius:10px;border:1px solid rgba(247,243,237,0.06);background:rgba(247,243,237,0.03)}
+.net-card h3{font-family:var(--font-display);font-size:.95rem;color:var(--paper);margin-bottom:.3rem}
+.net-card p{font-size:.82rem;color:rgba(247,243,237,0.6);line-height:1.55}
+.cta-section{padding:4rem 0;text-align:center}
+.cta-buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+.btn-primary{display:inline-block;font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.9rem 2.2rem;background:var(--teal);color:var(--paper);border:none;border-radius:100px;text-decoration:none;transition:all .3s}
+.btn-primary:hover{background:var(--teal-light);transform:translateY(-2px)}
+.btn-secondary{display:inline-block;font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.9rem 2.2rem;background:transparent;color:var(--ink);border:1px solid rgba(8,26,22,0.15);border-radius:100px;text-decoration:none;transition:all .3s}
+.btn-secondary:hover{border-color:var(--teal);color:var(--teal)}
+footer{padding:3rem 2rem;text-align:center;border-top:1px solid rgba(8,26,22,0.06)}
+footer p{font-size:.78rem;color:var(--mist);line-height:1.7}
+.footer-contact{margin-top:.5rem}
+.footer-contact a{color:var(--teal);text-decoration:none}
+.footer-links{margin-top:1rem;display:flex;justify-content:center;gap:1.5rem}
+.footer-links a{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mist);text-decoration:none}
+.footer-links a:hover{color:var(--teal)}
+.reveal{opacity:0;transform:translateY(16px);transition:all .6s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.scroll-top{position:fixed;bottom:2rem;right:2rem;width:40px;height:40px;border-radius:50%;background:var(--teal);color:var(--paper);border:none;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(10px);transition:all .3s;z-index:50}
+.scroll-top.show{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.hero{padding:8rem 0 3rem}.nav-links{display:none}section{padding:3rem 0}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="https://credu.academy" class="nav-logo">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/><rect x="18" y="2" width="12" height="12" rx="2" fill="currentColor"/><rect x="2" y="18" width="12" height="12" rx="2" fill="currentColor"/><rect x="22" y="18" width="8" height="8" rx="1" transform="rotate(45 26 22)" fill="#C49A2A"/></svg>
+    CREDU <em>Professional Services Hub</em>
+  </a>
+  <div class="nav-links">
+    <a href="https://credu.academy/#programme">Academy</a>
+    <a href="https://credu.academy/services">Services</a>
+    <a href="#">Tax Compass</a>
+    <a href="https://calendar.app.google/7CvGye8gGmcMm2Gf7" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-label reveal">Coordinated Professional Support at Network School</div>
+    <h1 class="reveal reveal-delay-1">Where do global citizens <em>pay tax?</em></h1>
+    <p class="hero-sub reveal reveal-delay-2">You are from one country. You incorporated in another. You work remotely from here. You earn in crypto. You travel. Every country has rules about your income. Without coordination across borders, you file wrong, overpay, get audited, lose visa options, and spend hours in the maze. It doesn't have to be that way.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="problem-section">
+  <div class="container">
+    <div class="section-label reveal">The problem</div>
+    <h2 class="section-title reveal">Coordinating your financial affairs and tax across countries</h2>
+    <div class="problem-list">
+      <div class="problem-item reveal">
+        <h3>Multiple countries, no picture</h3>
+        <p>Your Malaysian obligations don't talk to your home and company ones. Tax treaty reliefs go unclaimed. Structure doesn't work. Nobody has the full view.</p>
+      </div>
+      <div class="problem-item reveal reveal-delay-1">
+        <h3>Reddit and AI are not YOUR tax advisers</h3>
+        <p>Conflicting answers from online sources. No legal reliability. VS accountants who don't understand crypto or cross-border rules.</p>
+      </div>
+      <div class="problem-item reveal reveal-delay-2">
+        <h3>Accountants in silos, or unlicensed</h3>
+        <p>Your accountants don't talk to each other. Unlicensed operators give advice they can't stand behind. You end up with bad surprises nobody warned you about.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label reveal">What we provide</div>
+    <h2 class="section-title reveal">Not a firm. A trusted network.</h2>
+    <p style="font-size:1rem;color:var(--ink-light);line-height:1.7;max-width:640px;margin-bottom:2rem" class="reveal">A trusted network of freelance professionals who share an AI knowledge base they build and maintain. You research on it. You prepare with it. When you need representation, they're already there to add the licensed protection.</p>
+    <div class="services-grid">
+      <div class="svc reveal">
+        <h3>International Tax Compliance</h3>
+        <p>Tax residency determination, worldwide income mapping, coordinated filings across every jurisdiction that has a claim on your income.</p>
+      </div>
+      <div class="svc reveal reveal-delay-1">
+        <h3>Crypto and Digital Asset Accounting</h3>
+        <p>Transaction classification, cost basis tracking, DeFi yield, staking, airdrops. Proper books that survive an audit.</p>
+      </div>
+      <div class="svc reveal reveal-delay-2">
+        <h3>Financial Statements for Investors</h3>
+        <p>Credible, audit-ready financials for startups raising capital across jurisdictions.</p>
+      </div>
+      <div class="svc reveal">
+        <h3>Tax Structuring and Entity Setup</h3>
+        <p>Tax effective jurisdiction selection and entity setup for how you actually operate and live. All things considered, documented and defensible.</p>
+      </div>
+      <div class="svc reveal reveal-delay-1">
+        <h3>Business Advisory</h3>
+        <p>Compliance, governance, and financial planning from professionals who understand both traditional regulation and the digital economy.</p>
+      </div>
+      <div class="svc reveal reveal-delay-2">
+        <h3>Audit Defence</h3>
+        <p>Licensed professionals who can represent you to tax authorities with documentation, defensible positions, and standing to appear on your behalf.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-section">
+  <div class="container">
+    <div class="section-label reveal">How it works</div>
+    <h2 class="section-title reveal">From confusion to compliant filings (with better planning for the future)</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Determine your position</h3>
+        <p>AI-guided assessment works out your tax residency, reportable income, and filing obligations across jurisdictions.</p>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <h3>Upload once</h3>
+        <p>Source documents sorted and tagged for each jurisdiction. Kept on file for seven years.</p>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">03</div>
+        <h3>Routed to professionals</h3>
+        <p>Each jurisdiction's filing goes to a qualified professional. Providers collaborate in-system.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">04</div>
+        <h3>Coordinated filing</h3>
+        <p>Returns prepared applying double tax agreement reliefs. Taxes lodged, paid, estimated for the year ahead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flywheel-section">
+  <div class="container">
+    <div class="section-label reveal">The model</div>
+    <h2 class="section-title reveal">Professional community + professional software</h2>
+    <div style="margin-top:1.5rem" class="reveal">
+      <img src="images/flywheel.png" alt="Self-reinforcing flywheel: Research users get trusted research from the platform. Accountants maintain the knowledge base and get users as leads. Both sides reinforce each other." style="width:100%;max-width:800px;display:block;margin:0 auto;border-radius:12px">
+    </div>
+  </div>
+</section>
+
+<section class="network-section">
+  <div class="container">
+    <div class="section-label reveal">The professionals</div>
+    <h2 class="section-title reveal">CREDU Global Public Accountants</h2>
+    <div class="net-grid">
+      <div class="net-card reveal">
+        <h3>Licensed to represent you</h3>
+        <p>Qualified and licensed to prepare, sign, and lodge tax returns and represent your affairs to tax authorities.</p>
+      </div>
+      <div class="net-card reveal reveal-delay-1">
+        <h3>Cross-border by design</h3>
+        <p>Your Malaysian professional and your Australian one work within the same system. Coordinated, not siloed.</p>
+      </div>
+      <div class="net-card reveal reveal-delay-2">
+        <h3>Crypto-native, AI-augmented</h3>
+        <p>AI handles research and preparation at speed. Humans verify, sign, and take professional responsibility. Quality at a fraction of the usual time and cost.</p>
+      </div>
+      <div class="net-card reveal">
+        <h3>Based here, connected globally</h3>
+        <p>Operating onsite at Network School. Connected to trusted professional networks worldwide. Growing with every CREDU Academy cohort.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="section-label reveal">Get involved</div>
+    <h2 class="section-title reveal">Know an accountant who should be here?</h2>
+    <p style="font-size:1rem;color:var(--ink-light);max-width:520px;margin:0 auto 1.5rem;" class="reveal">We are building this with qualified professionals who want to collaborate at Network School. Send them our way.</p>
+    <div class="cta-buttons reveal reveal-delay-1">
+      <a href="mailto:support@credu.academy" class="btn-primary">support@credu.academy</a>
+      <a href="https://credu.academy/apply" class="btn-secondary">Join CREDU Academy</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>CREDU Academy at Network School, Malaysia</p>
+  <p class="footer-contact">Contact: <a href="mailto:support@credu.academy">support@credu.academy</a></p>
+  <div class="footer-links">
+    <a href="https://credu.academy">Home</a>
+    <a href="https://credu.academy/services">Services</a>
+    <a href="mailto:support@credu.academy">Support</a>
+  </div>
+</footer>
+
+<button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);document.querySelector('.scroll-top').classList.toggle('show',window.scrollY>400)});
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
