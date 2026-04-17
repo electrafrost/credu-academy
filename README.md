@@ -43,7 +43,7 @@ Practitioners adapting their own practice. Graduates seeking advanced skills and
 ## Founded by
 
 [Electra Frost](https://electrafrost.com), Chartered Tax Adviser (CTA), IPA Fellow and Global Certified Public Accountant (FIPA GCPA)
-Deputy President, Malaysia Member Advisory Committee, [Institute of Public Accountants Malaysia](https://www.publicaccountants.org.au/)
+Deputy President, Malaysia Member Advisory Committee, [Institute of Public Accountants](https://www.publicaccountants.org.au/)
 
 Electra is an Australian international tax specialist, early crypto accountant and community builder with 20+ years in professional practice, based at [Network School](https://ns.com/electrafrost/) since September 2024. She is assembling a transdisciplinary community of practitioners, educators and builders from accounting, emerging tech and finance to develop the CREDU platform and its credentialing ecosystem from the ground up with each cohort.
 
