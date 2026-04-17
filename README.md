@@ -14,7 +14,7 @@ Participants maintain in their roles remotely. Daily logistics are handled. The 
 
 ## Programme
 
-There is no fixed curriculum. Each cohort's programme is based on participants bring and where they need to get to. CREDU Academy adds accounting industry focus to Network School's regular programming and is customised around each intake.
+There is no fixed curriculum. Each cohort's programme is self-directed, based on what participants bring and where they need to get to. CREDU Academy adds accounting industry focus to Network School's regular programming and is customised around each intake.
 
 The structure below is an example of what a three-month programme could look like for a typical self-employed practitioner working remotely while at Network School.
 
