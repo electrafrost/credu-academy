@@ -1,8 +1,10 @@
 # CREDU Academy
 
-The original Academy was the school Plato founded in Athens. It was not a place of instruction from above. It was a place where capable people came together to think, question and work through problems with each other. The learning happened through dialogue and inquiry among peers. It ran for centuries.
+# CREDU Academy
 
-CREDU Academy draws from that tradition. It is not a traditional educational institution. It is a working residency where accounting and tax professionals from around the world learn and build alongside each other, in an environment designed to remove everything that gets in the way of progress.
+Plato's Academy in Athens was a place where capable people gathered to think and work through problems together. The learning came from the dialogue among peers. It ran for centuries.
+
+CREDU Academy draws from that tradition. A working residency where accounting and tax professionals from around the world learn and build alongside each other, in an environment designed to remove everything that gets in the way of progress.
 
 It is hosted by [Electra Frost](https://ns.com/electrafrost/) at [Network School](https://ns.com/) in Forest City, Malaysia, which already provides this environment for technologists, founders and builders from many countries and diverse backgrounds. CREDU Academy brings the same model to the accounting profession specifically - practitioners building within a professional accounting ecosystem, alongside a global community already working with AI, crypto and blockchain. Serviced accommodation, coworking, daily meals, gym and proximity to Singapore mean participants can focus entirely on progress without domestic friction.
 
