@@ -24,9 +24,7 @@ The structure below is an example of what a three-month programme could look lik
 
 ### Not ready for three months?
 
-Apply to visit Network School for one week as a guest, experience the environment and community, and decide if CREDU Academy is right for you. Many participants may choose to join the next cohort after a trial week.
-
-[Apply for a 1-week visit](https://ns.com/electrafrost/apply)
+Visit Network School for one week as a guest, experience the environment and community, and decide if CREDU Academy is right for you. Contact [support@credu.academy](mailto:support@credu.academy) to apply for a visit.
 
 ## Who it is for
 
