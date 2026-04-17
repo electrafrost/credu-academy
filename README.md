@@ -1,7 +1,5 @@
 # CREDU Academy
 
-# CREDU Academy
-
 Plato's Academy in Athens was a place where capable people gathered to think and work through problems together. The learning came from the dialogue among peers. It ran for centuries.
 
 CREDU Academy draws from that tradition. A working residency where accounting and tax professionals from around the world learn and build alongside each other, in an environment designed to remove everything that gets in the way of progress.
